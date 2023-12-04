@@ -19,9 +19,9 @@ public class SafetyPlanDAO {
         db = dbHelper.getWritableDatabase();
     }
 
-    public boolean addOne(SafetyPlanBo safetyPlanModel){
+    public boolean addOne(SafetyPlanBo safetyPlan){
         ContentValues cv = new ContentValues();
-        cv.put(COLUMN_SAFETY_RESPONSE, safetyPlanModel.getResponse());
+        cv.put(COLUMN_SAFETY_RESPONSE, safetyPlan.getResponse());
         long insert = db.insert(SAFETY_PLAN_TABLE, null, cv);
         if(insert == -1){
             return false;
@@ -31,7 +31,7 @@ public class SafetyPlanDAO {
 
     }
 
-    public boolean updateOne(SafetyPlanBo safetyPlanModel){
+    public boolean updateOne(SafetyPlanBo safetyPlan){
 
 
         return true;

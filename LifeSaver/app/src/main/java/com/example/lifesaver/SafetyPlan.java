@@ -8,7 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.lifesaver.dao.SafetyPlanDAO;
+
 public class SafetyPlan extends AppCompatActivity {
+
+    private SafetyPlanDAO safetyPlanDAO;
 
     TextView tv1, tv2, tv3, tv4, tv5, tv6;
 
@@ -18,6 +22,8 @@ public class SafetyPlan extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_safety_plan);
+
+        safetyPlanDAO = new SafetyPlanDAO(this);
 
 
         goEdit = findViewById(R.id.btn_go_to_edit);
