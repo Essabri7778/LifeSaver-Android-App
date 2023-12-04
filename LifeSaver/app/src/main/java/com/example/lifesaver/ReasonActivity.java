@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.lifesaver.bo.Reason;
 import com.example.lifesaver.bo.ReasonSection;
+import com.example.lifesaver.dao.ReasonDAO;
 import com.example.lifesaver.ui.adapter.ReasonSectionAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReasonActivity extends AppCompatActivity {
+
 
     RecyclerView recycle;
     List<Reason> reasons = new ArrayList<>();
@@ -30,26 +32,30 @@ public class ReasonActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNav;
 
+    ReasonDAO reasonDAO;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.reason_main);
+
+        reasonDAO = new ReasonDAO(this);
 
         bottomNav = findViewById(R.id.bottomNav);
 
         recycle=findViewById(R.id.reasonSection);
         recycle.setLayoutManager(new LinearLayoutManager(getBaseContext()));
 
-        Reason reason1 = new Reason("Reason 1", R.drawable.checked);
-        Reason reason2 = new Reason("Reason 2", R.drawable.checked);
-        Reason reason3 = new Reason("Reason 3", R.drawable.checked);
+        Reason reason1 = new Reason("I care enough about myself to live");
+        Reason reason2 = new Reason("I have the courage to face life");
+        Reason reason3 = new Reason("I want to experience all that life has to offer and there are many experiences I haven't had yet which I want to have");
         reasons.add(reason1);
         reasons.add(reason2);
         reasons.add(reason3);
 
-        Reason reason11 = new Reason("Reason 11", R.drawable.checked);
-        Reason reason22 = new Reason("Reason 22", R.drawable.checked);
-        Reason reason33 = new Reason("Reason 33", R.drawable.checked);
+        Reason reason11 = new Reason("My Self");
+        Reason reason22 = new Reason("Reason 22");
+        Reason reason33 = new Reason("Reason 33");
         reasons2.add(reason11);
         reasons2.add(reason22);
         reasons2.add(reason33);

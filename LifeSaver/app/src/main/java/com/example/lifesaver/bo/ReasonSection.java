@@ -5,14 +5,27 @@ import android.graphics.drawable.Drawable;
 import java.util.List;
 
 public class ReasonSection {
+
+    private int id;
     private String title;
     private int icon;
     private List<Reason> reasons;
+
+    public ReasonSection(int id, String title, int icon, List<Reason> reasons) {
+        this.id = id;
+        this.title = title;
+        this.icon = icon;
+        this.reasons = reasons;
+    }
 
     public ReasonSection(String title, int icon, List<Reason> reasons) {
         this.title = title;
         this.icon = icon;
         this.reasons = reasons;
+    }
+
+    public ReasonSection() {
+
     }
 
     public void setTitle(String title) {
@@ -37,5 +50,23 @@ public class ReasonSection {
 
     public List<Reason> getReasons() {
         return reasons;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "ReasonSection{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", icon=" + icon +
+                ", reasons=" + reasons +
+                '}';
     }
 }

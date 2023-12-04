@@ -1,5 +1,7 @@
 package com.example.lifesaver.bo;
 
+import com.example.lifesaver.R;
+
 public class Reason {
     String reason;
 
@@ -8,9 +10,9 @@ public class Reason {
     public Reason() {
     }
 
-    public Reason(String reason, int icon) {
+    public Reason(String reason) {
         this.reason = reason;
-        this.icon = icon;
+        this.icon = R.drawable.checked;
     }
 
     public String getReason() {

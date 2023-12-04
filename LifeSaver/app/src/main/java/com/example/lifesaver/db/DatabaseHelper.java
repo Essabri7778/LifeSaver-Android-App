@@ -18,10 +18,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_SAFETY_ID = "SAFETY_ID";
     public static final String COLUMN_SAFETY_RESPONSE = "SAFETY_RESPONSE";
 
+
     // COLUMNS OF TABLE 2
 
-
-
+    // reason section table columns
+    private static final String REASON_COLUMN_SECTION_ID = "REASON_SECTIONS_ID";
+    public static final String REASON_COLUMN_SECTION_TITLE = "REASON_SECTIONS_TITLE";
+    public static final String REASON_COLUMN_SECTION_ICON = "REASON_SECTIONS_ICON";
+    public static final String REASON_TABLE_SECTIONS = "REASON_SECTIONS";
 
 
     public DatabaseHelper(@Nullable Context context) {
@@ -37,11 +41,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(createSafetyStatement);
 
         // Create TABLE 2
+
+        // reason section table
+        String createSectionsReasonQuery = "CREATE TABLE " + REASON_TABLE_SECTIONS + " (" + REASON_COLUMN_SECTION_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + REASON_COLUMN_SECTION_TITLE + " TEXT, " + REASON_COLUMN_SECTION_ICON + " INTEGER)";
+
+        db.execSQL(createSectionsReasonQuery);
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
     }
 
 
