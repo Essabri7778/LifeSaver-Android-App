@@ -6,15 +6,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.lifesaver.bo.SafetyPlanBo;
 import com.example.lifesaver.dao.SafetyPlanDAO;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SafetyPlan extends AppCompatActivity {
 
     private SafetyPlanDAO safetyPlanDAO;
 
     TextView tv1, tv2, tv3, tv4, tv5, tv6;
+
+    ArrayList<TextView> arrayList;
 
     Button goEdit;
 
@@ -24,6 +31,24 @@ public class SafetyPlan extends AppCompatActivity {
         setContentView(R.layout.activity_safety_plan);
 
         safetyPlanDAO = new SafetyPlanDAO(this);
+
+        tv1 = findViewById(R.id.tv1);tv2 = findViewById(R.id.tv2);tv3 = findViewById(R.id.tv3);tv4 = findViewById(R.id.tv4);tv5 = findViewById(R.id.tv5);tv6 = findViewById(R.id.tv6);
+
+        arrayList= new ArrayList<>();
+        arrayList.add(tv1);arrayList.add(tv2);arrayList.add(tv3);arrayList.add(tv4);arrayList.add(tv5);arrayList.add(tv6);
+
+
+        List<SafetyPlanBo> list = safetyPlanDAO.getAll();
+
+        if(list.isEmpty()){
+            Intent myIntent = new Intent(SafetyPlan.this, EditSafetyPlan.class);
+            startActivity(myIntent);
+            finish();
+        }else{
+            fillViews();
+        }
+
+
 
 
         goEdit = findViewById(R.id.btn_go_to_edit);
@@ -36,5 +61,13 @@ public class SafetyPlan extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    public void fillViews(){
+        List<SafetyPlanBo> list = safetyPlanDAO.getAll();
+        for(int i=0 ; i<list.size() ; i++){
+            String response = list.get(i).getResponse();
+            (arrayList.get(i)).setText(response);
+        }
     }
 }
