@@ -50,8 +50,31 @@
                 android:id="@+id/et1"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:hint="e.g., not wanting to see anyone; feeling stressed at work"/>
+                android:hint="e.g., not wanting to see anyone; feeling stressed at work"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:paddingLeft="9dp"
+                android:paddingRight="9dp"
+                android:maxWidth="350dp"
+                android:text="- What thoughts, feelings, or behaviours happen before you start to have thoughts of suicide?"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:paddingLeft="9dp"
+                android:paddingRight="9dp"
+                android:maxWidth="350dp"
+                android:text="- Do you know what may trigger these feelings?"
+                android:textAlignment="center"
+                android:textSize="12sp" />
 
         </LinearLayout>
 
@@ -77,6 +100,29 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:hint="e.g., breathing exercises; listening to music; taking a walk"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:paddingLeft="9dp"
+                android:paddingRight="9dp"
+                android:maxWidth="350dp"
+                android:text="- What can you do to distract yourself?"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:paddingLeft="9dp"
+                android:paddingRight="9dp"
+                android:maxWidth="350dp"
+                android:text="- What has worked for you in the past?"
+                android:textAlignment="center"
                 android:textSize="12sp" />
 
         </LinearLayout>
@@ -106,6 +152,29 @@
                 android:hint="e.g., home; library"
                 android:textSize="12sp" />
 
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:paddingLeft="9dp"
+                android:paddingRight="9dp"
+                android:maxWidth="350dp"
+                android:text="- Where do you feel the most safe?"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:paddingLeft="9dp"
+                android:paddingRight="9dp"
+                android:maxWidth="350dp"
+                android:text="- Where can you go to distract yourself from your thoughts of suicide?"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
 
         </LinearLayout>
 
@@ -131,6 +200,29 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:hint="e.g., friends;family;a neighbor"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:paddingLeft="9dp"
+                android:paddingRight="9dp"
+                android:maxWidth="350dp"
+                android:text="- Who would you feel able to talk to about how you're feeling??"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:paddingLeft="9dp"
+                android:paddingRight="9dp"
+                android:maxWidth="350dp"
+                android:text="- Who has helped you in the past?"
+                android:textAlignment="center"
                 android:textSize="12sp" />
 
         </LinearLayout>
@@ -163,6 +255,29 @@
                 android:hint="e.g., key worker; Samaritans; a counsellor"
                 android:textSize="12sp" />
 
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:paddingLeft="9dp"
+                android:paddingRight="9dp"
+                android:maxWidth="350dp"
+                android:text="- Do you know any professionals or organizations in your region?"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:paddingLeft="9dp"
+                android:paddingRight="9dp"
+                android:maxWidth="350dp"
+                android:text="- Which organisation has helped you in the past?"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -187,6 +302,29 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:hint="e.g., asking a friend to look after medication;"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:paddingLeft="9dp"
+                android:paddingRight="9dp"
+                android:maxWidth="350dp"
+                android:text="- How can you make it harder to act on any plans you might havr for suicide?"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:paddingLeft="9dp"
+                android:paddingRight="9dp"
+                android:maxWidth="350dp"
+                android:text="- Where can you put things you could use to harm yourself so they are harder to get to if you overwhelmed?"
+                android:textAlignment="center"
                 android:textSize="12sp" />
 
         </LinearLayout>
