@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottomNav"
+            android:fontFamily="@font/poppins_black"
+            app:menu="@menu/bottom_menu"
+            android:background="@drawable/shape2"
+            app:itemIconTint="@color/selector"
+            app:itemTextColor="@color/selector"
+            app:labelVisibilityMode="labeled"
+            app:elevation="0dp"
+            android:layout_gravity="bottom"
+            android:paddingVertical="3dp"
+            app:itemRippleColor="@color/colorLight"
+            />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:backgroundTint="@color/colorPrimary"
+        android:src="@drawable/emrgencysvg"
+        app:borderWidth="2dp"
+        app:layout_anchor="@id/bottomNav"
+        app:maxImageSize="45dp"
+        app:tint="@color/white"
+        app:layout_anchorGravity="center|center_horizontal"
+        app:elevation="1dp"
+        app:backgroundTint="@color/colorSecondaryLight"
+        />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

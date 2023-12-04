@@ -24,13 +24,21 @@
 
         <activity
             android:name=".EditSafetyPlan"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            />
 
         <activity
             android:name=".SafetyPlan"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            >
 
         </activity>
+        <activity
+        android:name=".ReasonActivity"
+        android:exported="true"
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
 
         <activity
             android:name=".MainActivity"
