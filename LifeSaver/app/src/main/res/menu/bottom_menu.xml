@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="Home"
+        android:icon="@drawable/home"
+        android:id="@+id/home"
+        />
+    <item
+        android:title="mySpace"
+        android:icon="@drawable/myspace"
+        android:id="@+id/mySpace"
+        />
+    <item
+        android:title=""
+        android:id="@+id/emergency"
+        />
+    <item
+        android:title="Survey"
+        android:icon="@drawable/survey"
+        android:id="@+id/survey"
+        />
+    <item
+        android:title="Advices"
+        android:icon="@drawable/advice"
+        android:id="@+id/advice"
+        />
+</menu>
