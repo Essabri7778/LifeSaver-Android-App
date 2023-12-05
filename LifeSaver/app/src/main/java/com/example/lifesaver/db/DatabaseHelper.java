@@ -31,8 +31,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String REASON_TABLE = "REASON";
     public static final String REASON_COLUMN_TEXT = "REASON_TEXT";
     public static final String REASON_COLUMN_ID = "REASON_ID";
-    public static final String REASON_COLUMN_ICON = "REASON_ICON";
-
+    public static final String REASON_COLUMN_CHECKED = "REASON_CHECKED";
 
 
     public DatabaseHelper(@Nullable Context context) {
@@ -58,7 +57,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String createReasonQuery = "CREATE TABLE " + REASON_TABLE + " (" +
                 REASON_COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 REASON_COLUMN_TEXT + " TEXT, " +
-                REASON_COLUMN_ICON + " INTEGER, " +
+                REASON_COLUMN_CHECKED + " INTEGER, " +
                 REASON_COLUMN_SECTION_ID + " INTEGER, " +
                 "FOREIGN KEY(" + REASON_COLUMN_SECTION_ID + ") REFERENCES " +
                 REASON_TABLE_SECTIONS + "(" + REASON_COLUMN_SECTION_ID + "))";

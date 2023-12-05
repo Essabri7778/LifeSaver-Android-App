@@ -2,6 +2,7 @@ package com.example.lifesaver.bo;
 
 import android.graphics.drawable.Drawable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ReasonSection {
@@ -50,6 +51,14 @@ public class ReasonSection {
 
     public List<Reason> getReasons() {
         return reasons;
+    }
+
+    public List<Reason> getReasonsChecked() {
+        List<Reason> checkeds = new ArrayList<>();
+        for(Reason r : getReasons()){
+            if(r.isCheked()==1) checkeds.add(r);
+        }
+        return checkeds;
     }
 
     public int getId() {

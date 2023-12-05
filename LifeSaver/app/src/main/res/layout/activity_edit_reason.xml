@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ReasonActivity"
+    tools:context=".EditReasonActivity"
     android:background="@color/colorPrimary"
     >
 
@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-    />
+        />
 
 
     <androidx.core.widget.NestedScrollView
@@ -25,15 +25,15 @@
         app:layout_constraintTop_toBottomOf="@+id/topToolbar"
         app:layout_constraintBottom_toTopOf="@+id/bottomMenu"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/colorDark"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             >
-
-            <include layout="@layout/header_reasons"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/reasonSection"
@@ -43,6 +43,9 @@
                 android:divider="@android:color/darker_gray"
                 android:dividerHeight="1dp"
                 tools:listitem="@layout/reason_layout" />
+
+            <include layout="@layout/own_reason_layout_edit"
+                />
 
         </LinearLayout>
 
