@@ -39,7 +39,7 @@ public class ReasonsAdapter extends RecyclerView.Adapter<ReasonsAdapter.ReasonsH
 
     @Override
     public int getItemCount() {
-        return reasons.size();
+        return reasons!=null?reasons.size():0;
     }
 
     class ReasonsHolder extends RecyclerView.ViewHolder{
