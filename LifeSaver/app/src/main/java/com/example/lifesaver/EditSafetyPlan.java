@@ -2,11 +2,14 @@ package com.example.lifesaver;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.lifesaver.bo.SafetyPlanBo;
@@ -24,6 +27,9 @@ public class EditSafetyPlan extends AppCompatActivity {
     ArrayList<EditText> arrayList;
     Button btn_save;
 
+    ImageView back;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +43,8 @@ public class EditSafetyPlan extends AppCompatActivity {
         arrayList.add(et1);arrayList.add(et2);arrayList.add(et3);arrayList.add(et4);arrayList.add(et5);arrayList.add(et6);
 
         btn_save = findViewById(R.id.btn_save_plan);
+
+        back = findViewById(R.id.backButton);
 
         List<SafetyPlanBo> list = safetyPlanDAO.getAll();
         if(!list.isEmpty()) fillEditText();
@@ -55,6 +63,15 @@ public class EditSafetyPlan extends AppCompatActivity {
                 }
 
                 Intent myIntent = new Intent(EditSafetyPlan.this, SafetyPlan.class);
+                startActivity(myIntent);
+                finish();
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(EditSafetyPlan.this , SafetyPlan.class);
                 startActivity(myIntent);
                 finish();
             }

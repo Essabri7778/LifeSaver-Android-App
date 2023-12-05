@@ -1,39 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SafetyPlan">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal">
+
+            <!-- Your Toolbar content -->
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/back"
+                android:layout_gravity="start"
+                app:tint="@color/colorPrimary"
+                />
+
+            <TextView
+                android:layout_marginLeft="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Safety Plan"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="20dp"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="150dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:paddingTop="15dp"
-        android:paddingBottom="10dp">
-
-        <Button
-            android:id="@+id/btn_go_to_edit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Edit"/>
 
 
-    </LinearLayout>
+        <include layout="@layout/header_safety"/>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="150dp"
-        android:background="#A803A9F4"
+        android:background="@color/colorPrimary"
         android:gravity="center"
         android:orientation="vertical"
         android:paddingTop="15dp"
@@ -48,14 +73,18 @@
             android:text="These are warning signs that I may be struggling:"
             android:textAlignment="center"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/white"/>
 
         <TextView
             android:id="@+id/tv1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:textSize="12sp" />
+            android:textAlignment="center"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 
@@ -74,14 +103,20 @@
             android:layout_marginBottom="7dp"
             android:text="I will calm myself by trying:"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/black"
+            />
 
         <TextView
             android:id="@+id/tv2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:textSize="12sp" />
+            android:textAlignment="center"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/black"/>
 
     </LinearLayout>
 
@@ -89,7 +124,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="150dp"
-        android:background="#A803A9F4"
+        android:background="@color/colorPrimary"
         android:gravity="center"
         android:orientation="vertical"
         android:paddingTop="15dp"
@@ -101,14 +136,19 @@
             android:layout_marginBottom="7dp"
             android:text="I will go to my safe place:"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/white"/>
 
         <TextView
             android:id="@+id/tv3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:textSize="12sp" />
+            android:textAlignment="center"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 
@@ -127,14 +167,19 @@
             android:layout_marginBottom="7dp"
             android:text="If I am struggling, I can talk to:"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/tv4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:textSize="12sp" />
+            android:textAlignment="center"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/black"/>
 
     </LinearLayout>
 
@@ -142,10 +187,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="150dp"
-        android:background="#A803A9F4"
+        android:background="@color/colorPrimary"
         android:gravity="center"
         android:orientation="vertical"
         android:paddingTop="15dp"
+        android:textAlignment="center"
         android:paddingBottom="10dp">
 
         <TextView
@@ -157,14 +203,18 @@
             android:text="In a crisis, I will seek help from these professionals or organisations:"
             android:textAlignment="center"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/white"/>
 
         <TextView
             android:id="@+id/tv5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:textSize="12sp" />
+            android:textAlignment="center"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 
@@ -183,16 +233,37 @@
             android:layout_marginBottom="7dp"
             android:text="My ideas for staying safe:"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/tv6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:textSize="12sp" />
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="12sp"
+            android:textColor="@color/black"/>
 
     </LinearLayout>
+
     </LinearLayout>
 
-</ScrollView>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_go_to_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:srcCompat="@drawable/baseline_mode_edit_24"
+        app:backgroundTint="@color/colorLight" />
+
+</RelativeLayout>

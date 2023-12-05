@@ -1,342 +1,456 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EditSafetyPlan">
 
-    <LinearLayout
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal">
+
+            <!-- Your Toolbar content -->
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/back"
+                android:layout_gravity="start"
+                app:tint="@color/colorPrimary"
+                />
+
+            <TextView
+                android:layout_marginLeft="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit Safety Plan"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="20dp"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="100dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingTop="15dp"
-            android:paddingBottom="10dp">
+            android:orientation="vertical">
 
-            <!-- logo -->
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="150dp"
-            android:background="#A803A9F4"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingTop="15dp"
-            android:paddingBottom="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="7dp"
-                android:paddingLeft="9dp"
-                android:paddingRight="9dp"
-                android:text="These are warning signs that I may be struggling:"
-                android:textAlignment="center"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/et1"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:hint="e.g., not wanting to see anyone; feeling stressed at work"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="7dp"
-                android:paddingLeft="9dp"
-                android:paddingRight="9dp"
-                android:maxWidth="350dp"
-                android:text="- What thoughts, feelings, or behaviours happen before you start to have thoughts of suicide?"
-                android:textAlignment="center"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="7dp"
-                android:paddingLeft="9dp"
-                android:paddingRight="9dp"
-                android:maxWidth="350dp"
-                android:text="- Do you know what may trigger these feelings?"
-                android:textAlignment="center"
-                android:textSize="12sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="150dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingTop="15dp"
-            android:paddingBottom="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="7dp"
-                android:text="I will calm myself by trying:"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/et2"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:hint="e.g., breathing exercises; listening to music; taking a walk"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="7dp"
-                android:paddingLeft="9dp"
-                android:paddingRight="9dp"
-                android:maxWidth="350dp"
-                android:text="- What can you do to distract yourself?"
-                android:textAlignment="center"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="7dp"
-                android:paddingLeft="9dp"
-                android:paddingRight="9dp"
-                android:maxWidth="350dp"
-                android:text="- What has worked for you in the past?"
-                android:textAlignment="center"
-                android:textSize="12sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="150dp"
-            android:background="#A803A9F4"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingTop="15dp"
-            android:paddingBottom="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="7dp"
-                android:text="I will go to my safe place:"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/et3"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:hint="e.g., home; library"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="7dp"
-                android:paddingLeft="9dp"
-                android:paddingRight="9dp"
-                android:maxWidth="350dp"
-                android:text="- Where do you feel the most safe?"
-                android:textAlignment="center"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="7dp"
-                android:paddingLeft="9dp"
-                android:paddingRight="9dp"
-                android:maxWidth="350dp"
-                android:text="- Where can you go to distract yourself from your thoughts of suicide?"
-                android:textAlignment="center"
-                android:textSize="12sp" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="150dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingTop="15dp"
-            android:paddingBottom="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="7dp"
-                android:text="If I am struggling, I can talk to:"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/et4"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:hint="e.g., friends;family;a neighbor"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="7dp"
-                android:paddingLeft="9dp"
-                android:paddingRight="9dp"
-                android:maxWidth="350dp"
-                android:text="- Who would you feel able to talk to about how you're feeling??"
-                android:textAlignment="center"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="7dp"
-                android:paddingLeft="9dp"
-                android:paddingRight="9dp"
-                android:maxWidth="350dp"
-                android:text="- Who has helped you in the past?"
-                android:textAlignment="center"
-                android:textSize="12sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="150dp"
-            android:background="#A803A9F4"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingTop="15dp"
-            android:paddingBottom="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="7dp"
-                android:paddingLeft="6dp"
-                android:paddingRight="7dp"
-                android:text="In a crisis, I will seek help from these professionals or organisations:"
-                android:textAlignment="center"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/et5"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:hint="e.g., key worker; Samaritans; a counsellor"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="7dp"
-                android:paddingLeft="9dp"
-                android:paddingRight="9dp"
-                android:maxWidth="350dp"
-                android:text="- Do you know any professionals or organizations in your region?"
-                android:textAlignment="center"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="7dp"
-                android:paddingLeft="9dp"
-                android:paddingRight="9dp"
-                android:maxWidth="350dp"
-                android:text="- Which organisation has helped you in the past?"
-                android:textAlignment="center"
-                android:textSize="12sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="150dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingTop="15dp"
-            android:paddingBottom="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="7dp"
-                android:text="My ideas for staying safe:"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/et6"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:hint="e.g., asking a friend to look after medication;"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="7dp"
-                android:paddingLeft="9dp"
-                android:paddingRight="9dp"
-                android:maxWidth="350dp"
-                android:text="- How can you make it harder to act on any plans you might havr for suicide?"
-                android:textAlignment="center"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="7dp"
-                android:paddingLeft="9dp"
-                android:paddingRight="9dp"
-                android:maxWidth="350dp"
-                android:text="- Where can you put things you could use to harm yourself so they are harder to get to if you overwhelmed?"
-                android:textAlignment="center"
-                android:textSize="12sp" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/btn_save_plan"
+            <!-- Your existing layout content -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Save"/>
-        </LinearLayout>
-    </LinearLayout>
+                android:minHeight="150dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="15dp"
+                android:paddingBottom="10dp"
+                android:background="@drawable/shape">
 
-</ScrollView >
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/help"
+                    android:layout_gravity="center"
+                    app:tint="@color/colorPrimary" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="150dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="15dp"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:paddingLeft="9dp"
+                    android:paddingRight="9dp"
+                    android:text="These are warning signs that I may be struggling:"
+                    android:textAlignment="center"
+                    android:textSize="24sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/white" />
+
+                <EditText
+                    android:id="@+id/et1"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="e.g., not wanting to see anyone; feeling stressed at work"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins"
+                    android:backgroundTint="@color/colorSecondary"
+                    android:textColorHint="@color/colorSecondary"
+                    android:textColor="@color/colorSecondary"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:paddingLeft="9dp"
+                    android:paddingRight="9dp"
+                    android:maxWidth="350dp"
+                    android:text="- What thoughts, feelings, or behaviours happen before you start to have thoughts of suicide?"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:paddingLeft="9dp"
+                    android:paddingRight="9dp"
+                    android:maxWidth="350dp"
+                    android:text="- Do you know what may trigger these feelings?"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="150dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="15dp"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:text="I will calm myself by trying:"
+                    android:textSize="24sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    />
+
+                <EditText
+                    android:id="@+id/et2"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="e.g., breathing exercises; listening to music; taking a walk"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins"
+                    android:backgroundTint="@color/colorDark"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:paddingLeft="9dp"
+                    android:paddingRight="9dp"
+                    android:maxWidth="350dp"
+                    android:text="- What can you do to distract yourself?"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:paddingLeft="9dp"
+                    android:paddingRight="9dp"
+                    android:maxWidth="350dp"
+                    android:text="- What has worked for you in the past?"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="150dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="15dp"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:text="I will go to my safe place:"
+                    android:textSize="24sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/white"
+                    android:textAlignment="center"/>
+
+                <EditText
+                    android:id="@+id/et3"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="e.g., home; library"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins"
+                    android:backgroundTint="@color/colorSecondary"
+                    android:textColorHint="@color/colorSecondary"
+                    android:textColor="@color/colorSecondary"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:paddingLeft="9dp"
+                    android:paddingRight="9dp"
+                    android:maxWidth="350dp"
+                    android:text="- Where do you feel the most safe?"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:paddingLeft="9dp"
+                    android:paddingRight="9dp"
+                    android:maxWidth="350dp"
+                    android:text="- Where can you go to distract yourself from your thoughts of suicide?"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/white"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="150dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="15dp"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:text="If I am struggling, I can talk to:"
+                    android:textSize="24sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"/>
+
+                <EditText
+                    android:id="@+id/et4"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="e.g., friends;family;a neighbor"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins"
+                    android:backgroundTint="@color/colorDark"
+                    />
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:paddingLeft="9dp"
+                    android:paddingRight="9dp"
+                    android:maxWidth="350dp"
+                    android:text="- Who would you feel able to talk to about how you're feeling??"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:paddingLeft="9dp"
+                    android:paddingRight="9dp"
+                    android:maxWidth="350dp"
+                    android:text="- Who has helped you in the past?"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="150dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="15dp"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="7dp"
+                    android:text="In a crisis, I will seek help from these professionals or organisations:"
+                    android:textAlignment="center"
+                    android:textSize="24sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/white" />
+
+                <EditText
+                    android:id="@+id/et5"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="e.g., key worker; Samaritans; a counsellor"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins"
+                    android:backgroundTint="@color/colorSecondary"
+                    android:textColorHint="@color/colorSecondary"
+                    android:textColor="@color/colorSecondary"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:paddingLeft="9dp"
+                    android:paddingRight="9dp"
+                    android:maxWidth="350dp"
+                    android:text="- Do you know any professionals or organizations in your region?"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:paddingLeft="9dp"
+                    android:paddingRight="9dp"
+                    android:maxWidth="350dp"
+                    android:text="- Which organisation has helped you in the past?"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="150dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="15dp"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:text="My ideas for staying safe:"
+                    android:textSize="24sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"/>
+
+                <EditText
+                    android:id="@+id/et6"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="e.g., asking a friend to look after medication;"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins"
+                    android:backgroundTint="@color/colorDark"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="7dp"
+                    android:maxWidth="350dp"
+                    android:paddingLeft="9dp"
+                    android:paddingRight="9dp"
+                    android:text="- How can you make it harder to act on any plans you might havr for suicide?"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:paddingLeft="9dp"
+                    android:paddingRight="9dp"
+                    android:maxWidth="350dp"
+                    android:text="- Where can you put things you could use to harm yourself so they are harder to get to if you overwhelmed?"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <Button
+                    android:id="@+id/btn_save_plan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Save"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppins_bold"
+                    android:backgroundTint="@color/colorPrimaryLight"
+                    android:layout_margin="10dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

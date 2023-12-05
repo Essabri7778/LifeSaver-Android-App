@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.lifesaver.bo.SafetyPlanBo;
 import com.example.lifesaver.dao.SafetyPlanDAO;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,8 +25,9 @@ public class SafetyPlan extends AppCompatActivity {
 
     ArrayList<TextView> arrayList;
 
-    Button goEdit;
+    FloatingActionButton goEdit;
 
+    ImageView back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +36,8 @@ public class SafetyPlan extends AppCompatActivity {
         safetyPlanDAO = new SafetyPlanDAO(this);
 
         tv1 = findViewById(R.id.tv1);tv2 = findViewById(R.id.tv2);tv3 = findViewById(R.id.tv3);tv4 = findViewById(R.id.tv4);tv5 = findViewById(R.id.tv5);tv6 = findViewById(R.id.tv6);
+
+        back = findViewById(R.id.backButton);
 
         arrayList= new ArrayList<>();
         arrayList.add(tv1);arrayList.add(tv2);arrayList.add(tv3);arrayList.add(tv4);arrayList.add(tv5);arrayList.add(tv6);
@@ -57,6 +62,15 @@ public class SafetyPlan extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(SafetyPlan.this, EditSafetyPlan.class);
+                startActivity(myIntent);
+                finish();
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(SafetyPlan.this , MainActivity.class);
                 startActivity(myIntent);
                 finish();
             }
