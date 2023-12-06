@@ -34,6 +34,11 @@
         android:layout_marginBottom="1dp"
         android:layout_centerVertical="true"
         android:src="@drawable/baseline_keyboard_arrow_right_24"></ImageView>
+    <TextView
+        android:id="@+id/hidden_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"></TextView>
 
 
 </RelativeLayout>

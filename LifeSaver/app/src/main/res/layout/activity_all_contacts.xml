@@ -7,16 +7,36 @@
     tools:context=".AllContactsActivity"
     android:orientation="vertical">
 
+    <!-- Empty layout (hidden initially) -->
+    <LinearLayout
+        android:id="@+id/emptyLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/emptyTextView"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="You haven't add any contacts yet"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:alpha="0.7"/>
+
+
+    </LinearLayout>
+
     <ListView
         android:id="@+id/contactList"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </ListView>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/test"></TextView>
+
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

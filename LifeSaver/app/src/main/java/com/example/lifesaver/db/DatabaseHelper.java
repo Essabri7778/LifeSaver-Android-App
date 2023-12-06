@@ -18,7 +18,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_SAFETY_ID = "SAFETY_ID";
     public static final String COLUMN_SAFETY_RESPONSE = "SAFETY_RESPONSE";
 
-    // COLUMNS OF TABLE 2
+    // COLUMNS OF TABLE ContactBo
+    public static final String CONTACT_TABLE = "CONTACT";
+    public static final String COLUMN_CONTACT_ID = "CONTACT_ID";
+    public static final String COLUMN_CONTACT_IDENTIFIER = "CONTACT_IDENTIFIER";
+    public static final String COLUMN_CONTACT_PRIMARY_NAME = "CONTACT_PRIMARY_NAME";
+    public static final String COLUMN_CONTACT_ALTERNATIVE_NAME = "CONTACT_ALTERNATIVE_NAME";
+    public static final String COLUMN_CONTACT_PHONE_NUMBER = "CONTACT_PHONE_NUMBER";
+    public static final String COLUMN_CONTACT_PHOTO_URI = "CONTACT_PHOTO_URI";
+
+
 
 
 
@@ -36,7 +45,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.execSQL(createSafetyStatement);
 
-        // Create TABLE 2
+        // Create TABLE CONTACT
+        String createContactStatement = "CREATE TABLE " + CONTACT_TABLE + " (" + COLUMN_CONTACT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                                                                               + COLUMN_CONTACT_IDENTIFIER + " TEXT, "
+                                                                               + COLUMN_CONTACT_PRIMARY_NAME + " TEXT, "
+                                                                               + COLUMN_CONTACT_ALTERNATIVE_NAME + " TEXT, "
+                                                                               + COLUMN_CONTACT_PHONE_NUMBER + " TEXT, "
+                                                                               + COLUMN_CONTACT_PHOTO_URI + " TEXT)";
+
+        db.execSQL(createContactStatement);
     }
 
     @Override
