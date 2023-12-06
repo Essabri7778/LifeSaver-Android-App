@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" >
 
-    <!-- add READ_CONTACTS permission here  -->
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+<!-- add READ_CONTACTS permission here  -->
+<uses-permission android:name="android.permission.READ_CONTACTS"/>
 
     <application
         android:allowBackup="true"
@@ -15,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LifeSaver"
         tools:targetApi="31" >
+<<<<<<< HEAD
         <activity
             android:name=".ContactDetails"
             android:exported="false" />
@@ -27,18 +28,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+=======
+>>>>>>> 012ad4e165e97cf8d4b52a92fd6bc0f85d280375
 
-        <activity
-            android:name=".EditSafetyPlan"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-            />
+            <activity
+                android:name=".ContactDetails"
+                android:exported="false" />
+            <activity
+                android:name=".AllContactsActivity"
+                android:exported="true" />
 
-        <activity
-            android:name=".SafetyPlan"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+            <activity
+                android:name=".EditSafetyPlan"
+                android:exported="false"
+                android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+                />
 
+<<<<<<< HEAD
         <activity
         android:name=".ReasonActivity"
         android:exported="true"
@@ -49,6 +55,37 @@
             android:exported="true">
 
         </activity>
+=======
+            <activity
+                android:name=".SafetyPlan"
+                android:exported="true"
+                android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+
+
+            <activity
+                android:name=".ReasonActivity"
+                android:exported="true"
+                android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+
+            <activity
+                android:name=".EditReasonActivity"
+                android:exported="false"
+                android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+                />
+
+            <activity
+                android:name=".MainActivity"
+                android:exported="true"
+                android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+                >
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+
+            </activity>
+>>>>>>> 012ad4e165e97cf8d4b52a92fd6bc0f85d280375
 
     </application>
 

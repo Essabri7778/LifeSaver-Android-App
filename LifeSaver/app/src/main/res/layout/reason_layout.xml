@@ -19,10 +19,12 @@
             android:id="@+id/reasonImg"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_gravity="center"
             android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/myself"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+            android:layout_gravity="top"
+            />
 
         <TextView
             android:id="@+id/reasonTitle"
@@ -31,7 +33,9 @@
             android:fontFamily="@font/poppins_bold"
             android:textSize="31dp"
             android:text="MySelf"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:layout_gravity="top"
+            />
 
 
 
@@ -42,8 +46,9 @@
         android:id="@+id/listreasons"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="@android:color/darker_gray"
+        android:divider="@color/colorSecondary"
         android:dividerHeight="1dp"
-        tools:listitem="@layout/item_reason"/>
+        tools:listitem="@layout/item_reason"
+        />
 
 </LinearLayout>
