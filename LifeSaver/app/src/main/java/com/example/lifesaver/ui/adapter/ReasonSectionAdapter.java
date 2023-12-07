@@ -13,7 +13,9 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.lifesaver.EditReasonActivity;
 import com.example.lifesaver.R;
+import com.example.lifesaver.ReasonActivity;
 import com.example.lifesaver.bo.ReasonSection;
 
 import java.util.List;
@@ -22,10 +24,16 @@ public class ReasonSectionAdapter extends RecyclerView.Adapter<ReasonSectionAdap
 
     Context context;
     List<ReasonSection> reasons;
+
+    ReasonsAdapter adapter;
+
+
     public ReasonSectionAdapter(Context context, List<ReasonSection> reasons) {
         this.context=context;
         this.reasons=reasons;
     }
+
+
 
     @NonNull
     @Override
@@ -37,7 +45,11 @@ public class ReasonSectionAdapter extends RecyclerView.Adapter<ReasonSectionAdap
     @Override
     public void onBindViewHolder(@NonNull ReasonSectionHolder holder, int position) {
         ReasonSection reason = reasons.get(position);
-        holder.setDetail(reason,position);
+        if (context instanceof ReasonActivity) {
+            holder.setDetailViewMode(reason,position);
+        } else if (context instanceof EditReasonActivity){
+            holder.setDetailEditMode(reason,position);
+        }
     }
 
     @Override
@@ -45,12 +57,16 @@ public class ReasonSectionAdapter extends RecyclerView.Adapter<ReasonSectionAdap
         return reasons.size();
     }
 
+    public void updateData(List<ReasonSection> all) {
+        this.reasons = all;
+        notifyDataSetChanged();
+    }
+
     class ReasonSectionHolder extends RecyclerView.ViewHolder{
 
         ImageView imageView;
         RecyclerView recyclerView;
         TextView textView;
-        ReasonsAdapter adapter;
 
         LinearLayout reasonsSection;
 
@@ -64,7 +80,26 @@ public class ReasonSectionAdapter extends RecyclerView.Adapter<ReasonSectionAdap
             reasonsSection= itemView.findViewById(R.id.reasonOnly);
         }
 
-        void setDetail(ReasonSection reason, int position){
+
+        void setDetailViewMode(ReasonSection reason, int position){
+            textView.setText(reason.getTitle());
+            imageView.setImageResource(reason.getIcon());
+
+            if(position%2==0){
+                backgroundColor = ContextCompat.getColor(context, R.color.colorPrimary);
+            }else {
+                backgroundColor = ContextCompat.getColor(context, R.color.colorPrimaryLight);
+            }
+
+            reasonsSection.setBackgroundColor(backgroundColor);
+
+            recyclerView.setLayoutManager(new LinearLayoutManager(context.getApplicationContext()));
+            adapter = new ReasonsAdapter(context.getApplicationContext(),reason.getReasonsChecked());
+            adapter.setEditMode(false);
+            recyclerView.setAdapter(adapter);
+        }
+
+        void setDetailEditMode(ReasonSection reason, int position){
             textView.setText(reason.getTitle());
             imageView.setImageResource(reason.getIcon());
 
@@ -78,7 +113,11 @@ public class ReasonSectionAdapter extends RecyclerView.Adapter<ReasonSectionAdap
 
             recyclerView.setLayoutManager(new LinearLayoutManager(context.getApplicationContext()));
             adapter = new ReasonsAdapter(context.getApplicationContext(),reason.getReasons());
+            adapter.setEditMode(true);
             recyclerView.setAdapter(adapter);
         }
+    }
+    public ReasonsAdapter getCurrentReasonsAdapter() {
+        return adapter;
     }
 }

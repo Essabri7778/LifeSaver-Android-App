@@ -8,28 +8,24 @@ public class Reason {
 
     String reason;
 
-    int icon;
-
     private int sectionId;
 
+    int isCheked;
 
-    public Reason(int id, String reason, int sectionId) {
+
+    public Reason(int id, String reason, int isCheked, int sectionId) {
         this.id = id;
         this.reason = reason;
-        this.icon = R.drawable.checked;
         this.sectionId = sectionId;
+        this.isCheked =isCheked;
     }
 
-    public Reason(String reason, int sectionId) {
+    public Reason(String reason, int isCheked, int sectionId) {
         this.reason = reason;
-        this.icon = R.drawable.checked;
         this.sectionId = sectionId;
+        this.isCheked =isCheked;
     }
 
-    public Reason(String reason) {
-        this.reason = reason;
-        this.icon = R.drawable.checked;
-    }
 
     public String getReason() {
         return reason;
@@ -39,13 +35,6 @@ public class Reason {
         this.reason = reason;
     }
 
-    public int getIcon() {
-        return icon;
-    }
-
-    public void setIcon(int icon) {
-        this.icon = icon;
-    }
 
     public int getId() {
         return id;
@@ -63,13 +52,14 @@ public class Reason {
         this.sectionId = sectionId;
     }
 
-    @Override
-    public String toString() {
-        return "Reason{" +
-                "id=" + id +
-                ", reason='" + reason + '\'' +
-                ", icon=" + icon +
-                ", sectionId=" + sectionId +
-                '}';
+    public int isCheked() {
+        return isCheked;
     }
+
+    public void setCheked(int cheked) {
+        isCheked = cheked;
+    }
+
+
+
 }

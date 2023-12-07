@@ -19,7 +19,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_SAFETY_RESPONSE = "SAFETY_RESPONSE";
 
 
-    // COLUMNS OF TABLE 2
+    public static final String CONTACT_TABLE = "CONTACT";
+    public static final String COLUMN_CONTACT_ID = "CONTACT_ID";
+    public static final String COLUMN_CONTACT_IDENTIFIER = "CONTACT_IDENTIFIER";
+    public static final String COLUMN_CONTACT_PRIMARY_NAME = "CONTACT_PRIMARY_NAME";
+    public static final String COLUMN_CONTACT_ALTERNATIVE_NAME = "CONTACT_ALTERNATIVE_NAME";
+    public static final String COLUMN_CONTACT_PHONE_NUMBER = "CONTACT_PHONE_NUMBER";
+    public static final String COLUMN_CONTACT_PHOTO_URI = "CONTACT_PHOTO_URI";
+
+
+
 
     // reason section table columns
     public static final String REASON_COLUMN_SECTION_ID = "REASON_SECTIONS_ID";
@@ -31,8 +40,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String REASON_TABLE = "REASON";
     public static final String REASON_COLUMN_TEXT = "REASON_TEXT";
     public static final String REASON_COLUMN_ID = "REASON_ID";
-    public static final String REASON_COLUMN_ICON = "REASON_ICON";
-
+    public static final String REASON_COLUMN_CHECKED = "REASON_CHECKED";
 
 
     public DatabaseHelper(@Nullable Context context) {
@@ -47,6 +55,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.execSQL(createSafetyStatement);
 
+
+        // Create TABLE CONTACT
+        String createContactStatement = "CREATE TABLE " + CONTACT_TABLE + " (" + COLUMN_CONTACT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                                                                               + COLUMN_CONTACT_IDENTIFIER + " TEXT, "
+                                                                               + COLUMN_CONTACT_PRIMARY_NAME + " TEXT, "
+                                                                               + COLUMN_CONTACT_ALTERNATIVE_NAME + " TEXT, "
+                                                                               + COLUMN_CONTACT_PHONE_NUMBER + " TEXT, "
+                                                                               + COLUMN_CONTACT_PHOTO_URI + " TEXT)";
+
+        db.execSQL(createContactStatement);
+
         // Create TABLE 2
 
         // reason section table
@@ -58,12 +77,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String createReasonQuery = "CREATE TABLE " + REASON_TABLE + " (" +
                 REASON_COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 REASON_COLUMN_TEXT + " TEXT, " +
-                REASON_COLUMN_ICON + " INTEGER, " +
+                REASON_COLUMN_CHECKED + " INTEGER, " +
                 REASON_COLUMN_SECTION_ID + " INTEGER, " +
                 "FOREIGN KEY(" + REASON_COLUMN_SECTION_ID + ") REFERENCES " +
                 REASON_TABLE_SECTIONS + "(" + REASON_COLUMN_SECTION_ID + "))";
 
         db.execSQL(createReasonQuery);
+
     }
 
     @Override

@@ -5,10 +5,9 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ReasonActivity"
+    tools:context=".EditReasonActivity"
     android:background="@color/colorPrimary"
     >
-
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -41,16 +40,15 @@
                 android:layout_marginLeft="30dp"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
-                android:text="Reasons Space"
+                android:text="Reasons Space Edit"
                 android:gravity="center"
                 android:textColor="@color/colorPrimary"
                 android:fontFamily="@font/poppins_bold"
                 android:textSize="20dp"/>
 
-
-
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
+
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
@@ -59,15 +57,15 @@
         app:layout_constraintTop_toBottomOf="@+id/topToolbar"
         app:layout_constraintBottom_toTopOf="@+id/bottomMenu"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/colorPrimary"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             >
-
-            <include layout="@layout/header_reasons"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/reasonSection"
@@ -77,6 +75,9 @@
                 android:divider="@android:color/darker_gray"
                 android:dividerHeight="1dp"
                 tools:listitem="@layout/reason_layout" />
+
+            <include layout="@layout/own_reason_layout_edit"
+                />
 
         </LinearLayout>
 
@@ -92,21 +93,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="70dp"
-        android:layout_marginEnd="16dp"
-        android:clickable="true"
-        android:focusable="true"
-        app:srcCompat="@drawable/edit1"
-        app:tint="@color/colorPrimary"
-        app:backgroundTint="@color/colorSecondary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

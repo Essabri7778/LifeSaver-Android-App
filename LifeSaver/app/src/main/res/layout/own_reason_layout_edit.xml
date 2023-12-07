@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/colorPrimary"
+    android:padding="10dp"
+    >
+    <EditText
+        android:id="@+id/ownReason"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="add new one?"
+        android:fontFamily="@font/poppins_semibold"
+        android:textSize="15dp"
+        />
+    <EditText
+        android:id="@+id/idownReason"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/edit_reason_own"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Edit"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="15dp"
+            android:textColor="@color/colorPrimary"
+            android:backgroundTint="@color/colorSecondary"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/add_reason_own"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="Add to own"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="15dp"
+            android:textColor="@color/colorSecondary"
+            android:backgroundTint="@color/colorDark"
+            android:layout_marginHorizontal="10dp"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/delete_reason_own"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Delete"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:backgroundTint="#EF2A2A"
+            android:textAllCaps="false"
+            />
+    </LinearLayout>
+
+</LinearLayout>
