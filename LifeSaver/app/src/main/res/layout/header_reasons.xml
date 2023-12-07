@@ -19,7 +19,7 @@
         android:textSize="35dp"
         android:text="My Reasons For \n Living"
         android:textAlignment="center"
-        android:textColor="#1D63ED"
+        android:textColor="@color/colorPrimary"
         android:layout_gravity="center"/>
 
 </LinearLayout>
