@@ -15,6 +15,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LifeSaver"
         tools:targetApi="31" >
+<<<<<<< HEAD
+        <activity
+            android:name=".ContactDetails"
+            android:exported="false" />
+        <activity
+            android:name=".AllContactsActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+=======
+>>>>>>> 012ad4e165e97cf8d4b52a92fd6bc0f85d280375
 
             <activity
                 android:name=".ContactDetails"
@@ -29,6 +44,18 @@
                 android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
                 />
 
+<<<<<<< HEAD
+        <activity
+        android:name=".ReasonActivity"
+        android:exported="true"
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
+        </activity>
+=======
             <activity
                 android:name=".SafetyPlan"
                 android:exported="true"
@@ -58,6 +85,7 @@
                 </intent-filter>
 
             </activity>
+>>>>>>> 012ad4e165e97cf8d4b52a92fd6bc0f85d280375
 
     </application>
 
