@@ -7,6 +7,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +21,7 @@ import com.example.lifesaver.dao.ReasonSectionDAO;
 import com.example.lifesaver.ui.adapter.ReasonSectionAdapter;
 import com.example.lifesaver.ui.adapter.ReasonsAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
@@ -30,12 +33,13 @@ public class EditReasonActivity extends AppCompatActivity {
     List<ReasonSection> reasonSections;
     ReasonSectionAdapter adapter;
     BottomNavigationView bottomNav;
-    Button save, add;
+    Button add, edit, delete;
+    ImageView backButton;
     ReasonSectionDAO reasonSectionDAO;
     ReasonDAO reasonDAO;
-    ReasonsAdapter reasonAdapter;
+    EditText ownReason,ownReasonId;
 
-    EditText ownReason;
+    TextView idReason;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +52,13 @@ public class EditReasonActivity extends AppCompatActivity {
         reasonSections = reasonSectionDAO.getAll();
 
         bottomNav = findViewById(R.id.bottomNav);
-        save = findViewById(R.id.save);
-        add = findViewById(R.id.add);
+        add = findViewById(R.id.add_reason_own);
+        edit = findViewById(R.id.edit_reason_own);
+        delete = findViewById(R.id.delete_reason_own);
         ownReason = findViewById(R.id.ownReason);
+        backButton = findViewById(R.id.backButton);
+        idReason = findViewById(R.id.idReason);
+        ownReasonId = findViewById(R.id.idownReason);
 
 
         recycle = findViewById(R.id.reasonSection);
@@ -65,6 +73,24 @@ public class EditReasonActivity extends AppCompatActivity {
                 Reason reason = new Reason(ownReason.getText().toString(),1,5);
                 reasonDAO.addOne(reason);
                 adapter.getCurrentReasonsAdapter().addReason(reason);
+            }
+        });
+
+        /*
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reasonDAO.updateText(Integer.parseInt(ownReasonId.getText().toString()),ownReason.getText().toString());
+                adapter.getCurrentReasonsAdapter().notifyDataSetChanged();
+            }
+        });
+
+         */
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getOnBackPressedDispatcher().onBackPressed();
             }
         });
 
@@ -86,10 +112,19 @@ public class EditReasonActivity extends AppCompatActivity {
         });
 
 
+
+
     }
 
     private void navigateToActivity(Class<?> destinationActivity) {
         Intent intent = new Intent(this, destinationActivity);
         this.startActivity(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Update the data in the adapter
+        adapter.updateData(reasonSectionDAO.getAll());
     }
 }

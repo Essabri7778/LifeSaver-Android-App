@@ -9,6 +9,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:elevation="20dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <androidx.appcompat.widget.Toolbar
@@ -17,23 +18,7 @@
             android:layout_gravity="center_horizontal">
 
             <!-- Your Toolbar content -->
-            <ImageView
-                android:id="@+id/backButton"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/back"
-                android:layout_gravity="start"
-                app:tint="@color/colorPrimary"
-                />
-
-            <TextView
-                android:layout_marginLeft="30dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Safety Plan"
-                android:textColor="@color/colorPrimary"
-                android:fontFamily="@font/poppins_bold"
-                android:textSize="20dp"/>
+            <include layout="@layout/toolbar_2"/>
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -253,17 +238,20 @@
 
     </ScrollView>
 
+    <include layout="@layout/bottom_menu"/>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_go_to_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="70dp"
         android:layout_marginEnd="16dp"
         android:clickable="true"
         android:focusable="true"
-        app:srcCompat="@drawable/baseline_mode_edit_24"
-        app:backgroundTint="@color/colorLight" />
+        app:srcCompat="@drawable/edit1"
+        android:tint="@color/colorPrimary"
+        app:backgroundTint="@color/colorSecondary" />
 
 </RelativeLayout>

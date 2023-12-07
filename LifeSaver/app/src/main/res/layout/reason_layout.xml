@@ -37,9 +37,6 @@
             android:layout_gravity="top"
             />
 
-
-
-
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView

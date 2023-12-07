@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lifesaver.bo.SafetyPlanBo;
@@ -29,6 +30,8 @@ public class EditSafetyPlan extends AppCompatActivity {
 
     ImageView back;
 
+    TextView toolBarText;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,9 @@ public class EditSafetyPlan extends AppCompatActivity {
         btn_save = findViewById(R.id.btn_save_plan);
 
         back = findViewById(R.id.backButton);
+
+        toolBarText = findViewById(R.id.toolbartext);
+        toolBarText.setText("Edit Safety Plan");
 
         List<SafetyPlanBo> list = safetyPlanDAO.getAll();
         if(!list.isEmpty()) fillEditText();

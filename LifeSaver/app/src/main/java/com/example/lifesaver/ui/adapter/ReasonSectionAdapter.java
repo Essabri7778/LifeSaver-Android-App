@@ -57,6 +57,11 @@ public class ReasonSectionAdapter extends RecyclerView.Adapter<ReasonSectionAdap
         return reasons.size();
     }
 
+    public void updateData(List<ReasonSection> all) {
+        this.reasons = all;
+        notifyDataSetChanged();
+    }
+
     class ReasonSectionHolder extends RecyclerView.ViewHolder{
 
         ImageView imageView;
@@ -99,9 +104,9 @@ public class ReasonSectionAdapter extends RecyclerView.Adapter<ReasonSectionAdap
             imageView.setImageResource(reason.getIcon());
 
             if(position%2==0){
-                backgroundColor = ContextCompat.getColor(context, R.color.colorDark);
+                backgroundColor = ContextCompat.getColor(context, R.color.colorPrimary);
             }else {
-                backgroundColor = ContextCompat.getColor(context, R.color.black);
+                backgroundColor = ContextCompat.getColor(context, R.color.colorPrimaryLight);
             }
 
             reasonsSection.setBackgroundColor(backgroundColor);
