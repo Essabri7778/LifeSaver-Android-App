@@ -21,7 +21,7 @@ public class SafetyPlan extends AppCompatActivity {
 
     private SafetyPlanDAO safetyPlanDAO;
 
-    TextView tv1, tv2, tv3, tv4, tv5, tv6;
+    TextView tv1, tv2, tv3, tv4, tv5, tv6 , toolBarText;
 
     ArrayList<TextView> arrayList;
 
@@ -38,6 +38,9 @@ public class SafetyPlan extends AppCompatActivity {
         tv1 = findViewById(R.id.tv1);tv2 = findViewById(R.id.tv2);tv3 = findViewById(R.id.tv3);tv4 = findViewById(R.id.tv4);tv5 = findViewById(R.id.tv5);tv6 = findViewById(R.id.tv6);
 
         back = findViewById(R.id.backButton);
+
+        toolBarText = findViewById(R.id.toolbartext);
+        toolBarText.setText("Safety Plan");
 
         arrayList= new ArrayList<>();
         arrayList.add(tv1);arrayList.add(tv2);arrayList.add(tv3);arrayList.add(tv4);arrayList.add(tv5);arrayList.add(tv6);
