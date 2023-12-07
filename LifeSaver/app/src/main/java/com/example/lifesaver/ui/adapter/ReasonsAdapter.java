@@ -1,14 +1,10 @@
 package com.example.lifesaver.ui.adapter;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -18,10 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.lifesaver.EditReasonActivity;
-import com.example.lifesaver.MainActivity;
 import com.example.lifesaver.R;
-import com.example.lifesaver.ReasonActivity;
 import com.example.lifesaver.bo.Reason;
 import com.example.lifesaver.dao.ReasonDAO;
 
@@ -36,14 +29,12 @@ public class ReasonsAdapter extends RecyclerView.Adapter<ReasonsAdapter.ReasonsH
 
     boolean isEditMode;
 
+    ReasonDAO reasonDAO;
+
     public ReasonsAdapter(Context context,List<Reason> reasons) {
         this.context=context;
         this.reasons=reasons;
         reasonsModified=new ArrayList<>();
-    }
-
-    public List<Reason> getReasons() {
-        return reasons;
     }
 
     public void setEditMode(boolean isEditMode) {
@@ -57,6 +48,7 @@ public class ReasonsAdapter extends RecyclerView.Adapter<ReasonsAdapter.ReasonsH
         return new ReasonsHolder(view);
     }
 
+
     @Override
     public void onBindViewHolder(@NonNull ReasonsHolder holder, int position) {
         Reason reason = reasons.get(position);
@@ -67,15 +59,10 @@ public class ReasonsAdapter extends RecyclerView.Adapter<ReasonsAdapter.ReasonsH
 
                 @Override
                 public void onClick(View view) {
-
                     if (reason.isCheked() == 1) {
                         reason.setCheked(0);
                     } else {
                         reason.setCheked(1);
-                    }
-
-                    if(reason.getSectionId()==5){
-
                     }
 
                     if(reasonsModified.contains(reason)) reasonsModified.remove(reason);
@@ -85,15 +72,52 @@ public class ReasonsAdapter extends RecyclerView.Adapter<ReasonsAdapter.ReasonsH
                 }
             });
 
-            holder.llay.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View v) {
-                    Toast.makeText(context, "HHHHH", Toast.LENGTH_SHORT).show();
-                    return true;
-                }
-            });
+            if(reason.getSectionId()==5){
+                holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        if(holder.pip.getVisibility()==View.GONE){
+                            holder.pip.setVisibility(View.VISIBLE);
+                        }else{
+                            holder.pip.setVisibility(View.GONE);
+                            return true;
+                        }
+                        holder.ownReason.setText(reason.getReason());
+                        reasonDAO = new ReasonDAO(context);
+                        holder.edit.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                String editReason = holder.ownReason.getText().toString();
+                                if(!editReason.equals("")){
+                                    reason.setReason(holder.ownReason.getText().toString());
+                                    reasonDAO.updateText(reason.getId(),holder.ownReason.getText().toString());
+                                    holder.pip.setVisibility(View.GONE);
+                                    notifyDataSetChanged();
+                                    Toast.makeText(context,"Reason successfully edited \uD83C\uDF89",Toast.LENGTH_LONG).show();
+                                }else{
+                                    Toast.makeText(context,"Please enter a valid edited Reason ⚠️",Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
+
+                        holder.delete.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                reasonDAO.deleteReason(reason.getId());
+                                holder.pip.setVisibility(View.GONE);
+                                notifyDataSetChanged();
+                                holder.itemView.setVisibility(View.GONE);
+                                Toast.makeText(context,"Reason successfully deleted",Toast.LENGTH_LONG).show();
+                            }
+                        });
+                        return true;
+                    }
+                });
+            }
         }
     }
+
+
 
     public void Save(){
         ReasonDAO reasonDAO = new ReasonDAO(context);
@@ -119,14 +143,20 @@ public class ReasonsAdapter extends RecyclerView.Adapter<ReasonsAdapter.ReasonsH
         ImageView imageView;
         TextView textView;
         TextView id;
-        LinearLayout llay;
+        LinearLayout pip;
+
+        Button edit ,delete;
+        EditText ownReason;
 
         public ReasonsHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.itemImg);
             textView = itemView.findViewById(R.id.reasonText);
             id = itemView.findViewById(R.id.idReason);
-            llay = itemView.findViewById(R.id.llay);
+            pip = itemView.findViewById(R.id.popip);
+            edit = itemView.findViewById(R.id.edit_reason_own);
+            delete = itemView.findViewById(R.id.delete_reason_own);
+            ownReason = itemView.findViewById(R.id.ownReason);
         }
 
         void setDetail(Reason reason){

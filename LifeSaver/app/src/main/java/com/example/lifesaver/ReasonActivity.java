@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +20,7 @@ import com.example.lifesaver.bo.ReasonSection;
 import com.example.lifesaver.dao.ReasonDAO;
 import com.example.lifesaver.dao.ReasonSectionDAO;
 import com.example.lifesaver.ui.adapter.ReasonSectionAdapter;
+import com.example.lifesaver.ui.adapter.ReasonsAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
@@ -30,9 +33,7 @@ public class ReasonActivity extends AppCompatActivity {
     RecyclerView recycle;
     List<ReasonSection> reasonSections;
     ReasonSectionAdapter adapter;
-    BottomNavigationView bottomNav;
     ReasonSectionDAO reasonSectionDAO;
-
     FloatingActionButton edit;
 
     @Override
@@ -43,7 +44,6 @@ public class ReasonActivity extends AppCompatActivity {
         reasonSectionDAO = new ReasonSectionDAO(this);
         reasonSections = reasonSectionDAO.getAll();
 
-        bottomNav = findViewById(R.id.bottomNav);
         edit = findViewById(R.id.edit);
 
         recycle=findViewById(R.id.reasonSection);
@@ -55,36 +55,15 @@ public class ReasonActivity extends AppCompatActivity {
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navigateToActivity(EditReasonActivity.class);
+                Intent intent = new Intent(ReasonActivity.this, EditReasonActivity.class);
+                ReasonActivity.this.startActivity(intent);
             }
         });
 
 
-        bottomNav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id = item.getItemId();
-                if(id == R.id.home) {
-                    navigateToActivity(ReasonActivity.class);
-                    return true;
-                } else if (id == R.id.advice) {
-                    Dialog dialog = new Dialog(ReasonActivity.this);
-                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                    dialog.setCancelable(true);
-                    dialog.setContentView(R.layout.main_button_layout);
-                    dialog.show();
-                    return true;
-                }else {
-                    return false;
-                }
-            }
-        });
-
-    }
-
-    private void navigateToActivity(Class<?> destinationActivity) {
-        Intent intent = new Intent(this, destinationActivity);
-        this.startActivity(intent);
+        //for menu item
+        MenuHelper menuHelper = new MenuHelper(ReasonActivity.this);
+        menuHelper.setupMenu();
     }
 
     @Override

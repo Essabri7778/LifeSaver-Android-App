@@ -9,9 +9,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.lifesaver.MainActivity;
 import com.example.lifesaver.R;
-import com.example.lifesaver.bo.Reason;
 import com.example.lifesaver.bo.ReasonSection;
 import com.example.lifesaver.db.DatabaseHelper;
 

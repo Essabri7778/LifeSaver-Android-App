@@ -19,6 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_SAFETY_RESPONSE = "SAFETY_RESPONSE";
 
 
+    // COLUMN OF TABLE CONTACT
     public static final String CONTACT_TABLE = "CONTACT";
     public static final String COLUMN_CONTACT_ID = "CONTACT_ID";
     public static final String COLUMN_CONTACT_IDENTIFIER = "CONTACT_IDENTIFIER";
@@ -66,7 +67,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.execSQL(createContactStatement);
 
-        // Create TABLE 2
 
         // reason section table
         String createSectionsReasonQuery = "CREATE TABLE " + REASON_TABLE_SECTIONS + " (" + REASON_COLUMN_SECTION_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + REASON_COLUMN_SECTION_TITLE + " TEXT, " + REASON_COLUMN_SECTION_ICON + " INTEGER)";

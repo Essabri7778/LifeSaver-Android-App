@@ -142,4 +142,11 @@ public class ReasonDAO {
         return list;
     }
 
+    public int deleteReason(int reasonId) {
+
+        String whereClause = REASON_COLUMN_ID + "=?";
+        String[] whereArgs = {String.valueOf(reasonId)};
+
+        return db.delete(REASON_TABLE, whereClause, whereArgs);
+    }
 }

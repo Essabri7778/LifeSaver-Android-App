@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyOwnResourcesActivity"
+    android:background="#E5F2FC">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/resources_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="15dp"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="8dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Resources"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="25sp"
+                android:textColor="@color/colorDark"
+                android:paddingTop="18dp"
+                android:paddingBottom="12dp"
+                android:paddingLeft="13dp"
+                >
+            </TextView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorDark"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:alpha="0.2"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Stay Alive"
+                android:textColor="@color/colorDark"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="18sp"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                android:alpha="0.5"></TextView>
+
+            <TextView
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15dp"
+                android:alpha="0.3"
+                android:fontFamily="@font/poppins"
+                android:text="you have none of your own resources press the button to get started"
+                android:textAlignment="center"
+                android:textColor="@color/colorDark"
+                android:textSize="15sp"
+                tools:ignore="TextSizeCheck"></TextView>
+            <ListView
+                android:id="@+id/resourcesList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+            </ListView>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/resources_card"
+        android:layout_margin="15dp"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="8dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bookmarks"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="25sp"
+                android:textColor="@color/colorDark"
+                android:paddingTop="18dp"
+                android:paddingBottom="12dp"
+                android:paddingLeft="13dp"
+                >
+            </TextView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorDark"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:alpha="0.2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Stay Alive"
+                android:textColor="@color/colorDark"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="18sp"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                android:alpha="0.5"></TextView>
+
+            <TextView
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15dp"
+                android:alpha="0.3"
+                android:fontFamily="@font/poppins"
+                android:text="you have none bookmarked service providers. Bookmark a service provider "
+                android:textAlignment="center"
+                android:textColor="@color/colorDark"
+                android:textSize="15sp"
+                tools:ignore="TextSizeCheck"></TextView>
+            <ListView
+                android:id="@+id/bookmarksList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+            </ListView>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginBottom="28dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/baseline_add_24"
+        android:backgroundTint="@color/colorPrimary"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
