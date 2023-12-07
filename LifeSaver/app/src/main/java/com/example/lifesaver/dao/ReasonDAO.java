@@ -105,6 +105,17 @@ public class ReasonDAO {
     }
 
 
+    public int updateText(int reasonId, String text) {
+        ContentValues values = new ContentValues();
+        values.put(REASON_COLUMN_TEXT, text);
+
+        String whereClause = REASON_COLUMN_ID + "=?";
+        String[] whereArgs = {String.valueOf(reasonId)};
+
+        return db.update(REASON_TABLE, values, whereClause, whereArgs);
+    }
+
+
     public List<Reason> getBySection(int sectionId) {
 
         List<Reason> list = new ArrayList<>();

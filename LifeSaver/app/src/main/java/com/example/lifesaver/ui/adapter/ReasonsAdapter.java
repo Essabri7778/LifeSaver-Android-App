@@ -1,11 +1,19 @@
 package com.example.lifesaver.ui.adapter;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,16 +33,13 @@ public class ReasonsAdapter extends RecyclerView.Adapter<ReasonsAdapter.ReasonsH
     Context context;
     List<Reason> reasons;
     List<Reason> reasonsModified;
+
     boolean isEditMode;
+
     public ReasonsAdapter(Context context,List<Reason> reasons) {
         this.context=context;
         this.reasons=reasons;
         reasonsModified=new ArrayList<>();
-    }
-    public ReasonsAdapter(Context context) {
-        this.context = context;
-        this.reasons = new ArrayList<>();
-        reasonsModified = new ArrayList<>();
     }
 
     public List<Reason> getReasons() {
@@ -59,18 +64,32 @@ public class ReasonsAdapter extends RecyclerView.Adapter<ReasonsAdapter.ReasonsH
 
         if(isEditMode){
             holder.itemView.setOnClickListener(new View.OnClickListener() {
+
                 @Override
                 public void onClick(View view) {
+
                     if (reason.isCheked() == 1) {
                         reason.setCheked(0);
                     } else {
                         reason.setCheked(1);
                     }
 
+                    if(reason.getSectionId()==5){
+
+                    }
+
                     if(reasonsModified.contains(reason)) reasonsModified.remove(reason);
                     reasonsModified.add(reason);
 
                     Save();
+                }
+            });
+
+            holder.llay.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    Toast.makeText(context, "HHHHH", Toast.LENGTH_SHORT).show();
+                    return true;
                 }
             });
         }
@@ -100,13 +119,14 @@ public class ReasonsAdapter extends RecyclerView.Adapter<ReasonsAdapter.ReasonsH
         ImageView imageView;
         TextView textView;
         TextView id;
-
+        LinearLayout llay;
 
         public ReasonsHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.itemImg);
             textView = itemView.findViewById(R.id.reasonText);
             id = itemView.findViewById(R.id.idReason);
+            llay = itemView.findViewById(R.id.llay);
         }
 
         void setDetail(Reason reason){
