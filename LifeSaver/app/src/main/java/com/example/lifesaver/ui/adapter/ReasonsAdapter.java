@@ -1,35 +1,21 @@
 package com.example.lifesaver.ui.adapter;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.lifesaver.EditReasonActivity;
-import com.example.lifesaver.MainActivity;
 import com.example.lifesaver.R;
-import com.example.lifesaver.ReasonActivity;
 import com.example.lifesaver.bo.Reason;
-import com.example.lifesaver.bo.ReasonSection;
 import com.example.lifesaver.dao.ReasonDAO;
 
 import java.util.ArrayList;

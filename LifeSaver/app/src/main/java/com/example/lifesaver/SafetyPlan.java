@@ -73,7 +73,7 @@ public class SafetyPlan extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(SafetyPlan.this , MainActivity.class);
+                Intent myIntent = new Intent(SafetyPlan.this , HomeActivity.class);
                 startActivity(myIntent);
                 finish();
             }
