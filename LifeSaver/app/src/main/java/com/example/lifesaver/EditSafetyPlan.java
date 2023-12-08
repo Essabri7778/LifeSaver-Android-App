@@ -77,9 +77,7 @@ public class EditSafetyPlan extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(EditSafetyPlan.this , SafetyPlan.class);
-                startActivity(myIntent);
-                finish();
+                getOnBackPressedDispatcher().onBackPressed();
             }
         });
 

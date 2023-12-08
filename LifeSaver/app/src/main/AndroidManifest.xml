@@ -26,10 +26,6 @@
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
         </activity>
-
-        <activity
-            android:name=".MySpace"
-            android:exported="false" />
         <activity
             android:name=".ReasonActivity"
             android:exported="false"
@@ -66,8 +62,4 @@
 
 
     </application>
-
-
-
-
 </manifest>
