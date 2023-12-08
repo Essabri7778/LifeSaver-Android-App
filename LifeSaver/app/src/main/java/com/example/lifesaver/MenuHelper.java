@@ -30,15 +30,18 @@ public class MenuHelper {
     }
 
     public void setupMenu(){
-        BottomNavigationView bottomNav = ((Activity) context).findViewById(R.id.bottomNav);
+        //BottomNavigationView bottomNav = ((Activity) context).findViewById(R.id.bottomNav);
         FloatingActionButton buttonEmergency = ((Activity) context).findViewById(R.id.buttonEmergency);
 
+        /*
         bottomNav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 return menuNavigation(item);
             }
         });
+
+         */
 
         buttonEmergency.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,15 +84,16 @@ public class MenuHelper {
 
     }
 
+    /*
     public boolean menuNavigation(MenuItem item) {
         int id = item.getItemId();
         if(id == R.id.home) {
             navigateToActivity(context, ReasonActivity.class);
             return true;
-        } else if (id == R.id.advice) {
+        } else if (id == R.id.mySpace) {
             navigateToActivity(context, EditReasonActivity.class);
             return true;
-        }else {
+        }else{
             return false;
         }
     }
@@ -101,6 +105,8 @@ public class MenuHelper {
         Intent intent = new Intent(context, destinationActivity);
         context.startActivity(intent);
     }
+
+     */
 
 
 }

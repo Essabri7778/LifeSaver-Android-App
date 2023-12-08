@@ -87,10 +87,6 @@ public class EditReasonActivity extends AppCompatActivity {
             }
         });
 
-        //for menu item
-        MenuHelper menuHelper = new MenuHelper(EditReasonActivity.this);
-        menuHelper.setupMenu();
-
     }
 
     @Override

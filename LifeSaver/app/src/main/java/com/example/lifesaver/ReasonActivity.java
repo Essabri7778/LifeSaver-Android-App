@@ -60,10 +60,6 @@ public class ReasonActivity extends AppCompatActivity {
             }
         });
 
-
-        //for menu item
-        MenuHelper menuHelper = new MenuHelper(ReasonActivity.this);
-        menuHelper.setupMenu();
     }
 
     @Override
