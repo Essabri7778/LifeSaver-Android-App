@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:padding="10dp"
+    android:background="#00000000"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/forpopup"
+        android:layout_marginBottom="-35dp"
+        android:translationZ="10dp"
+        android:layout_gravity="center"
+        android:background="#00000000"
+        />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     android:id="@+id/popup"
     android:background="@drawable/shape3"
+    android:paddingTop="35dp"
+    android:paddingBottom="15dp"
+    android:paddingHorizontal="15dp"
     >
 
     <TextView
@@ -83,23 +101,33 @@
         android:layout_height="wrap_content"
         android:background="@drawable/shape4"
         android:hint="ex: 060000000000"
-        android:textColor="@color/colorDark"
+        android:textColor="@color/colorPrimary"
         android:fontFamily="@font/poppins_semibold"
         android:textColorHint="@color/colorPrimary"
         android:textSize="14dp"
         />
 
-    <Button
-        android:id="@+id/confirmMainButtonPhone"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Confirm"
-        android:fontFamily="@font/poppins_semibold"
-        android:textSize="16dp"
-        android:textColor="@color/colorSecondary"
-        android:backgroundTint="@color/colorPrimary"
-        android:textAllCaps="false"
-        />
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_space"
+        android:padding="6dp"
+        android:id="@+id/confirmMainButtonPhone"
+        android:layout_marginVertical="10dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Confirm"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="15dp"
+            android:lineSpacingMultiplier="0.8"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:paddingHorizontal="6dp"
+            />
+    </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
@@ -112,3 +140,4 @@
         />
 
 </LinearLayout>
+    </LinearLayout>

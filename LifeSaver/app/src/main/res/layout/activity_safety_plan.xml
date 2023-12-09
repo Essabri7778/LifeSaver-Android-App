@@ -4,25 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SafetyPlan">
+    tools:context=".SafetyPlan"
+    android:background="@color/colorPrimary"
+    >
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:elevation="20dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal">
-
-            <!-- Your Toolbar content -->
-            <include layout="@layout/toolbar_2"/>
-
-        </androidx.appcompat.widget.Toolbar>
-
-    </com.google.android.material.appbar.AppBarLayout>
+    <include layout="@layout/toolbar_1"
+        android:id="@+id/topToolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white"
+        />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -80,7 +72,9 @@
         android:gravity="center"
         android:orientation="vertical"
         android:paddingTop="15dp"
-        android:paddingBottom="10dp">
+        android:paddingBottom="10dp"
+        android:background="@color/white"
+        >
 
         <TextView
             android:layout_width="wrap_content"
@@ -90,7 +84,7 @@
             android:textSize="24sp"
             android:textAlignment="center"
             android:fontFamily="@font/poppins_bold"
-            android:textColor="@color/black"
+            android:textColor="@color/colorDark"
             />
 
         <TextView
@@ -101,7 +95,7 @@
             android:textAlignment="center"
             android:textSize="12sp"
             android:fontFamily="@font/poppins_semibold"
-            android:textColor="@color/black"/>
+            android:textColor="@color/colorDark"/>
 
     </LinearLayout>
 
@@ -144,7 +138,9 @@
         android:gravity="center"
         android:orientation="vertical"
         android:paddingTop="15dp"
-        android:paddingBottom="10dp">
+        android:paddingBottom="10dp"
+        android:background="@color/white"
+        >
 
         <TextView
             android:layout_width="wrap_content"
@@ -154,7 +150,7 @@
             android:textSize="24sp"
             android:textAlignment="center"
             android:fontFamily="@font/poppins_bold"
-            android:textColor="@color/black"/>
+            android:textColor="@color/colorDark"/>
 
         <TextView
             android:id="@+id/tv4"
@@ -164,7 +160,7 @@
             android:textAlignment="center"
             android:textSize="12sp"
             android:fontFamily="@font/poppins_semibold"
-            android:textColor="@color/black"/>
+            android:textColor="@color/colorDark"/>
 
     </LinearLayout>
 
@@ -210,7 +206,8 @@
         android:gravity="center"
         android:orientation="vertical"
         android:paddingTop="15dp"
-        android:paddingBottom="10dp">
+        android:paddingBottom="10dp"
+        android:background="@color/white">
 
         <TextView
             android:layout_width="wrap_content"
@@ -220,7 +217,7 @@
             android:textSize="24sp"
             android:textAlignment="center"
             android:fontFamily="@font/poppins_bold"
-            android:textColor="@color/black"/>
+            android:textColor="@color/colorDark"/>
 
         <TextView
             android:id="@+id/tv6"
@@ -230,7 +227,7 @@
             android:textAlignment="center"
             android:fontFamily="@font/poppins_semibold"
             android:textSize="12sp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/colorDark"/>
 
     </LinearLayout>
 
@@ -238,7 +235,6 @@
 
     </ScrollView>
 
-    <include layout="@layout/bottom_menu"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_go_to_edit"
@@ -246,7 +242,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
         android:clickable="true"
         android:focusable="true"

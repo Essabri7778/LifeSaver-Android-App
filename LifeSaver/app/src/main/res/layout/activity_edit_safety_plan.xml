@@ -1,30 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditSafetyPlan">
+    tools:context=".EditSafetyPlan"
+    android:background="@color/colorPrimary"
+    >
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:elevation="20dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal">
-
-            <!-- Your Toolbar content -->
-           <include layout="@layout/toolbar_2"/>
-
-        </androidx.appcompat.widget.Toolbar>
-
-    </com.google.android.material.appbar.AppBarLayout>
+    <include layout="@layout/toolbar_1"
+        android:id="@+id/topToolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white"
+        />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -127,7 +118,8 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 android:paddingTop="15dp"
-                android:paddingBottom="10dp">
+                android:paddingBottom="10dp"
+                android:background="@color/white">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -136,7 +128,7 @@
                     android:text="I will calm myself by trying:"
                     android:textSize="24sp"
                     android:fontFamily="@font/poppins_bold"
-                    android:textColor="@color/black"
+                    android:textColor="@color/colorDark"
                     android:textAlignment="center"
                     />
 
@@ -147,6 +139,8 @@
                     android:hint="e.g., breathing exercises; listening to music; taking a walk"
                     android:textSize="12sp"
                     android:fontFamily="@font/poppins"
+                    android:textColorHint="@color/colorDark"
+                    android:textColor="@color/colorDark"
                     android:backgroundTint="@color/colorDark"/>
 
                 <TextView
@@ -161,7 +155,7 @@
                     android:textAlignment="center"
                     android:textSize="12sp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/colorDark"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -174,7 +168,7 @@
                     android:textAlignment="center"
                     android:textSize="12sp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/colorDark"/>
 
             </LinearLayout>
 
@@ -246,7 +240,8 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 android:paddingTop="15dp"
-                android:paddingBottom="10dp">
+                android:paddingBottom="10dp"
+                android:background="@color/white">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -255,7 +250,7 @@
                     android:text="If I am struggling, I can talk to:"
                     android:textSize="24sp"
                     android:fontFamily="@font/poppins_bold"
-                    android:textColor="@color/black"
+                    android:textColor="@color/colorDark"
                     android:textAlignment="center"/>
 
                 <EditText
@@ -265,6 +260,8 @@
                     android:hint="e.g., friends;family;a neighbor"
                     android:textSize="12sp"
                     android:fontFamily="@font/poppins"
+                    android:textColorHint="@color/colorDark"
+                    android:textColor="@color/colorDark"
                     android:backgroundTint="@color/colorDark"
                     />
 
@@ -280,7 +277,7 @@
                     android:textAlignment="center"
                     android:textSize="12sp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/colorDark"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -293,7 +290,7 @@
                     android:textAlignment="center"
                     android:textSize="12sp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/colorDark"/>
 
             </LinearLayout>
 
@@ -366,7 +363,8 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 android:paddingTop="15dp"
-                android:paddingBottom="10dp">
+                android:paddingBottom="10dp"
+                android:background="@color/white">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -375,7 +373,7 @@
                     android:text="My ideas for staying safe:"
                     android:textSize="24sp"
                     android:fontFamily="@font/poppins_bold"
-                    android:textColor="@color/black"
+                    android:textColor="@color/colorDark"
                     android:textAlignment="center"/>
 
                 <EditText
@@ -385,6 +383,8 @@
                     android:hint="e.g., asking a friend to look after medication;"
                     android:textSize="12sp"
                     android:fontFamily="@font/poppins"
+                    android:textColorHint="@color/colorDark"
+                    android:textColor="@color/colorDark"
                     android:backgroundTint="@color/colorDark"/>
 
                 <TextView
@@ -399,7 +399,7 @@
                     android:textAlignment="center"
                     android:textSize="12sp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/colorDark"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -412,7 +412,7 @@
                     android:textAlignment="center"
                     android:textSize="12sp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/colorDark"/>
 
             </LinearLayout>
 
@@ -420,6 +420,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/white"
                 >
                 <Button
                     android:id="@+id/btn_save_plan"
@@ -428,8 +429,9 @@
                     android:text="Save"
                     android:textColor="@color/white"
                     android:fontFamily="@font/poppins_bold"
-                    android:backgroundTint="@color/colorPrimaryLight"
-                    android:layout_margin="10dp"/>
+                    android:backgroundTint="@color/colorPrimary"
+                    android:layout_marginBottom="10dp"
+                    />
             </LinearLayout>
 
         </LinearLayout>

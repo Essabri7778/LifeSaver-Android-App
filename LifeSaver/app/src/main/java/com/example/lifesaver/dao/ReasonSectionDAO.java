@@ -72,27 +72,6 @@ public class ReasonSectionDAO {
         return list;
     }
 
-    public ReasonSection getByTitle(String title) {
-        ReasonSection reasonSection = null;
-
-        String query = "SELECT * FROM " + REASON_TABLE_SECTIONS + " WHERE " + REASON_COLUMN_SECTION_TITLE + " = ?";
-
-        Cursor cursor = db.rawQuery(query, new String[]{title});
-
-        if (cursor != null && cursor.moveToFirst()) {
-            int id = cursor.getInt(0);
-            int icon = cursor.getInt(2);
-
-            reasonSection = new ReasonSection(id, title, icon, null);
-        }
-
-        if (cursor != null) {
-            cursor.close();
-        }
-
-        return reasonSection;
-    }
-
 
 
 }

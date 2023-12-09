@@ -24,6 +24,14 @@ public class ContactBo {
         this.phoneNumber = phoneNumber;
     }
 
+    public ContactBo(String identifier, String primaryName, String alternativeName, Uri photo, String phoneNumber) {
+        this.identifier = identifier;
+        this.primaryName = primaryName;
+        this.alternativeName = alternativeName;
+        this.photo = photo;
+        this.phoneNumber = phoneNumber;
+    }
+
     public String getIdentifier() {
         return identifier;
     }
