@@ -43,7 +43,7 @@ android:background="@color/white"
 
             <!--first-->
             <LinearLayout
-                android:id="@+id/gotToSurvey"
+                android:id="@+id/goToSurvey"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:orientation="horizontal"
@@ -104,7 +104,7 @@ android:background="@color/white"
             <!--second-->
 
             <LinearLayout
-                android:id="@+id/gotToHelp"
+                android:id="@+id/goToHelp"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:orientation="horizontal"
@@ -228,7 +228,7 @@ android:background="@color/white"
             <!--fourth-->
 
             <LinearLayout
-                android:id="@+id/gotToAdvice"
+                android:id="@+id/goToAdvice"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:orientation="horizontal"

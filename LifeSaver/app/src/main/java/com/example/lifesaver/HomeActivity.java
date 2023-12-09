@@ -3,8 +3,11 @@ package com.example.lifesaver;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.lifesaver.dao.ContactDAO;
 import com.example.lifesaver.fragments.AdviceFragment;
 import com.example.lifesaver.fragments.HomeFragment;
 import com.example.lifesaver.fragments.MySpaceFragment;
@@ -13,10 +16,13 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
     BottomNavigationView bottomNav;
+    MenuHelper menuHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        ContactDAO contactDAO = new ContactDAO(this);
 
         bottomNav = findViewById(R.id.bottomNav);
 
@@ -43,6 +49,22 @@ public class HomeActivity extends AppCompatActivity {
 
             return true;
         });
+
+
+        menuHelper = new MenuHelper(this);
+        menuHelper.setupMenu();
+
+        if(getIntent().getBooleanExtra("navigate_to_myspace",false)){
+            MySpaceFragment mySpaceFragment = new MySpaceFragment();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, mySpaceFragment)
+                    .commit();
+        }
+    }
+
+    public void updateSelectedItem(int itemId) {
+        bottomNav.setSelectedItemId(itemId);
     }
 
 }

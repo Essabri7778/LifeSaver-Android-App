@@ -9,7 +9,7 @@
     android:background="@color/colorPrimary"
     >
 
-    <include layout="@layout/toolbar_2"
+    <include layout="@layout/toolbar_1"
         android:id="@+id/topToolbar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"

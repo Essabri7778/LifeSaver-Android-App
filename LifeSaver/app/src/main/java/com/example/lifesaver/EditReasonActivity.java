@@ -39,7 +39,7 @@ public class EditReasonActivity extends AppCompatActivity {
     ReasonSectionDAO reasonSectionDAO;
     ReasonDAO reasonDAO;
     EditText ownReason;
-    TextView idReason;
+    TextView idReason, toolbartext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +56,8 @@ public class EditReasonActivity extends AppCompatActivity {
         ownReason = findViewById(R.id.ownReason);
         backButton = findViewById(R.id.backButton);
         idReason = findViewById(R.id.idReason);
+        toolbartext = findViewById(R.id.toolbartext);
+        toolbartext.setText("Edit Reason Activity");
 
 
         recycle = findViewById(R.id.reasonSection);
@@ -73,6 +75,7 @@ public class EditReasonActivity extends AppCompatActivity {
                     reasonDAO.addOne(reason);
                     adapter.getCurrentReasonsAdapter().addReason(reason);
                     Toast.makeText(EditReasonActivity.this,"Reason added successfully \uD83C\uDF89",Toast.LENGTH_LONG).show();
+                    ownReason.setText("");
                 }else{
                     Toast.makeText(EditReasonActivity.this,"Please enter a valid Reason ⚠️",Toast.LENGTH_LONG).show();
                 }

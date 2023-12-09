@@ -4,6 +4,12 @@
     <!-- add READ_CONTACTS permission here -->
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -32,7 +38,7 @@
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".ContactDetails"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".AllContactsActivity"
             android:exported="true" />

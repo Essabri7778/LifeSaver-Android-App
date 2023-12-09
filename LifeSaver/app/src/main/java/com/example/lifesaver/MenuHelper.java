@@ -6,17 +6,21 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 
+import com.example.lifesaver.dao.ContactDAO;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
@@ -24,9 +28,12 @@ import com.google.android.material.navigation.NavigationBarView;
 public class MenuHelper {
 
     Context context;
+    ContactDAO contactDAO;
+
 
     public MenuHelper(Context context) {
         this.context = context;
+        contactDAO = new ContactDAO(context);
     }
 
     public void setupMenu(){
@@ -50,13 +57,17 @@ public class MenuHelper {
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setCancelable(true);
                 dialog.setContentView(R.layout.main_button_layout);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
-                Button confirmMainButtonPhone = dialog.findViewById(R.id.confirmMainButtonPhone);
+                LinearLayout confirmMainButtonPhone = dialog.findViewById(R.id.confirmMainButtonPhone);
                 EditText mainButtonPhone = dialog.findViewById(R.id.mainButtonPhone);
+                mainButtonPhone.setText(contactDAO.getByName("myHopeEmergency").getPhoneNumber());
                 confirmMainButtonPhone.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Toast.makeText(context,mainButtonPhone.getText().toString(),Toast.LENGTH_LONG).show();
+                        contactDAO.updatePhoneNum(contactDAO.getByName("myHopeEmergency").getId(),
+                                mainButtonPhone.getText().toString());
                         dialog.dismiss();
                     }
                 });
@@ -68,15 +79,14 @@ public class MenuHelper {
             @Override
             public boolean onLongClick(View v) {
                 //TODO: call emergency
-                /*
                 if(ActivityCompat.checkSelfPermission(context, android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
                     ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.CALL_PHONE},101);
                 }
                 Intent callIntent =new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel: "+mainButtonPhone.getText().toString()));
+                callIntent.setData(Uri.parse("tel: "+contactDAO.getByName("myHopeEmergency").getPhoneNumber()));
                 context.startActivity(callIntent);
-                 */
-                Toast.makeText(context,"Stay Safe we got u!",Toast.LENGTH_LONG).show();
+
+                Toast.makeText(context,"\uD83D\uDEA8Emergency help is on the way.\nStay safe, You are not alone\uD83E\uDEF6",Toast.LENGTH_LONG).show();
                 return true;
             }
         });

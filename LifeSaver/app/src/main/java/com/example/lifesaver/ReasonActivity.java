@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -35,11 +37,17 @@ public class ReasonActivity extends AppCompatActivity {
     ReasonSectionAdapter adapter;
     ReasonSectionDAO reasonSectionDAO;
     FloatingActionButton edit;
+    ImageView backButton;
+    TextView toolbartext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.reason_main);
+
+        backButton = findViewById(R.id.backButton);
+        toolbartext = findViewById(R.id.toolbartext);
+        toolbartext.setText("Reason Activity");
 
         reasonSectionDAO = new ReasonSectionDAO(this);
         reasonSections = reasonSectionDAO.getAll();
@@ -57,6 +65,13 @@ public class ReasonActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ReasonActivity.this, EditReasonActivity.class);
                 ReasonActivity.this.startActivity(intent);
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getOnBackPressedDispatcher().onBackPressed();
             }
         });
 
