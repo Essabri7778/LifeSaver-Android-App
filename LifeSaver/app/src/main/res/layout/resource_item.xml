@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    android:padding="6dip"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:background="@color/white"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/resource_logo"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@mipmap/ic_launcher_round"
+        android:layout_centerVertical="true"
+
+        />
+
+    <LinearLayout
+        android:id="@+id/text_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toEndOf= "@id/resource_logo"
+        android:layout_centerVertical="true"
+        >
+        <TextView
+            android:id="@+id/resource_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorDark"
+            android:layout_toEndOf= "@id/resource_logo"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_marginLeft="20dp"
+            android:typeface="sans"
+            android:text="First Resource"
+            android:fontFamily="@font/poppins_semibold"/>
+        <TextView
+            android:id="@+id/resource_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorDark"
+            android:layout_below="@id/resource_logo"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            android:textSize="12dp"
+            android:layout_marginLeft="20dp"
+            android:typeface="sans"
+            android:text="First Resource description"
+            android:fontFamily="@font/poppins"
+            android:alpha="0.6"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_alignEnd="@+id/text_layout"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="1dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/baseline_keyboard_arrow_right_24"></ImageView>
+    <TextView
+        android:id="@+id/hidden_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"></TextView>
+
+
+</RelativeLayout>

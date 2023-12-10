@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AllContactsActivity"
+    tools:context=".OnlineSupportActivity"
     android:orientation="vertical"
     android:background="@color/white">
     <!-- START TOOLBAR -->
@@ -42,41 +42,8 @@
         android:layout_marginTop="80dp"
         ></ListView>
     <!-- Empty layout (hidden initially) -->
-    <LinearLayout
-        android:id="@+id/emptyLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:visibility="visible"
-        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
-        <TextView
-            android:id="@+id/emptyTextView"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:alpha="0.7"
-            android:gravity="center"
-            android:text="You haven't add any contacts yet"
-            android:textAlignment="center"
-            android:textColor="@color/colorDark"
-            android:fontFamily="@font/poppins"
-            android:textSize="18sp" />
-    </LinearLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="70dp"
-        android:layout_marginEnd="16dp"
-        app:srcCompat="@drawable/baseline_add_24"
-        app:tint="@color/white"
-        app:backgroundTint="@color/colorPrimary"/>
     <include
         android:id="@+id/bottomMenu"
         layout="@layout/bottom_menu"

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddResourceActivity"
+    android:background="@color/colorSecondary"
+    >
+
+    <!-- START TOOLBAR -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/white"
+        app:elevation="20dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal">
+
+            <!-- Your Toolbar content -->
+            <include layout="@layout/toolbar_2"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <!-- END TOOLBAR -->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/resources_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:layout_margin="15dp"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="8dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="18dp"
+                android:textColor="@color/white"/>
+            <EditText
+                android:id="@+id/resource_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:hint="Tap the resource name"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins"
+                android:backgroundTint="@color/white"
+                android:layout_marginBottom="10dp"
+                ></EditText>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="18dp"
+                android:textColor="@color/white"/>
+            <EditText
+                android:id="@+id/resource_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:hint="Tap the resource description"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins"
+                android:backgroundTint="@color/white"
+                android:layout_marginBottom="10dp"></EditText>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phone number"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="18dp"
+                android:textColor="@color/white"/>
+            <EditText
+                android:id="@+id/resource_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:hint="Tap the resource name"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins"
+                android:backgroundTint="@color/white"
+                android:layout_marginBottom="10dp"></EditText>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SMS number"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="18dp"
+                android:textColor="@color/white"/>
+            <EditText
+                android:id="@+id/resource_sms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:hint="Tap the resource name"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins"
+                android:backgroundTint="@color/white"
+                android:layout_marginBottom="10dp"></EditText>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email address"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="18dp"
+                android:textColor="@color/white"/>
+            <EditText
+                android:id="@+id/resource_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:hint="Tap the resource name"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins"
+                android:backgroundTint="@color/white"
+                android:layout_marginBottom="10dp"></EditText>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Website"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="18dp"
+                android:textColor="@color/white"/>
+            <EditText
+                android:id="@+id/resource_website"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:hint="Tap the resource name"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins"
+                android:backgroundTint="@color/white"
+                android:layout_marginBottom="10dp"></EditText>
+            <Button
+                android:id="@+id/save_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="SAVE"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:backgroundTint="@color/colorSecondary"
+                android:layout_marginTop="10dp"
+                android:elevation="10dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <include
+        android:id="@+id/bottomMenu"
+        layout="@layout/bottom_menu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="20dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="60dp"
+    android:layout_height="70dp"
     android:orientation="horizontal"
     android:padding="6dip"
     android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp">
+    android:layout_marginRight="20dp"
+    android:background="@color/white">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/contact_img"
@@ -22,10 +23,12 @@
         android:layout_toEndOf= "@id/contact_img"
         android:layout_centerVertical="true"
         android:textStyle="bold"
-        android:textSize="18dp"
+        android:textSize="20dp"
         android:layout_marginLeft="20dp"
         android:typeface="sans"
-        android:text="First Contact"/>
+        android:text="First Contact"
+        android:textColor="@color/colorPrimary"
+        android:fontFamily="@font/poppins_semibold"/>
     <ImageView
         android:layout_width="22dp"
         android:layout_height="22dp"

@@ -65,7 +65,7 @@ public class AllContactsActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Object o = listView.getItemAtPosition(position);
                 ContactBo contact = (ContactBo) o;
-                populateForm(contact,emptyLayout);
+                populateForm(contact);
             }
         });
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener(){
@@ -90,7 +90,7 @@ public class AllContactsActivity extends AppCompatActivity {
 
     }
 
-    private void populateForm(ContactBo contact,LinearLayout emptyLayout) {
+    private void populateForm(ContactBo contact) {
         Intent i = new Intent(AllContactsActivity.this,ContactDetails.class);
         i.putExtra("firstName",contact.getPrimaryName());
         i.putExtra("secondName",contact.getAlternativeName());
