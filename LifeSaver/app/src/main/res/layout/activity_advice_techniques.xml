@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".AdviceTechniques">
+
+    <include layout="@layout/toolbar_1"
+        android:id="@+id/topToolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white"
+        />
+
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="60dp"
+    android:background="@color/white"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:background="@drawable/shape"
+            android:backgroundTint="@color/colorPrimary">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ground"
+                android:layout_gravity="center"
+                app:tint="@color/colorSecondary" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="12dp"
+                android:layout_marginLeft="10dp"
+                android:text="These techniques can help us deal with overwhelming anxiety, pain or emotions. Here are a few examples of grounding techniques:"
+                android:textColor="@color/colorSecondary"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:background="@color/colorSecondary"
+            android:padding="5dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                android:gravity="top">
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_background"
+                    android:gravity="center"
+                    android:text="1"
+                    android:layout_marginTop="7dp"
+                    android:textColor="@android:color/white"
+                    android:padding="5dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Do an activity that requires focus and attention, to help calm you mind and body."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:padding="5dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                android:gravity="top"
+                >
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_background"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textColor="@android:color/white"
+                    android:padding="5dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Think about a safe place/activity from your life, that reminds you of a time when you felt safe and calm; try to remember in your mind and body how that felt."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:background="@color/colorSecondary"
+            android:padding="5dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                android:gravity="top"
+                >
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_background"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textColor="@android:color/white"
+                    android:padding="5dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Breathe slowly and steadily from your belly, as best you can, and imagine letting go of pain as you breathe out."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:padding="5dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                android:gravity="top"
+                >
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_background"
+                    android:gravity="center"
+                    android:text="4"
+                    android:textColor="@android:color/white"
+                    android:padding="5dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="If someone tells a professional about their thoughts of suicide, they will be sectioned and admitted to hospital (detained under the Mental Health Act)."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:background="@color/colorSecondary"
+            android:padding="5dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                android:gravity="top"
+                >
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_background"
+                    android:gravity="center"
+                    android:text="5"
+                    android:textColor="@android:color/white"
+                    android:padding="5dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stroke your hands over your body; be aware the physical sensations as you do this, and try to reassure and calm yourself as you do this."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:padding="5dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                android:gravity="top"
+                >
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_background"
+                    android:gravity="center"
+                    android:text="6"
+                    android:textColor="@android:color/white"
+                    android:padding="5dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pay attention to your senses:what can you see, hear, smell, taste or feel?
+"
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:background="@color/colorSecondary"
+            android:padding="5dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                android:gravity="top"
+                >
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_background"
+                    android:gravity="center"
+                    android:text="7"
+                    android:textColor="@android:color/white"
+                    android:padding="5dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Move: try walking, stretching, bending and pay attention to how your body feels."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:padding="5dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                android:gravity="top"
+                >
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_background"
+                    android:gravity="center"
+                    android:text="8"
+                    android:textColor="@android:color/white"
+                    android:padding="5dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try holding yourself and rocking yourself, soothing yourself with words or touch."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:background="@color/colorSecondary"
+            android:padding="5dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                android:gravity="top"
+                >
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/circle_background"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="9"
+                    android:layout_marginTop="7dp"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Use your voice: try talking or reading aloud."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:padding="5dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                android:gravity="top"
+                >
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_background"
+                    android:gravity="center"
+                    android:text="10"
+                    android:textColor="@android:color/white"
+                    android:padding="5dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Write down how you are feeling and what you are thinking."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:background="@color/colorSecondary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                android:gravity="top"
+                >
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_background"
+                    android:gravity="center"
+                    android:text="11"
+                    android:textColor="@android:color/white"
+                    android:padding="5dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Some people who have thoughts of suicide have found it helpful to keep a diary of situations or events that might contribute to them thinking about suicide. Keeping track of these ‘triggers’ can help you think about how to respond to them as soon as possible to try to avoid becoming suicidal."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:padding="5dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                android:gravity="top"
+                >
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/circle_background"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="12"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="7dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Finally, you could try imagining a friend of yours is struggling with thoughts of suicide in the same way that you are. How would you try and support them? What would you say to them? How would you show them that you care? Perhaps you can show some of the same kindness and compassion towards yourself."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>
+
+
+
+
+</RelativeLayout>

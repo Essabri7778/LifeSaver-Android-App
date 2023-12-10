@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#00000000"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/forpopup"
+        android:layout_marginBottom="-35dp"
+        android:translationZ="10dp"
+        android:layout_gravity="center"
+        android:background="#00000000"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/popup"
+        android:background="@drawable/shape3"
+        android:paddingTop="35dp"
+        android:paddingBottom="15dp"
+        android:paddingHorizontal="15dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="22dp"
+            android:text="✨Your Hope Space✨"
+            android:textColor="@color/colorPrimary"
+            android:layout_gravity="top"
+            android:gravity="center"
+            android:layout_marginBottom="-10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="13dp"
+            android:text="Your Support in Tough Times"
+            android:textColor="@color/colorPrimary"
+            android:layout_gravity="top"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="14dp"
+            android:textAlignment="center"
+            android:text="Thank you for choosing us!\nReady to embark on your journey? Let's ensure your safety by setting up your emergency contact. Simply tap the My Hope main button, enter a trusted number, and confirm.\nYour safety matters, and so does your journey towards hope and healing!"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginBottom="8dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="12dp"
+            android:text="💙Remember, you're not alone💙"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            />
+
+    </LinearLayout>
+</LinearLayout>

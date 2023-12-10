@@ -5,16 +5,13 @@
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/llay"
+    android:layout_marginBottom="20dp"
     >
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            xmlns:android="http://schemas.android.com/apk/res/android"
             >
-
                 <TextView
                     android:id="@+id/idReason"
                     android:layout_width="match_parent"
@@ -50,5 +47,54 @@
             android:layout_height="1px"
             android:layout_marginTop="4dp"
             android:background="@color/colorSecondary" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:padding="10dp"
+            android:id="@+id/popip"
+            android:visibility="gone"
+            >
+                <EditText
+                    android:id="@+id/ownReason"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="15dp"
+                    android:layout_weight="1"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <Button
+                            android:id="@+id/edit_reason_own"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Edit"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:textSize="15dp"
+                            android:textColor="@color/colorSecondary"
+                            android:backgroundTint="@color/colorDark"
+                            android:textAllCaps="false"
+                            android:layout_marginRight="15dp"
+                            />
+                        <Button
+                            android:id="@+id/delete_reason_own"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Delete"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:textSize="15dp"
+                            android:textColor="@color/white"
+                            android:backgroundTint="#EF2A2A"
+                            android:textAllCaps="false"
+                            />
+                </LinearLayout>
+        </LinearLayout>
 
 </LinearLayout>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".fragments.MySpaceFragment"
+android:background="@color/white"
+    >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:padding="18dp"
+    android:gravity="center_vertical|center_horizontal"
+    >
+
+    <!--first-->
+    <LinearLayout
+        android:id="@+id/gotToReason"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        android:background="@drawable/shape_space"
+        android:padding="15dp"
+        android:layout_marginBottom="15dp"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/shape3"
+            android:backgroundTint="@color/white"
+            android:padding="20dp"
+            android:layout_gravity="center"
+            >
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/beliefs"
+                app:tint="@color/colorPrimary"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="15dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="25dp"
+                android:lineSpacingMultiplier="0.8"
+                android:text="Reasons For Living"
+                android:gravity="top"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:layout_marginBottom="-10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="13dp"
+                android:text="Your Reasons for living"
+                android:textColor="@color/white"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--sec-->
+    <LinearLayout
+        android:id="@+id/goToSafety"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        android:background="@drawable/shape_space"
+        android:padding="15dp"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/shape3"
+            android:backgroundTint="@color/white"
+            android:padding="20dp"
+
+            android:layout_gravity="center"
+            >
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/help"
+                app:tint="@color/colorPrimary"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="15dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="25dp"
+                android:lineSpacingMultiplier="0.8"
+                android:text="Your Safety Plan"
+                android:gravity="top"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:layout_marginBottom="-10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="13dp"
+                android:text="Your Safety plan"
+                android:textColor="@color/white"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="420dp"
+    android:src="@drawable/grpsp"
+    android:layout_gravity="center"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    />
+
+<TextView
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/poppins_bold"
+    android:textSize="20dp"
+    android:lineSpacingMultiplier="0.9"
+    android:gravity="top"
+    android:text="Your Space"
+    android:textColor="@color/white"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginBottom="135dp"
+    />
+
+<TextView
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/poppins_semibold"
+    android:textSize="12dp"
+    android:lineSpacingMultiplier="0.8"
+    android:text="This is Your Own Space, a place dedicated to your journey towards hope and well-being. Here, you have the power to shape your reasons for living and safety plan."
+    android:textColor="@color/white"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginBottom="80dp"
+    />
+
+
+
+<include
+    android:id="@+id/bottomMenu"
+    layout="@layout/bottom_menu"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

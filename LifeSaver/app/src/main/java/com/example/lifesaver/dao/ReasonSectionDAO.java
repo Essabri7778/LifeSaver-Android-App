@@ -9,9 +9,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.lifesaver.MainActivity;
 import com.example.lifesaver.R;
-import com.example.lifesaver.bo.Reason;
 import com.example.lifesaver.bo.ReasonSection;
 import com.example.lifesaver.db.DatabaseHelper;
 
@@ -72,27 +70,6 @@ public class ReasonSectionDAO {
         cursor.close();
 
         return list;
-    }
-
-    public ReasonSection getByTitle(String title) {
-        ReasonSection reasonSection = null;
-
-        String query = "SELECT * FROM " + REASON_TABLE_SECTIONS + " WHERE " + REASON_COLUMN_SECTION_TITLE + " = ?";
-
-        Cursor cursor = db.rawQuery(query, new String[]{title});
-
-        if (cursor != null && cursor.moveToFirst()) {
-            int id = cursor.getInt(0);
-            int icon = cursor.getInt(2);
-
-            reasonSection = new ReasonSection(id, title, icon, null);
-        }
-
-        if (cursor != null) {
-            cursor.close();
-        }
-
-        return reasonSection;
     }
 
 

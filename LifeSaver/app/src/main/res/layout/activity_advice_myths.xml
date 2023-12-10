@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".AdviceMyths">
+
+    <include layout="@layout/toolbar_1"
+        android:id="@+id/topToolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white"
+        />
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="60dp"
+    android:background="@color/white"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:background="@drawable/shape"
+            android:backgroundTint="@color/colorPrimary">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/myths"
+                android:layout_gravity="center"
+                app:tint="@color/colorSecondary" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="13dp"
+                android:layout_marginLeft="10dp"
+                android:text="Common misunderstanding and misconceptions about suicide"
+                android:textColor="@color/colorSecondary"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="10dp"
+         android:orientation="vertical"
+         android:background="@color/colorSecondary"
+         android:padding="5dp">
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal"
+             android:layout_marginBottom="5dp">
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Myth: "
+             android:textColor="@color/colorPrimary"
+             android:fontFamily="@font/poppins_bold"/>
+
+         <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="Asking someone about suicide will put the idea in their head and make them more likely to kill themselves."
+                 android:textColor="@color/colorDark"
+                 android:fontFamily="@font/poppins"/>
+
+         </LinearLayout>
+
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal"
+             android:layout_marginBottom="5dp">
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="Fact:  "
+                 android:textColor="@color/colorPrimary"
+                 android:fontFamily="@font/poppins_bold"/>
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="It is safer to ask about suicide than not to ask about suicide. Research shows that it is not dangerous to ask. If the answer is yes, the person with thoughts of suicide can be supported. If the answer is no, no harm has been done. People often find great relief in being able to openly talk about their thoughts and feelings about suicide."
+                 android:textColor="@color/colorDark"
+                 android:fontFamily="@font/poppins"/>
+
+         </LinearLayout>
+
+
+
+     </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+               >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Myth: "
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Talking about suicide is attention seeking behaviour."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fact:  "
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Anyone considering suicide needs serious attention. They are in pain and may feel hopeless. Most people who die by suicide have talked about it first; we should always take seriously anyone talking about suicide."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:background="@color/colorSecondary"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Myth: "
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thinking about suicide means someone is mentally ill."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fact:  "
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Many people who have thoughts of suicide have no mental illness."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Myth: "
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="If someone tells a professional about their thoughts of suicide, they will be sectioned and admitted to hospital (detained under the Mental Health Act)."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fact:  "
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A section is only used when three people (an Approved Mental Health Professional or nearest relative and two doctors) agree that the person is suffering from a mental disorder and needs to be detained for assessment or treatment, either for their own safety or others’. If a person with thoughts of suicide has no mental illness it is very unlikely that they will be sectioned."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:background="@color/colorSecondary"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Myth: "
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thinking about suicide is rare and unusual."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fact:  "
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thinking about suicide is part of being human. Anyone has the potential to have thoughts of suicide. One in 5 people have thought of taking their own life at some point in their lives. One in 15 people are estimated to have made an attempt at some point in their life."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Myth: "
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Certain groups of people are at higher risk of suicide and we don't need to worry about people who aren't in those groups."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fact:  "
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Anyone has the potential to have thoughts of suicide. While certain groups do have a statistically higher likelihood of dying by suicide, if we only focus on those groups, we miss all the other individuals who may be struggling with thoughts of suicide."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:background="@color/colorSecondary"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Myth: "
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="It is weak or selfish to consider suicide."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fact:  "
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="People who attempt suicide are usually struggling with feelings of pain, despair, hopelessness, worthlessness or other overwhelming feelings. They may believe that suicide is the only way out, and be unable to see beyond their intense thoughts and feelings."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Myth: "
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Most suicides happen with no warning."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fact:  "
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Most people struggling with thoughts of suicide find a way to communicate that they need help, sometimes at an unconscious level. However, sometimes these warning signs can be missed, dismissed or avoided. It is important to be alert to potential warning signs and be prepared to ask about suicide if you are concerned for someone else."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:background="@color/colorSecondary"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Myth: "
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="It's easy to tell if someone's thinking about suicide."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fact:  "
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sometimes the potential warning signs can be very subtle. A person thinking about suicide may appear to be okay, or even cheerful. Sometimes, particularly if someone has been ill for a long time with depression, making a decision to die by suicide can bring them some relief and their mood can appear to improve. It is important to be alert to changes in someone's behaviour, and to help someone talk about how they are feeling. If we are concerned it is important that we ask about suicide."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Myth: "
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Self-harm is always a sign that someone is thinking about suicide."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fact:  "
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Many people self-harm as a way of coping with difficult feelings, but are not thinking about suicide. If you are concerned that someone's self-harm may be linked to thoughts of suicide, the only way to be sure is to ask."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>
+
+
+
+
+</RelativeLayout>

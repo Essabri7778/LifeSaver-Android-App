@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".fragments.HomeFragment"
+android:background="@color/white"
+    >
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomMenu"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="15dp"
+            android:gravity="center_vertical|center_horizontal">
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_black"
+                android:textSize="35dp"
+                android:text="Welcome to Your Hope Space 💫"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:layout_gravity="center"
+                android:lineSpacingMultiplier="0.8"
+                android:layout_marginBottom="10dp"
+                />
+
+            <!--first-->
+            <LinearLayout
+                android:id="@+id/goToSurvey"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:orientation="horizontal"
+                android:background="@drawable/shape3"
+                android:backgroundTint="@color/colorPrimary"
+                android:padding="15dp"
+                android:layout_marginBottom="15dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/shape3"
+                    android:backgroundTint="@color/white"
+                    android:padding="20dp"
+
+                    android:layout_gravity="center"
+                    >
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/survey"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="15dp"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="25dp"
+                        android:text="Take a Survey"
+                        android:gravity="top"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="-10dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textSize="13dp"
+                        android:text="Take a Small Survey: Guide Your Next Steps Toward Hope"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--second-->
+
+            <LinearLayout
+                android:id="@+id/goToHelp"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:orientation="horizontal"
+                android:background="@drawable/shape3"
+                android:backgroundTint="@color/colorSecondary"
+                android:padding="15dp"
+                android:layout_marginBottom="15dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/shape3"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:padding="20dp"
+
+                    android:layout_gravity="center"
+                    >
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/help2"
+                        app:tint="@color/white"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="15dp"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="25dp"
+                        android:text="Find Help Now"
+                        android:gravity="top"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="-10dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textSize="13dp"
+                        android:text="Find Help Now: your Instant Connection to Support"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_gravity="center"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--third-->
+
+            <LinearLayout
+                android:id="@+id/gotToSpace"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:orientation="horizontal"
+                android:background="@drawable/shape3"
+                android:backgroundTint="@color/colorSecondary"
+                android:padding="15dp"
+                android:layout_marginBottom="15dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/shape3"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:padding="20dp"
+
+                    android:layout_gravity="center"
+                    >
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/myspace"
+                        app:tint="@color/white"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="15dp"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="25dp"
+                        android:text="My Space"
+                        android:gravity="top"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="-10dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textSize="13dp"
+                        android:text="Discover my Safe Haven and Reasons for Living"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_gravity="center"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--fourth-->
+
+            <LinearLayout
+                android:id="@+id/goToAdvice"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:orientation="horizontal"
+                android:background="@drawable/shape3"
+                android:backgroundTint="@color/colorSecondary"
+                android:padding="15dp"
+                android:layout_marginBottom="15dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/shape3"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:padding="20dp"
+
+                    android:layout_gravity="center"
+                    >
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/advice"
+                        app:tint="@color/white"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="15dp"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="25dp"
+                        android:text="Advice"
+                        android:gravity="top"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="-10dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textSize="13dp"
+                        android:text="Tailored Guidance for Your Unique Journey"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_gravity="center"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+<FrameLayout
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
+
+
+<include
+    android:id="@+id/bottomMenu"
+    layout="@layout/bottom_menu"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
