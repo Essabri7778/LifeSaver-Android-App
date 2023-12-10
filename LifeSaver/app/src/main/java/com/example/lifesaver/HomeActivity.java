@@ -27,7 +27,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        ContactDAO contactDAO = new ContactDAO(this);
+        ContactDAO contactDAO = new ContactDAO(HomeActivity.this);
 
         bottomNav = findViewById(R.id.bottomNav);
 
@@ -76,6 +76,9 @@ public class HomeActivity extends AppCompatActivity {
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             dialog.show();
         }
+
+
+
 
     }
 

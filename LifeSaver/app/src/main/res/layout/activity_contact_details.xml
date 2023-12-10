@@ -25,7 +25,7 @@
         android:layout_gravity="center_horizontal">
 
       <!-- Your Toolbar content -->
-      <include layout="@layout/toolbar_2"/>
+      <include layout="@layout/toolbar_1"/>
 
     </androidx.appcompat.widget.Toolbar>
 
