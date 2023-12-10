@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,7 +25,8 @@ public class DisplayResourceActivity extends AppCompatActivity {
     LinearLayout emailLayout;
     LinearLayout websiteLayout;
 
-
+    ImageView backButton;
+    TextView toolbartext;
 
 
     @Override
@@ -97,6 +99,18 @@ public class DisplayResourceActivity extends AppCompatActivity {
                 Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
                 emailIntent.setData(Uri.parse("mailto:" + emailAddress));
                 startActivity(Intent.createChooser(emailIntent, "Send Email"));
+            }
+        });
+
+
+        backButton = findViewById(R.id.backButton);
+        toolbartext = findViewById(R.id.toolbartext);
+        toolbartext.setText("Resources");
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getOnBackPressedDispatcher().onBackPressed();
             }
         });
     }

@@ -48,13 +48,11 @@
         android:layout_below="@+id/btn_layout"
         android:layout_marginTop="10dp"
         android:orientation="vertical">
-        <
+        <View
             android:layout_width="match_parent"
             android:layout_height="100dp">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"/>
-        </>
+
+        </View>
 
         <TextView
             android:layout_width="match_parent"

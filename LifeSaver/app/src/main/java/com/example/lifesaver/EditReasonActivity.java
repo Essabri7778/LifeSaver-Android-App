@@ -54,10 +54,10 @@ public class EditReasonActivity extends AppCompatActivity {
         bottomNav = findViewById(R.id.bottomNav);
         add = findViewById(R.id.add_reason_own);
         ownReason = findViewById(R.id.ownReason);
-        backButton = findViewById(R.id.backButton);
         idReason = findViewById(R.id.idReason);
+        backButton = findViewById(R.id.backButton);
         toolbartext = findViewById(R.id.toolbartext);
-        toolbartext.setText("Edit Reason Activity");
+        toolbartext.setText("Edit Reasons To Live");
 
 
         recycle = findViewById(R.id.reasonSection);
@@ -82,6 +82,7 @@ public class EditReasonActivity extends AppCompatActivity {
 
             }
         });
+
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
