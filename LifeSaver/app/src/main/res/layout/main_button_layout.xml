@@ -95,19 +95,44 @@
         android:layout_marginBottom="8dp"
         />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
     <EditText
         android:id="@+id/mainButtonPhone"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/shape4"
         android:hint="ex: 060000000000"
         android:textColor="@color/colorPrimary"
         android:fontFamily="@font/poppins_semibold"
         android:textColorHint="@color/colorPrimary"
-        android:textSize="14dp"
+        android:textSize="12dp"
         android:layout_weight="3"
-        android:layout_marginRight="10dp"
         />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_space2"
+            android:backgroundTint="@color/colorPrimary"
+            android:padding="6dp"
+            android:layout_weight="0.5"
+            android:id="@+id/contactMainBut"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/addcontact"
+                app:tint="@color/white"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
