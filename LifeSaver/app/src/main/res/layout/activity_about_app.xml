@@ -151,14 +151,6 @@
                     android:textColor="@color/colorDark"
                     android:fontFamily="@font/poppins_semibold"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="14dp"
-                    android:text="Your Hope Space is designed to help you navigate through tough times and prevent suicide. Together, let's build a society that understands, connects, and supports every individual on their mental health journey. You are not alone."
-                    android:textColor="@color/colorDark"
-                    android:fontFamily="@font/poppins_semibold"/>
-
             </LinearLayout>
 
         <LinearLayout
@@ -175,7 +167,8 @@
                 android:textSize="20dp"
                 android:text="Developed by"
                 android:textColor="@color/colorPrimary"
-                android:fontFamily="@font/poppins_bold"/>
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginBottom="10dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

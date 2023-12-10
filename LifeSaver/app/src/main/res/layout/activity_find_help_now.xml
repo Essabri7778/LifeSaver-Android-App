@@ -13,7 +13,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/white"
         />
     <!-- END TOOLBAR -->
 
@@ -34,14 +33,14 @@
             android:padding="6dip"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="@color/white"
-            >
+                >
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <ImageView
                 android:id="@+id/resource_logo1"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@mipmap/ic_launcher_round"
+                android:src="@drawable/urgent"
+                app:tint="@color/colorPrimary"
                 android:layout_centerVertical="true"
 
                 />
@@ -92,6 +91,13 @@
                 android:layout_centerVertical="true"
                 android:src="@drawable/baseline_keyboard_arrow_right_24"></ImageView>
         </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="4dp"
+        android:background="@color/colorDark"
+        android:alpha="0.2"
+        />
     <RelativeLayout
         android:id="@+id/online_resource"
         android:layout_width="match_parent"
@@ -100,14 +106,14 @@
         android:padding="6dip"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="@color/white"
         >
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:id="@+id/resource_logo2"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@mipmap/ic_launcher_round"
+            android:src="@drawable/online"
+            android:tint="@color/colorPrimary"
             android:layout_centerVertical="true"
 
             />
@@ -161,6 +167,15 @@
 
 
     </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="4dp"
+        android:background="@color/colorDark"
+        android:alpha="0.2"
+        />
+
     <RelativeLayout
         android:id="@+id/contacts"
         android:layout_width="match_parent"
@@ -169,7 +184,6 @@
         android:padding="6dip"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="@color/white"
         >
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -234,6 +248,15 @@
 
 
     </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="4dp"
+        android:background="@color/colorDark"
+        android:alpha="0.2"
+        />
+
     <RelativeLayout
         android:id="@+id/own_resources"
         android:layout_width="match_parent"
@@ -242,13 +265,14 @@
         android:padding="6dip"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="@color/white">
+        >
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:id="@+id/resource_logo4"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@mipmap/ic_launcher_round"
+            android:src="@drawable/ownres"
+            app:tint="@color/colorPrimary"
             android:layout_centerVertical="true"
 
             />
@@ -299,6 +323,14 @@
             android:layout_centerVertical="true"
             android:src="@drawable/baseline_keyboard_arrow_right_24"></ImageView>
     </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="4dp"
+        android:background="@color/colorDark"
+        android:alpha="0.2"
+        />
 
 </LinearLayout>
 
