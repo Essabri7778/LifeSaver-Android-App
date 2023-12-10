@@ -42,6 +42,9 @@ public class AllContactsActivity extends AppCompatActivity {
     FloatingActionButton addButton;
     LinearLayout emptyLayout;
 
+    ImageView backButton;
+    TextView toolbartext;
+
     private static final int REQUEST_READ_CONTACTS_PERMISSION = 0;
     private static final int REQUEST_CONTACT = 1;
 
@@ -83,6 +86,18 @@ public class AllContactsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 requestContactsPermission();
+            }
+        });
+
+
+        backButton = findViewById(R.id.backButton);
+        toolbartext = findViewById(R.id.toolbartext);
+        toolbartext.setText("All Contacts");
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getOnBackPressedDispatcher().onBackPressed();
             }
         });
 

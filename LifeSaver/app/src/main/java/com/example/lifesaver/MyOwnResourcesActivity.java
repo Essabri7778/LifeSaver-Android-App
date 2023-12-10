@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -28,6 +29,10 @@ public class MyOwnResourcesActivity extends AppCompatActivity {
     FloatingActionButton addBtn;
     LinearLayout layout1;
     LinearLayout layout2;
+
+    ImageView backButton;
+    TextView toolbartext;
+
 
 
     @Override
@@ -63,6 +68,17 @@ public class MyOwnResourcesActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        backButton = findViewById(R.id.backButton);
+        toolbartext = findViewById(R.id.toolbartext);
+        toolbartext.setText("My Own Resources");
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getOnBackPressedDispatcher().onBackPressed();
+            }
+        });
     }
 
     private void populateOwnResourceForm(ResourceBo resource) {
@@ -91,4 +107,5 @@ public class MyOwnResourcesActivity extends AppCompatActivity {
         ownResource.setAdapter(new ResourceCustomAdapter(this,ownResourceList));
         bookmark.setAdapter(new ResourceCustomAdapter(this,bookedResourceList));
     }
+
 }

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,9 @@ public class AddResourceActivity extends AppCompatActivity {
     TextView smsTxt;
     TextView websiteTxt;
     Button saveBtn;
+
+    ImageView backButton;
+    TextView toolbartext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +64,17 @@ public class AddResourceActivity extends AppCompatActivity {
                 }
                 Intent i = new Intent(AddResourceActivity.this,MyOwnResourcesActivity.class);
                 startActivity(i);
+            }
+        });
+
+        backButton = findViewById(R.id.backButton);
+        toolbartext = findViewById(R.id.toolbartext);
+        toolbartext.setText("Add Own Resources");
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getOnBackPressedDispatcher().onBackPressed();
             }
         });
 

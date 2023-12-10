@@ -9,28 +9,13 @@
     >
 
     <!-- START TOOLBAR -->
-    <com.google.android.material.appbar.AppBarLayout
+    <include layout="@layout/toolbar_1"
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:backgroundTint="@color/white"
-        app:elevation="20dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal">
-
-            <!-- Your Toolbar content -->
-            <include layout="@layout/toolbar_2"/>
-
-        </androidx.appcompat.widget.Toolbar>
-
-    </com.google.android.material.appbar.AppBarLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white"
+        />
     <!-- END TOOLBAR -->
 
     <androidx.cardview.widget.CardView
@@ -38,9 +23,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/colorPrimary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
@@ -179,16 +161,6 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-
-    <include
-        android:id="@+id/bottomMenu"
-        layout="@layout/bottom_menu"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:elevation="20dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
