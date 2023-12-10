@@ -94,6 +94,8 @@ public class ReasonsAdapter extends RecyclerView.Adapter<ReasonsAdapter.ReasonsH
                                     holder.pip.setVisibility(View.GONE);
                                     notifyDataSetChanged();
                                     Toast.makeText(context,"Reason successfully edited \uD83C\uDF89",Toast.LENGTH_LONG).show();
+                                }else if(editReason.equals(reason.getReason())){
+                                    Toast.makeText(context,"You kept the same Reason ⚠️",Toast.LENGTH_LONG).show();
                                 }else{
                                     Toast.makeText(context,"Please enter a valid edited Reason ⚠️",Toast.LENGTH_LONG).show();
                                 }

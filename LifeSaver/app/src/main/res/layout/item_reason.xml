@@ -77,8 +77,8 @@
                             android:text="Edit"
                             android:fontFamily="@font/poppins_semibold"
                             android:textSize="15dp"
-                            android:textColor="@color/colorPrimary"
-                            android:backgroundTint="@color/colorSecondary"
+                            android:textColor="@color/colorSecondary"
+                            android:backgroundTint="@color/colorDark"
                             android:textAllCaps="false"
                             android:layout_marginRight="15dp"
                             />

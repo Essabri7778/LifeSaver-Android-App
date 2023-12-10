@@ -2,9 +2,14 @@ package com.example.lifesaver;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
 import android.widget.Toast;
 
 import com.example.lifesaver.dao.ContactDAO;
@@ -60,7 +65,18 @@ public class HomeActivity extends AppCompatActivity {
                     .beginTransaction()
                     .replace(R.id.fragment_container, mySpaceFragment)
                     .commit();
+            updateSelectedItem(R.id.mySpace);
         }
+
+        if(contactDAO.getByName("myHopeEmergency").getPhoneNumber().equals("")){
+            Dialog dialog = new Dialog(this);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setCancelable(true);
+            dialog.setContentView(R.layout.intro_popus);
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            dialog.show();
+        }
+
     }
 
     public void updateSelectedItem(int itemId) {

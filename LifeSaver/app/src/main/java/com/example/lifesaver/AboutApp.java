@@ -4,23 +4,24 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.ImageView;
+import android.widget.TextView;
 
-public class AdviceTechniques extends AppCompatActivity {
+public class AboutApp extends AppCompatActivity {
 
     TextView toolBarText;
-
     ImageView backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_advice_techniques);
+        setContentView(R.layout.activity_about_app);
 
         backButton = findViewById(R.id.backButton);
         toolBarText = findViewById(R.id.toolbartext);
-        toolBarText.setText("Grounding Techniques");
+
+
+        toolBarText.setText("About Your Hope Space");
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override

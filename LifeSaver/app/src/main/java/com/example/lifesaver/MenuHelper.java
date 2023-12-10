@@ -26,10 +26,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MenuHelper {
-
     Context context;
     ContactDAO contactDAO;
-
 
     public MenuHelper(Context context) {
         this.context = context;
@@ -65,10 +63,14 @@ public class MenuHelper {
                 confirmMainButtonPhone.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(context,mainButtonPhone.getText().toString(),Toast.LENGTH_LONG).show();
-                        contactDAO.updatePhoneNum(contactDAO.getByName("myHopeEmergency").getId(),
-                                mainButtonPhone.getText().toString());
-                        dialog.dismiss();
+                        if(mainButtonPhone.getText().toString().equals("")){
+                            Toast.makeText(context,"Please enter a valid phone number⚠️",Toast.LENGTH_LONG).show();
+                        }else{
+                            Toast.makeText(context,"Emergency phone number updated\uD83D\uDEA8",Toast.LENGTH_LONG).show();
+                            contactDAO.updatePhoneNum(contactDAO.getByName("myHopeEmergency").getId(),
+                                    mainButtonPhone.getText().toString());
+                            dialog.dismiss();
+                        }
                     }
                 });
 
@@ -78,21 +80,26 @@ public class MenuHelper {
         buttonEmergency.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                //TODO: call emergency
-                if(ActivityCompat.checkSelfPermission(context, android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
-                    ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.CALL_PHONE},101);
-                }
-                Intent callIntent =new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel: "+contactDAO.getByName("myHopeEmergency").getPhoneNumber()));
-                context.startActivity(callIntent);
+                if(contactDAO.getByName("myHopeEmergency").getPhoneNumber().equals("")){
+                    Toast.makeText(context,"Please first setup an emergency phone number by clicking once⚠️",Toast.LENGTH_LONG).show();
+                }else{
+                    if(ActivityCompat.checkSelfPermission(context, android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
+                        ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.CALL_PHONE},101);
+                    }else{
+                        Intent callIntent =new Intent(Intent.ACTION_CALL);
+                        callIntent.setData(Uri.parse("tel: "+contactDAO.getByName("myHopeEmergency").getPhoneNumber()));
+                        context.startActivity(callIntent);
 
-                Toast.makeText(context,"\uD83D\uDEA8Emergency help is on the way.\nStay safe, You are not alone\uD83E\uDEF6",Toast.LENGTH_LONG).show();
+                        Toast.makeText(context,"\uD83D\uDEA8Emergency help is on the way.\nStay safe, You are not alone\uD83E\uDEF6",Toast.LENGTH_LONG).show();
+                    }
+                }
                 return true;
             }
         });
 
 
     }
+
 
     /*
     public boolean menuNavigation(MenuItem item) {

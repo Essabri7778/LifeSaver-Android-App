@@ -13,6 +13,7 @@
         android:layout_height="match_parent"
         android:hint="add new one?"
         android:fontFamily="@font/poppins_semibold"
+        android:backgroundTint="@color/colorSecondary"
         android:textSize="15dp"
         />
     <EditText
@@ -30,8 +31,8 @@
             android:text="Add to own"
             android:fontFamily="@font/poppins_semibold"
             android:textSize="15dp"
-            android:textColor="@color/colorSecondary"
-            android:backgroundTint="@color/colorDark"
+            android:textColor="@color/colorPrimary"
+            android:backgroundTint="@color/colorSecondary"
             android:layout_marginHorizontal="10dp"
             android:textAllCaps="false"
             />

@@ -73,7 +73,7 @@ public class HomeFragment extends Fragment {
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, adviceFragment);
                 transaction.commit();
-                ((HomeActivity) requireActivity()).updateSelectedItem(R.id.advice);
+                ((HomeActivity) getActivity()).updateSelectedItem(R.id.advice);
             }
         });
 

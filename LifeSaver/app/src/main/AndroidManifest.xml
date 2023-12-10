@@ -4,13 +4,11 @@
     <!-- add READ_CONTACTS permission here -->
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
-
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
 
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
-
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -22,29 +20,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LifeSaver"
         tools:targetApi="31">
-
+        <activity
+            android:name=".AboutApp"
+            android:exported="false" />
         <activity
             android:name=".AdviceTechniques"
             android:exported="true" />
-
-
         <activity
             android:name=".MyOwnResourcesActivity"
             android:exported="true" />
-
-
         <activity
             android:name=".Survey"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
-
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".ReasonActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".ContactDetails"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".AllContactsActivity"
             android:exported="true" />
@@ -60,7 +55,6 @@
             android:name=".EditReasonActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-
         <activity
             android:name=".HomeActivity"
             android:exported="true"
@@ -71,16 +65,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".AdviceMyths"
-            android:exported="true">
-
-        </activity>
-        
-
-
+            android:exported="true"></activity>
     </application>
 
 </manifest>
