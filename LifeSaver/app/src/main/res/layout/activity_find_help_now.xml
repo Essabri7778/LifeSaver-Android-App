@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FindHelpNowActivity"
+    android:orientation="vertical"
+    android:background="@color/white">
+    <!-- START TOOLBAR -->
+    <include layout="@layout/toolbar_1"
+        android:id="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <!-- END TOOLBAR -->
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+
+    <RelativeLayout
+        android:id="@+id/urgent_support"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:padding="6dip"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+                >
+
+            <ImageView
+                android:id="@+id/resource_logo1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/urgent"
+                app:tint="@color/colorPrimary"
+                android:layout_centerVertical="true"
+
+                />
+
+            <LinearLayout
+                android:id="@+id/text_layout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_toEndOf= "@id/resource_logo1"
+                android:layout_centerVertical="true"
+                >
+                <TextView
+                    android:id="@+id/resource_name1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorDark"
+                    android:layout_toEndOf= "@id/resource_logo"
+                    android:layout_centerVertical="true"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:typeface="sans"
+                    android:text="Urgent Support"
+                    android:fontFamily="@font/poppins_semibold"/>
+                <TextView
+                    android:id="@+id/resource_desc1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorDark"
+                    android:layout_below="@id/resource_logo"
+                    android:layout_centerVertical="true"
+                    android:textStyle="bold"
+                    android:textSize="12dp"
+                    android:layout_marginLeft="20dp"
+                    android:typeface="sans"
+                    android:text="Resource for emergency situation "
+                    android:fontFamily="@font/poppins"
+                    android:alpha="0.6"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_alignEnd="@+id/text_layout1"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="1dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/baseline_keyboard_arrow_right_24"></ImageView>
+        </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="4dp"
+        android:background="@color/colorDark"
+        android:alpha="0.2"
+        />
+    <RelativeLayout
+        android:id="@+id/online_resource"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:padding="6dip"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        >
+
+        <ImageView
+            android:id="@+id/resource_logo2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/online"
+            android:tint="@color/colorPrimary"
+            android:layout_centerVertical="true"
+
+            />
+
+        <LinearLayout
+            android:id="@+id/text_layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toEndOf= "@id/resource_logo2"
+            android:layout_centerVertical="true"
+            >
+            <TextView
+                android:id="@+id/resource_name2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorDark"
+                android:layout_toEndOf= "@id/resource_logo2"
+                android:layout_centerVertical="true"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                android:typeface="sans"
+                android:text="Online Resource"
+                android:fontFamily="@font/poppins_semibold"/>
+            <TextView
+                android:id="@+id/resource_desc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorDark"
+                android:layout_below="@id/resource_logo2"
+                android:layout_centerVertical="true"
+                android:textStyle="bold"
+                android:textSize="12dp"
+                android:layout_marginLeft="20dp"
+                android:typeface="sans"
+                android:text="Resources you can find online"
+                android:fontFamily="@font/poppins"
+                android:alpha="0.6"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignEnd="@+id/text_layout2"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="1dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/baseline_keyboard_arrow_right_24"></ImageView>
+
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="4dp"
+        android:background="@color/colorDark"
+        android:alpha="0.2"
+        />
+
+    <RelativeLayout
+        android:id="@+id/contacts"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:padding="6dip"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/resource_logo3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/baseline_contacts_24"
+            android:layout_centerVertical="true"
+
+            />
+
+        <LinearLayout
+            android:id="@+id/text_layout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toEndOf= "@id/resource_logo3"
+            android:layout_centerVertical="true"
+            >
+            <TextView
+                android:id="@+id/resource_name3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorDark"
+                android:layout_toEndOf= "@id/resource_logo3"
+                android:layout_centerVertical="true"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                android:typeface="sans"
+                android:text="Contacts"
+                android:fontFamily="@font/poppins_semibold"/>
+            <TextView
+                android:id="@+id/resource_desc3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorDark"
+                android:layout_below="@id/resource_logo3"
+                android:layout_centerVertical="true"
+                android:textStyle="bold"
+                android:textSize="12dp"
+                android:layout_marginLeft="20dp"
+                android:typeface="sans"
+                android:text="people i know who can help"
+                android:fontFamily="@font/poppins"
+                android:alpha="0.6"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignEnd="@+id/text_layout3"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="1dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/baseline_keyboard_arrow_right_24"></ImageView>
+        <TextView
+            android:id="@+id/hidden_id3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"></TextView>
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="4dp"
+        android:background="@color/colorDark"
+        android:alpha="0.2"
+        />
+
+    <RelativeLayout
+        android:id="@+id/own_resources"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:padding="6dip"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        >
+
+        <ImageView
+            android:id="@+id/resource_logo4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ownres"
+            app:tint="@color/colorPrimary"
+            android:layout_centerVertical="true"
+
+            />
+
+        <LinearLayout
+            android:id="@+id/text_layout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toEndOf= "@id/resource_logo4"
+            android:layout_centerVertical="true"
+            >
+            <TextView
+                android:id="@+id/resource_name4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorDark"
+                android:layout_toEndOf= "@id/resource_logo4"
+                android:layout_centerVertical="true"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                android:typeface="sans"
+                android:text="My Own Reasources"
+                android:fontFamily="@font/poppins_semibold"/>
+            <TextView
+                android:id="@+id/resource_desc4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorDark"
+                android:layout_below="@id/resource_logo4"
+                android:layout_centerVertical="true"
+                android:textStyle="bold"
+                android:textSize="12dp"
+                android:layout_marginLeft="20dp"
+                android:typeface="sans"
+                android:text="add further sources of suport"
+                android:fontFamily="@font/poppins"
+                android:alpha="0.6"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignEnd="@+id/text_layout4"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="1dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/baseline_keyboard_arrow_right_24"></ImageView>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="4dp"
+        android:background="@color/colorDark"
+        android:alpha="0.2"
+        />
+
+</LinearLayout>
+
+    <!-- Empty layout (hidden initially) -->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout >

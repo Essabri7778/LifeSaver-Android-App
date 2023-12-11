@@ -28,6 +28,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_CONTACT_PHONE_NUMBER = "CONTACT_PHONE_NUMBER";
     public static final String COLUMN_CONTACT_PHOTO_URI = "CONTACT_PHOTO_URI";
 
+    // COLUMN OF TABLE RESOURCES
+    public static final String RESOURCE_TABLE = "RESOURCE";
+    public static final String COLUMN_RESOURCE_ID = "RESOURCE_ID";
+    public static final String COLUMN_RESOURCE_NAME = "RESOURCE_NAME";
+    public static final String COLUMN_RESOURCE_DESCRIPTION = "RESOURCE_DESCRIPTION";
+    public static final String COLUMN_RESOURCE_PHONE = "RESOURCE_PHONE";
+    public static final String COLUMN_RESOURCE_SMS = "RESOURCE_SMS";
+    public static final String COLUMN_RESOURCE_EMAIL = "RESOURCE_EMAIL";
+    public static final String COLUMN_RESOURCE_WEBSITE = "RESOURCE_WEBSITE";
+    public static final String COLUMN_RESOURCE_LOGO = "RESOURCE_LOGO";
+    public static final String COLUMN_RESOURCE_TYPE = "RESOURCE_TYPE";
+
 
 
 
@@ -83,6 +95,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 REASON_TABLE_SECTIONS + "(" + REASON_COLUMN_SECTION_ID + "))";
 
         db.execSQL(createReasonQuery);
+
+        // Create TABLE RESOURCES
+        String createResourceStatement = "CREATE TABLE " + RESOURCE_TABLE + " (" + COLUMN_RESOURCE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                                                                                + COLUMN_RESOURCE_NAME + " TEXT, "
+                                                                                + COLUMN_RESOURCE_DESCRIPTION + " TEXT, "
+                                                                                + COLUMN_RESOURCE_PHONE + " TEXT, "
+                                                                                + COLUMN_RESOURCE_SMS + " TEXT, "
+                                                                                + COLUMN_RESOURCE_EMAIL + " TEXT, "
+                                                                                + COLUMN_RESOURCE_WEBSITE + " TEXT, "
+                                                                                + COLUMN_RESOURCE_LOGO + " TEXT, "
+                                                                                + COLUMN_RESOURCE_TYPE + " INTEGER)";
+        db.execSQL(createResourceStatement);
 
     }
 

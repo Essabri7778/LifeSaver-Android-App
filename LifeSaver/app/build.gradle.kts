@@ -41,5 +41,7 @@ dependencies {
 
     implementation ("de.hdodenhof:circleimageview:3.1.0")
 
+    implementation ("androidx.core:core-splashscreen:1.0.1")
+
 
 }

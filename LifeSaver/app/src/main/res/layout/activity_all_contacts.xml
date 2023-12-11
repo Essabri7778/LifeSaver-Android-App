@@ -5,52 +5,62 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AllContactsActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white">
+    <!-- START TOOLBAR -->
+    <include layout="@layout/toolbar_1"
+        android:id="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white"
+        />
+    <!-- END TOOLBAR -->
 
+    <ListView
+        android:id="@+id/contactList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="80dp"
+        ></ListView>
     <!-- Empty layout (hidden initially) -->
     <LinearLayout
         android:id="@+id/emptyLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible"
+        android:gravity="center"
         android:orientation="vertical"
-        android:gravity="center">
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <TextView
             android:id="@+id/emptyTextView"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:text="You haven't add any contacts yet"
-            android:textSize="18sp"
-            android:textColor="@android:color/white"
+            android:alpha="0.7"
             android:gravity="center"
+            android:text="You haven't add any contacts yet"
             android:textAlignment="center"
-            android:alpha="0.7"/>
-
-
+            android:textColor="@color/colorDark"
+            android:fontFamily="@font/poppins"
+            android:textSize="18sp" />
     </LinearLayout>
-
-    <ListView
-        android:id="@+id/contactList"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </ListView>
-
-
-
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:layout_marginBottom="28dp"
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/baseline_add_24" />
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        app:srcCompat="@drawable/baseline_add_24"
+        app:tint="@color/white"
+        app:backgroundTint="@color/colorPrimary"/>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout >
+</androidx.constraintlayout.widget.ConstraintLayout>

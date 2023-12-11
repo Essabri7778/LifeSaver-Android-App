@@ -42,6 +42,9 @@ public class AllContactsActivity extends AppCompatActivity {
     FloatingActionButton addButton;
     LinearLayout emptyLayout;
 
+    ImageView backButton;
+    TextView toolbartext;
+
     private static final int REQUEST_READ_CONTACTS_PERMISSION = 0;
     private static final int REQUEST_CONTACT = 1;
 
@@ -65,7 +68,7 @@ public class AllContactsActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Object o = listView.getItemAtPosition(position);
                 ContactBo contact = (ContactBo) o;
-                populateForm(contact,emptyLayout);
+                populateForm(contact);
             }
         });
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener(){
@@ -87,10 +90,22 @@ public class AllContactsActivity extends AppCompatActivity {
         });
 
 
+        backButton = findViewById(R.id.backButton);
+        toolbartext = findViewById(R.id.toolbartext);
+        toolbartext.setText("All Contacts");
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getOnBackPressedDispatcher().onBackPressed();
+            }
+        });
+
+
 
     }
 
-    private void populateForm(ContactBo contact,LinearLayout emptyLayout) {
+    private void populateForm(ContactBo contact) {
         Intent i = new Intent(AllContactsActivity.this,ContactDetails.class);
         i.putExtra("firstName",contact.getPrimaryName());
         i.putExtra("secondName",contact.getAlternativeName());

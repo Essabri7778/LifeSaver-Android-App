@@ -22,6 +22,9 @@ public class ContactDetails extends AppCompatActivity {
     ImageView callBtn;
     ImageView messageBtn;
 
+    ImageView backButton;
+    TextView toolbartext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +63,17 @@ public class ContactDetails extends AppCompatActivity {
                 Uri smsUri = Uri.parse("smsto:" + (i.getStringExtra("phone")).toString());
                 Intent smsIntent = new Intent(Intent.ACTION_SENDTO, smsUri);
                 startActivity(smsIntent);
+            }
+        });
+
+        backButton = findViewById(R.id.backButton);
+        toolbartext = findViewById(R.id.toolbartext);
+        toolbartext.setText("Contact Details");
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getOnBackPressedDispatcher().onBackPressed();
             }
         });
     }

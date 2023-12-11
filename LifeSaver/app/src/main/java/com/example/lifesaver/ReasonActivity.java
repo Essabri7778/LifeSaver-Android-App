@@ -47,7 +47,7 @@ public class ReasonActivity extends AppCompatActivity {
 
         backButton = findViewById(R.id.backButton);
         toolbartext = findViewById(R.id.toolbartext);
-        toolbartext.setText("Reason Activity");
+        toolbartext.setText("Reason To Live");
 
         reasonSectionDAO = new ReasonSectionDAO(this);
         reasonSections = reasonSectionDAO.getAll();

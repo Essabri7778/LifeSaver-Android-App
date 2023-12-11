@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
@@ -5,43 +6,56 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".AdviceTechniques">
 
-<com.google.android.material.appbar.AppBarLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:elevation="20dp"
-    android:backgroundTint="@color/white">
+    <include layout="@layout/toolbar_1"
+        android:id="@+id/topToolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white"
+        />
 
-    <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
 
-        <!-- Your Toolbar content -->
-        <include layout="@layout/toolbar_1"/>
-
-    </androidx.appcompat.widget.Toolbar>
-
-</com.google.android.material.appbar.AppBarLayout>
 
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="60dp"
-    android:background="@color/white">
+    android:background="@color/white"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        >
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorDark"
-            android:fontFamily="@font/poppins"
-            android:text="These techniques can help us deal with overwhelming anxiety, pain or emotions. Here are a few examples of grounding techniques:"
-            android:paddingTop="5dp"
-            android:paddingLeft="15dp"/>
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:background="@drawable/shape"
+            android:backgroundTint="@color/colorPrimary">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ground"
+                android:layout_gravity="center"
+                app:tint="@color/colorSecondary" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="12dp"
+                android:layout_marginLeft="10dp"
+                android:text="These techniques can help us deal with overwhelming anxiety, pain or emotions. Here are a few examples of grounding techniques:"
+                android:textColor="@color/colorSecondary"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
 
 
         <LinearLayout
@@ -50,10 +64,7 @@ tools:context=".AdviceTechniques">
             android:layout_marginTop="10dp"
             android:orientation="vertical"
             android:background="@color/colorSecondary"
-            android:paddingLeft="15dp"
-            android:paddingTop="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="5dp"
+            android:padding="5dp"
             >
 
             <LinearLayout
@@ -61,7 +72,7 @@ tools:context=".AdviceTechniques">
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginBottom="5dp"
-                android:gravity="center">
+                android:gravity="top">
 
                 <TextView
                     android:layout_width="28dp"
@@ -69,10 +80,11 @@ tools:context=".AdviceTechniques">
                     android:background="@drawable/circle_background"
                     android:gravity="center"
                     android:text="1"
+                    android:layout_marginTop="7dp"
                     android:textColor="@android:color/white"
                     android:padding="5dp"
                     android:fontFamily="@font/poppins_bold"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginRight="10dp"
                     />
 
                 <TextView
@@ -96,17 +108,15 @@ tools:context=".AdviceTechniques">
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:orientation="vertical"
-            android:paddingLeft="15dp"
-            android:paddingTop="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="5dp">
+            android:padding="5dp"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginBottom="5dp"
-                android:gravity="center"
+                android:gravity="top"
                 >
 
                 <TextView
@@ -118,7 +128,8 @@ tools:context=".AdviceTechniques">
                     android:textColor="@android:color/white"
                     android:padding="5dp"
                     android:fontFamily="@font/poppins_bold"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="10dp"
                     />
 
                 <TextView
@@ -141,17 +152,15 @@ tools:context=".AdviceTechniques">
             android:layout_marginTop="5dp"
             android:orientation="vertical"
             android:background="@color/colorSecondary"
-            android:paddingLeft="15dp"
-            android:paddingTop="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="5dp">
+            android:padding="5dp"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginBottom="5dp"
-                android:gravity="center"
+                android:gravity="top"
                 >
 
                 <TextView
@@ -163,7 +172,8 @@ tools:context=".AdviceTechniques">
                     android:textColor="@android:color/white"
                     android:padding="5dp"
                     android:fontFamily="@font/poppins_bold"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
                     />
 
                 <TextView
@@ -185,17 +195,15 @@ tools:context=".AdviceTechniques">
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:orientation="vertical"
-            android:paddingLeft="15dp"
-            android:paddingTop="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="5dp">
+            android:padding="5dp"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginBottom="5dp"
-                android:gravity="center"
+                android:gravity="top"
                 >
 
                 <TextView
@@ -207,7 +215,8 @@ tools:context=".AdviceTechniques">
                     android:textColor="@android:color/white"
                     android:padding="5dp"
                     android:fontFamily="@font/poppins_bold"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
                     />
 
                 <TextView
@@ -229,17 +238,15 @@ tools:context=".AdviceTechniques">
             android:layout_marginTop="5dp"
             android:orientation="vertical"
             android:background="@color/colorSecondary"
-            android:paddingLeft="15dp"
-            android:paddingTop="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="5dp">
+            android:padding="5dp"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginBottom="5dp"
-                android:gravity="center"
+                android:gravity="top"
                 >
 
                 <TextView
@@ -251,7 +258,8 @@ tools:context=".AdviceTechniques">
                     android:textColor="@android:color/white"
                     android:padding="5dp"
                     android:fontFamily="@font/poppins_bold"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
                     />
 
                 <TextView
@@ -272,17 +280,15 @@ tools:context=".AdviceTechniques">
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:orientation="vertical"
-            android:paddingLeft="15dp"
-            android:paddingTop="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="5dp">
+            android:padding="5dp"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginBottom="5dp"
-                android:gravity="center"
+                android:gravity="top"
                 >
 
                 <TextView
@@ -294,7 +300,8 @@ tools:context=".AdviceTechniques">
                     android:textColor="@android:color/white"
                     android:padding="5dp"
                     android:fontFamily="@font/poppins_bold"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
                     />
 
                 <TextView
@@ -317,17 +324,15 @@ tools:context=".AdviceTechniques">
             android:layout_marginTop="5dp"
             android:orientation="vertical"
             android:background="@color/colorSecondary"
-            android:paddingLeft="15dp"
-            android:paddingTop="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="5dp">
+            android:padding="5dp"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginBottom="5dp"
-                android:gravity="center"
+                android:gravity="top"
                 >
 
                 <TextView
@@ -339,7 +344,8 @@ tools:context=".AdviceTechniques">
                     android:textColor="@android:color/white"
                     android:padding="5dp"
                     android:fontFamily="@font/poppins_bold"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
                     />
 
                 <TextView
@@ -359,17 +365,15 @@ tools:context=".AdviceTechniques">
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:orientation="vertical"
-            android:paddingLeft="15dp"
-            android:paddingTop="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="5dp">
+            android:padding="5dp"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginBottom="5dp"
-                android:gravity="center"
+                android:gravity="top"
                 >
 
                 <TextView
@@ -381,7 +385,8 @@ tools:context=".AdviceTechniques">
                     android:textColor="@android:color/white"
                     android:padding="5dp"
                     android:fontFamily="@font/poppins_bold"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
                     />
 
                 <TextView
@@ -402,27 +407,27 @@ tools:context=".AdviceTechniques">
             android:layout_marginTop="5dp"
             android:orientation="vertical"
             android:background="@color/colorSecondary"
-            android:paddingLeft="15dp"
-            android:paddingTop="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="5dp">
+            android:padding="5dp"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginBottom="5dp"
+                android:gravity="top"
                 >
 
                 <TextView
                     android:layout_width="28dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginRight="10dp"
                     android:background="@drawable/circle_background"
                     android:fontFamily="@font/poppins_bold"
                     android:gravity="center"
                     android:padding="5dp"
                     android:text="9"
+                    android:layout_marginTop="7dp"
                     android:textColor="@android:color/white" />
 
                 <TextView
@@ -442,16 +447,15 @@ tools:context=".AdviceTechniques">
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:orientation="vertical"
-            android:paddingLeft="15dp"
-            android:paddingTop="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="5dp">
+            android:padding="5dp"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginBottom="5dp"
+                android:gravity="top"
                 >
 
                 <TextView
@@ -463,7 +467,8 @@ tools:context=".AdviceTechniques">
                     android:textColor="@android:color/white"
                     android:padding="5dp"
                     android:fontFamily="@font/poppins_bold"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
                     />
 
                 <TextView
@@ -482,10 +487,7 @@ tools:context=".AdviceTechniques">
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:orientation="vertical"
-            android:paddingLeft="15dp"
-            android:paddingTop="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="5dp"
+            android:padding="5dp"
             android:background="@color/colorSecondary">
 
             <LinearLayout
@@ -493,7 +495,7 @@ tools:context=".AdviceTechniques">
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginBottom="5dp"
-                android:gravity="center"
+                android:gravity="top"
                 >
 
                 <TextView
@@ -505,7 +507,8 @@ tools:context=".AdviceTechniques">
                     android:textColor="@android:color/white"
                     android:padding="5dp"
                     android:fontFamily="@font/poppins_bold"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
                     />
 
                 <TextView
@@ -525,29 +528,29 @@ tools:context=".AdviceTechniques">
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:orientation="vertical"
-            android:paddingLeft="15dp"
-            android:paddingTop="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="5dp">
+            android:padding="5dp"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginBottom="5dp"
-                android:gravity="center"
+                android:gravity="top"
                 >
 
                 <TextView
                     android:layout_width="28dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginRight="10dp"
                     android:background="@drawable/circle_background"
                     android:fontFamily="@font/poppins_bold"
                     android:gravity="center"
                     android:padding="5dp"
                     android:text="12"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="7dp"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"

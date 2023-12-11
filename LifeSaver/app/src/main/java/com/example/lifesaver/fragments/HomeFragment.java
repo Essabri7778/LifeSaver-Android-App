@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.lifesaver.FindHelpNowActivity;
 import com.example.lifesaver.HomeActivity;
 import com.example.lifesaver.R;
 import com.example.lifesaver.ReasonActivity;
@@ -73,14 +74,14 @@ public class HomeFragment extends Fragment {
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, adviceFragment);
                 transaction.commit();
-                ((HomeActivity) requireActivity()).updateSelectedItem(R.id.advice);
+                ((HomeActivity) getActivity()).updateSelectedItem(R.id.advice);
             }
         });
 
         goToHelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),ReasonActivity.class);
+                Intent intent = new Intent(getActivity(), FindHelpNowActivity.class);
                 startActivity(intent);
             }
         });

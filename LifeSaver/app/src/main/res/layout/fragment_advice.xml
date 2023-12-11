@@ -8,6 +8,15 @@
     android:background="@color/white"
     >
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomMenu"
+        >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -259,6 +268,8 @@
     </LinearLayout>
 
     </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
     <ImageView
         android:layout_width="match_parent"

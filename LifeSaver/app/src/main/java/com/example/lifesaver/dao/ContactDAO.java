@@ -95,7 +95,7 @@ public class ContactDAO {
         Uri resourceUri = Uri.parse("android.resource://com.example.lifesaver/" + resourceId);
 
         addContact(new ContactBo("","myHopeEmergency",
-                "myHopeEmergency", resourceUri,"066"));
+                "myHopeEmergency", resourceUri,""));
     }
 
     public ContactBo getByName(String name) {

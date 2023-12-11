@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutApp">
+
+    <include layout="@layout/toolbar_1"
+        android:id="@+id/topToolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:background="@color/white"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:background="@drawable/shape"
+                android:backgroundTint="@color/colorPrimary">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/about"
+                    android:layout_gravity="center"
+                    app:tint="@color/colorSecondary" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="13dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="About Your Hope Space: Your Companion in Tough Times"
+                    android:textColor="@color/colorSecondary"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="About us"
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14dp"
+                        android:text="Congratulations on discovering Your Hope Space, a sanctuary of support. Your Hope Space is a dedicated suicide prevention app, ready to assist you if you're grappling with thoughts of suicide or if you're worried about someone else. With just a few taps, you can access immediate crisis support."
+                        android:textColor="@color/colorDark"
+                        android:fontFamily="@font/poppins_semibold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:text="Take a moment to explore its features tailored to your well-being. This app is designed to be your companion, free to use, and committed to confidentiality. Your journey towards hope and healing starts here."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins_semibold"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="How to Use Your Hope Space "
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:text="Crisis Support in a Tap: Immediate assistance is just a few taps away. Whether you're navigating personal struggles or concerned for someone else, this app provides support."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins_semibold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:text="🌟Personalize Your Experience:"
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:text="🔹Find Help Space: Connect instantly to a network of emergency contacts, and customize with your own additions.
+                    \n🔹Your Safety Plan: Strategize for crisis moments.
+                    \n🔹Reasons for Living: Choose personal motivations.
+                    \n🔹Survey Space: Guiding you to the next step in utilizing the app.
+                    \n🔹Advice Space: Find helpful insights, including information on myths about suicide and grounding techniques.
+                    \n🔹Your Hope Main Button: Quick and easy access for emergency calls."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins_semibold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:text="🌟Remember"
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:text="🔹Suicidal thoughts are temporary.
+                    \n🔹A safety plan helps you cope and protect yourself.
+                    \n🔹Easy access to emergency resources is available if needed.
+                    \n🔹Long-term recovery is supported with a comprehensive guide."
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins_semibold"/>
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:layout_marginBottom="15dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Developed by"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                >
+
+                <!--nss-->
+                <LinearLayout
+                    android:id="@+id/ben"
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/shape_space"
+                    android:padding="5dp"
+                    >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textSize="10dp"
+                            android:lineSpacingMultiplier="0.8"
+                            android:textAlignment="center"
+                            android:text="BENMAMOUN\nNassim"
+                            android:textColor="@color/white"
+                            android:layout_gravity="center"
+                            />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:src="@drawable/github"
+                        app:tint="@color/white"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+                <!--abb-->
+                <LinearLayout
+                    android:id="@+id/che"
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/shape_space"
+                    android:padding="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="10dp"
+                        android:lineSpacingMultiplier="0.8"
+                        android:textAlignment="center"
+                        android:text="CHENTOUI\nAbdelali"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center"
+                        />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:src="@drawable/github"
+                        app:tint="@color/white"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+                <!--fzz-->
+                <LinearLayout
+                    android:id="@+id/ess"
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/shape_space"
+                    android:padding="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="10dp"
+                        android:lineSpacingMultiplier="0.8"
+                        android:textAlignment="center"
+                        android:text="ESSABRI\nFatima Zaharae"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center"
+                        />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:src="@drawable/github"
+                        app:tint="@color/white"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+
+
+
+</RelativeLayout>
