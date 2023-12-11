@@ -6,6 +6,9 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".AdviceMyths">
 
+
+
+
     <include layout="@layout/toolbar_1"
         android:id="@+id/topToolbar"
         app:layout_constraintTop_toTopOf="parent"
@@ -13,6 +16,7 @@ tools:context=".AdviceMyths">
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@color/white"
         />
+
 
 <ScrollView
     android:layout_width="match_parent"
