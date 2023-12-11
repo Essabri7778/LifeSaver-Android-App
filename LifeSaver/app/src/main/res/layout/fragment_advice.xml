@@ -272,6 +272,7 @@
     </androidx.core.widget.NestedScrollView>
 
     <ImageView
+        android:id="@+id/bookImg"
         android:layout_width="match_parent"
         android:layout_height="420dp"
         android:src="@drawable/advicehome"
