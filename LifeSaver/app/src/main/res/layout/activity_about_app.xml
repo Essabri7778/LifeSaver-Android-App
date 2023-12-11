@@ -32,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="5dp"
+                android:padding="10dp"
                 android:background="@drawable/shape"
                 android:backgroundTint="@color/colorPrimary">
                 <ImageView
@@ -46,7 +46,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_bold"
-                    android:textSize="15dp"
+                    android:textSize="13dp"
                     android:layout_marginLeft="10dp"
                     android:text="About Your Hope Space: Your Companion in Tough Times"
                     android:textColor="@color/colorSecondary"
