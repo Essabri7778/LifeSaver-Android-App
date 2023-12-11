@@ -52,9 +52,6 @@
             android:name=".Survey"
             android:exported="true" />
         <activity
-            android:name=".ContactDetails"
-            android:exported="false" />
-        <activity
             android:name=".AllContactsActivity"
             android:exported="true" />
         <activity

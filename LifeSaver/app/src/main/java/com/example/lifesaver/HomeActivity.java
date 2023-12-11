@@ -1,11 +1,13 @@
 package com.example.lifesaver;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.splashscreen.SplashScreen;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
 import android.app.Activity;
@@ -158,6 +160,7 @@ public class HomeActivity extends AppCompatActivity {
                 return true;
             }
         });
+
     }
 
     public void updateSelectedItem(int itemId) {
@@ -286,6 +289,5 @@ public class HomeActivity extends AppCompatActivity {
             }
         }
     }
-
 
 }

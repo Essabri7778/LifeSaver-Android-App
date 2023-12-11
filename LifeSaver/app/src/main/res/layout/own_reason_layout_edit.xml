@@ -37,4 +37,11 @@
             android:textAllCaps="false"
             />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="*to edit or delete long hover on the reason"
+        />
+
 </LinearLayout>

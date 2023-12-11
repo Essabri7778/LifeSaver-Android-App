@@ -27,6 +27,8 @@ public class ReasonsAdapter extends RecyclerView.Adapter<ReasonsAdapter.ReasonsH
     List<Reason> reasons;
     List<Reason> reasonsModified;
 
+    ReasonsAdapter reasonsAdapter;
+
     boolean isEditMode;
 
     ReasonDAO reasonDAO;
@@ -88,7 +90,7 @@ public class ReasonsAdapter extends RecyclerView.Adapter<ReasonsAdapter.ReasonsH
                             @Override
                             public void onClick(View v) {
                                 String editReason = holder.ownReason.getText().toString();
-                                if(!editReason.equals("")){
+                                if(!editReason.equals("") && !editReason.equals(reason.getReason())){
                                     reason.setReason(holder.ownReason.getText().toString());
                                     reasonDAO.updateText(reason.getId(),holder.ownReason.getText().toString());
                                     holder.pip.setVisibility(View.GONE);
@@ -132,7 +134,7 @@ public class ReasonsAdapter extends RecyclerView.Adapter<ReasonsAdapter.ReasonsH
 
     public void addReason(Reason reason) {
         reasons.add(reason);
-        notifyItemInserted(reasons.size() - 1);
+        notifyDataSetChanged();
     }
 
     @Override

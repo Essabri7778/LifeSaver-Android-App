@@ -1,6 +1,7 @@
 package com.example.lifesaver;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.view.LayoutInflater;
@@ -9,6 +10,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
+import androidx.core.widget.ImageViewCompat;
 
 import com.example.lifesaver.bo.ContactBo;
 
@@ -50,7 +54,7 @@ public class FindHelpCustomAdapter extends BaseAdapter {
             holder = new ViewHolder();
             holder.contactNameView = (TextView) convertView.findViewById(R.id.contact_name);
             // add the image
-            holder.contactImgView = (CircleImageView) convertView.findViewById(R.id.contact_img);
+            holder.contactImgView = convertView.findViewById(R.id.contact_img);
             holder.hiddenId = (TextView) convertView.findViewById(R.id.hidden_id);
             convertView.setTag(holder);
         }else{
@@ -62,7 +66,9 @@ public class FindHelpCustomAdapter extends BaseAdapter {
             holder.contactImgView.setImageURI(contactList.get(position).getPhoto());
 
         }else{
-            holder.contactImgView.setImageResource(R.drawable.baseline_person_24);
+            int color = ContextCompat.getColor(context, R.color.colorPrimary);
+            holder.contactImgView.setImageResource(R.drawable.myself);
+            ImageViewCompat.setImageTintList(holder.contactImgView, ColorStateList.valueOf(color));
         }
         return convertView;
 
@@ -74,7 +80,7 @@ public class FindHelpCustomAdapter extends BaseAdapter {
 
     static class ViewHolder {
         TextView contactNameView;
-        CircleImageView contactImgView;
+        ImageView contactImgView;
         TextView hiddenId;
     }
 }

@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.example.lifesaver.bo.SafetyPlanBo;
 import com.example.lifesaver.dao.SafetyPlanDAO;
 import com.example.lifesaver.db.DatabaseHelper;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,7 @@ public class EditSafetyPlan extends AppCompatActivity {
 
     EditText et1, et2, et3, et4, et5, et6;
     ArrayList<EditText> arrayList;
-    Button btn_save;
+    FloatingActionButton btn_save;
 
     ImageView back;
 
