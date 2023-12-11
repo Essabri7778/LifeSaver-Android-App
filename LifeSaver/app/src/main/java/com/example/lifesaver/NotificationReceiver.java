@@ -50,7 +50,8 @@ public class NotificationReceiver extends BroadcastReceiver {
                 .setContentText(message)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setContentIntent(pendingIntent) // Set the click action
-                .setAutoCancel(true); // Close the notification when clicked
+                .setAutoCancel(true)// Close the notification when clicked
+                .setStyle(new NotificationCompat.BigTextStyle().bigText(message)); // Make the notification expandable with longer text;
 
         // Show the notification
         notificationManager.notify(notificationId, builder.build());
