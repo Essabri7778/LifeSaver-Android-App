@@ -17,6 +17,7 @@
     >
 
     <TextView
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_bold"
@@ -29,12 +30,13 @@
         />
 
     <TextView
+        android:id="@+id/para"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_semibold"
         android:textSize="18dp"
         android:textAlignment="center"
-        android:text="This will remove the contact from your list in Stay alive, not from your device"
+        android:text="This will remove the contact from the app, not from your device"
         android:textColor="@color/colorPrimary"
         android:layout_marginBottom="8dp"
         />
