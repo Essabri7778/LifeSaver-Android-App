@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -67,6 +68,7 @@ public class OnlineSupportCustomAdapter extends BaseAdapter {
             holder.websiteLayout = (LinearLayout) convertView.findViewById(R.id.website_layout);
             holder.emailLayout = (LinearLayout) convertView.findViewById(R.id.email_layout);
             holder.bookBtn = (FloatingActionButton) convertView.findViewById(R.id.booked_button);
+            holder.moreInfoBtn = (Button) convertView.findViewById(R.id.more_info);
             holder.key = (TextView) convertView.findViewById(R.id.key);
             convertView.setTag(holder);
         }else{
@@ -81,20 +83,29 @@ public class OnlineSupportCustomAdapter extends BaseAdapter {
         holder.bookBtn.setImageResource(condition ? R.drawable.outline_bookmark_add_24_blue:R.drawable.baseline_bookmark_added_24_white);
         holder.key.setText(keys.get(position));
 
+        /** LOADING LOGO */
         Picasso.get().load(supportList.get(position).getLogo()).into(holder.supportLogoView);
+
+        /** START HANDLE EMAIL BUTTON */
         holder.emailLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 initiateEmail(supportList.get(position).getEmail());
             }
         });
+        /** END HANDLE EMAIL BUTTON */
+
+        /** START HANDLE WEBSITE BUTTON */
         holder.websiteLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 VisiteWebSite(supportList.get(position).getWebsite());
             }
         });
+        /** END HANDLE WEBSITE BUTTON */
 
+
+        /** START HANDLE BOOKED BUTTON */
         holder.bookBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,7 +131,33 @@ public class OnlineSupportCustomAdapter extends BaseAdapter {
             //handleBookedResources();
 
         });
+        /** END HANDLE BOOKED BUTTON */
+
+        /** START HANDLE MORE INFO BUTTON */
+        holder.moreInfoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                populateOnlineSupportForm(supportList.get(position));
+            }
+        });
+        /** END HANDLE MORE INFO BUTTON */
         return convertView;
+    }
+
+    private void populateOnlineSupportForm(OnlineSupportBo onlineSupportBo) {
+        Intent i = new Intent(context,DisplayOnlineSupportActivity.class);
+        i.putExtra("name",onlineSupportBo.getName());
+        i.putExtra("logo",onlineSupportBo.getLogo());
+        i.putExtra("desc",onlineSupportBo.getDescription());
+        i.putExtra("email",onlineSupportBo.getEmail());
+        i.putExtra("website",onlineSupportBo.getWebsite());
+        i.putExtra("booked",onlineSupportBo.getBooked());
+        i.putExtra("type",onlineSupportBo.getType());
+
+        if (context != null && context instanceof Activity) {
+            Activity activity = (Activity) context;
+            activity.startActivity(i);
+        }
     }
 
     private void handleBookedResources() {
@@ -167,5 +204,6 @@ public class OnlineSupportCustomAdapter extends BaseAdapter {
         LinearLayout websiteLayout;
         FloatingActionButton bookBtn;
         TextView key;
+        Button moreInfoBtn;
     }
 }

@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -67,6 +68,7 @@ public class UrgentSupportCustomAdapter extends BaseAdapter {
             holder.phoneLayout = (LinearLayout) convertView.findViewById(R.id.phone_layout);
             holder.smsLayout = (LinearLayout) convertView.findViewById(R.id.sms_layout);
             holder.bookBtn = (FloatingActionButton) convertView.findViewById(R.id.booked_button);
+            holder.moreInfoBtn = (Button) convertView.findViewById(R.id.more_info);
             holder.key = (TextView) convertView.findViewById(R.id.key);
             convertView.setTag(holder);
         }else{
@@ -81,20 +83,32 @@ public class UrgentSupportCustomAdapter extends BaseAdapter {
         holder.bookBtn.setImageResource(condition ? R.drawable.outline_bookmark_add_24_blue:R.drawable.baseline_bookmark_added_24_white);
         holder.key.setText(keys.get(position));
 
+
+        /** LOADING LOGO */
         Picasso.get().load(supportList.get(position).getLogo()).into(holder.supportLogoView);
+
+
+
+        /** START HANDLE PHONE BUTTON */
         holder.phoneLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 initiatePhoneCall(supportList.get(position).getPhone());
             }
         });
+        /** END HANDLE PHONE BUTTON */
+
+        /** START HANDLE SMS BUTTON */
         holder.smsLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 initiateSmsMessage(supportList.get(position).getSms());
             }
         });
+        /** END HANDLE SMS BUTTON */
 
+
+        /** START HANDLE BOOKED BUTTON */
         holder.bookBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,7 +121,6 @@ public class UrgentSupportCustomAdapter extends BaseAdapter {
                     resource.setSms(supportList.get(position).getSms());
                     resource.setLogo(supportList.get(position).getLogo());
                     resourceDAO.addResource(resource);
-                    //holder.bookBtn.setImageResource(R.drawable.baseline_bookmark_added_24_white);
                     firebaseDatabaseHelper.updateUrgentBookedStatus(keys.get(position),1);
                 } else {
                     resourceDAO.deleteByName(supportList.get(position).getName());
@@ -120,6 +133,19 @@ public class UrgentSupportCustomAdapter extends BaseAdapter {
                 //handleBookedResources();
 
         });
+        /** ENS HANDLE BOOKED BUTTON */
+
+        /** START HANDLE MORE INFO BUTTON */
+        holder.moreInfoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                populateUrgentSupportForm(supportList.get(position));
+            }
+        });
+
+        /** ENd HANDLE MORE INFO BUTTON */
+
+
         return convertView;
     }
 
@@ -147,6 +173,23 @@ public class UrgentSupportCustomAdapter extends BaseAdapter {
             activity.startActivity(smsIntent);
         }}
 
+    private void populateUrgentSupportForm(UrgentSupportBo urgentSupportBo){
+        Intent i = new Intent(context,DisplayUrgentSuportActivity.class);
+        i.putExtra("name",urgentSupportBo.getName());
+        i.putExtra("logo",urgentSupportBo.getLogo());
+        i.putExtra("desc",urgentSupportBo.getDescription());
+        i.putExtra("phone",urgentSupportBo.getPhone());
+        i.putExtra("sms",urgentSupportBo.getSms());
+        i.putExtra("booked",urgentSupportBo.getBooked());
+        i.putExtra("type",urgentSupportBo.getType());
+
+        if (context != null && context instanceof Activity) {
+            Activity activity = (Activity) context;
+            activity.startActivity(i);
+        }
+    }
+
+
 
 
     public List<UrgentSupportBo> getDataList(){
@@ -164,5 +207,6 @@ public class UrgentSupportCustomAdapter extends BaseAdapter {
         LinearLayout phoneLayout;
         FloatingActionButton bookBtn;
         TextView key;
+        Button moreInfoBtn;
     }
 }

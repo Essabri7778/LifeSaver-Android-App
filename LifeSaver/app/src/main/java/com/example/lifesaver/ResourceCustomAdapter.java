@@ -55,7 +55,7 @@ public class ResourceCustomAdapter extends BaseAdapter {
         holder.resourceNameView.setText(resourceList.get(position).getName());
         holder.resourceDescView.setText(resourceList.get(position).getDescription());
         //holder.hiddenId.setText(resourceList.get(position).getId());
-
+        notifyDataSetChanged();
         return convertView;
 
     }

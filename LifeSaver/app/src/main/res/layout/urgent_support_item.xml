@@ -53,7 +53,8 @@
         android:layout_below="@+id/btn_layout"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center">
         <ImageView
             android:id="@+id/support_logo"
             android:layout_width="match_parent"
@@ -81,9 +82,17 @@
             android:textColor="@color/colorDark"
             android:alpha="0.8"
             android:textSize="14dp"
+            android:layout_marginBottom="3dp"
             android:textAlignment="center"
             ></TextView>
-
+        <Button
+            android:id="@+id/more_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="More info"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/colorPrimary"
+            android:fontFamily="@font/poppins"></Button>
 
     </LinearLayout>
     <LinearLayout
@@ -91,7 +100,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_below="@+id/desc_layout"
-        android:layout_marginTop="18dp">
+        android:layout_marginTop="8dp">
 
         <View
             android:layout_width="match_parent"

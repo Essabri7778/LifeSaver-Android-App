@@ -71,12 +71,20 @@ public class MyOwnResourcesActivity extends AppCompatActivity {
                 return true;
             }
         });
+        bookmark.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Object o = bookmark.getItemAtPosition(position);
+                ResourceBo resource = (ResourceBo) o;
+                populateBookedResourceForm(resource);
+            }
+        });
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MyOwnResourcesActivity.this, AddResourceActivity.class);
                 startActivity(i);
-                finish();
+                
             }
         });
 
@@ -90,6 +98,20 @@ public class MyOwnResourcesActivity extends AppCompatActivity {
                 getOnBackPressedDispatcher().onBackPressed();
             }
         });
+    }
+
+    private void populateBookedResourceForm(ResourceBo resource) {
+        Intent i = null;
+        Class<? extends AppCompatActivity> aClass = resource.getType() == 2 ? DisplayUrgentSuportActivity.class : DisplayOnlineSupportActivity.class;
+        i = new Intent(MyOwnResourcesActivity.this, aClass);
+        i.putExtra("name",resource.getName());
+        i.putExtra("desc",resource.getDescription());
+        i.putExtra("phone",resource.getPhone());
+        i.putExtra("sms",resource.getSms());
+        i.putExtra("email",resource.getEmail());
+        i.putExtra("website",resource.getWebsite());
+        i.putExtra("logo",resource.getLogo());
+        startActivity(i);
     }
 
     private void populateOwnResourceForm(ResourceBo resource) {

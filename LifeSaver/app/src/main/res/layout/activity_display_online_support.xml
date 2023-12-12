@@ -4,6 +4,148 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DisplayOnlineSupportActivity">
+    tools:context=".DisplayOnlineSupportActivity"
+    android:background="@color/colorSecondary">
+
+    <!-- START TOOLBAR -->
+    <include layout="@layout/toolbar_1"
+        android:id="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white"
+        />
+    <!-- END TOOLBAR -->
+    <LinearLayout
+        android:id="@+id/logo_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:layout_margin="15dp"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"></ImageView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo_layout"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_marginLeft="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="25dp">
+            <TextView
+                android:id="@+id/resource_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="My resource name"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="19dp"
+                android:textColor="@color/colorDark"></TextView>
+            <TextView
+                android:id="@+id/resource_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="My resource description"
+                android:textSize="15dp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/colorDark"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/email_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp">
+            <ImageView
+                android:id="@+id/text_btn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="18dp"
+                android:src="@drawable/baseline_email_24"
+
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp">
+
+                <TextView
+                    android:id="@+id/resource_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="example@mail"
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="15dp"
+                    android:inputType="textEmailAddress"></TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tap to mail now"
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="15dp"
+                    android:alpha="0.5"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/website_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dp">
+            <ImageView
+                android:id="@+id/web_btn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="18dp"
+                android:src="@drawable/baseline_web_asset_24"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp">
+
+                <TextView
+                    android:id="@+id/resource_website"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="www.myResource"
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="15dp"
+                    android:inputType="phone"></TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tap to visit now"
+                    android:textColor="@color/colorDark"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="15dp"
+                    android:alpha="0.5"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
