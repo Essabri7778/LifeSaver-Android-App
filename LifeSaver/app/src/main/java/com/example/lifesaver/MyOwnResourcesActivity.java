@@ -3,16 +3,21 @@ package com.example.lifesaver;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.lifesaver.bo.ContactBo;
 import com.example.lifesaver.bo.ResourceBo;
@@ -142,27 +147,36 @@ public class MyOwnResourcesActivity extends AppCompatActivity {
     }
 
     public void showDeleteDialog(int id){
-        AlertDialog.Builder builder = new AlertDialog.Builder(MyOwnResourcesActivity.this);
-        builder.setTitle("Delete your own?");
-        builder.setMessage("Are you sure you would like to delete this resource?");
+        Dialog dialog = new Dialog(MyOwnResourcesActivity.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCancelable(true);
+        dialog.setContentView(R.layout.contact_popup);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-        builder.setPositiveButton("Remove", new DialogInterface.OnClickListener() {
+        LinearLayout yes = dialog.findViewById(R.id.yes);
+        LinearLayout no = dialog.findViewById(R.id.no);
+        TextView title = dialog.findViewById(R.id.title);
+        TextView para = dialog.findViewById(R.id.para);
+
+        title.setText("Delete your own?");
+        para.setText("Are you sure you would like to delete this resource?");
+
+        yes.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // Delete the item from the db
+            public void onClick(View v) {
                 deleteResource(id);
+                Toast.makeText(MyOwnResourcesActivity.this,"Contact deleted successfully",Toast.LENGTH_LONG).show();
+                dialog.dismiss();
             }
         });
 
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        no.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // User canceled the dialog, do nothing
+            public void onClick(View v) {
+                dialog.dismiss();
             }
         });
 
-        // Create and show the dialog
-        AlertDialog dialog = builder.create();
         dialog.show();
 
     }

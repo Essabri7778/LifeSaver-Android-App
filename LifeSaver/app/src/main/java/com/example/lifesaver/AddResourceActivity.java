@@ -53,17 +53,24 @@ public class AddResourceActivity extends AppCompatActivity {
                 String email = emailTxt.getText().toString();
                 resourceDao = new ResourceDAO(AddResourceActivity.this);
 
-                ResourceBo resource = new ResourceBo(name,description,phone,sms,email,website,"",1);
-                boolean res = resourceDao.addResource(resource);
 
-                if(res){
-                    Toast.makeText(AddResourceActivity.this,"Resource added successfully",Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(AddResourceActivity.this,"Operation failed",Toast.LENGTH_SHORT).show();
+                if(name.equals("") || description.equals("") || sms.equals("")
+                        || phone.equals("") || website.equals("")|| email.equals("")){
+                    Toast.makeText(AddResourceActivity.this,"Please enter all fields!",Toast.LENGTH_SHORT).show();
+                }else {
+                    ResourceBo resource = new ResourceBo(name,description,phone,sms,email,website,"",1);
+                    boolean res = resourceDao.addResource(resource);
 
+                    if(res){
+                        Toast.makeText(AddResourceActivity.this,"Resource added successfully",Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(AddResourceActivity.this,"Operation failed",Toast.LENGTH_SHORT).show();
+
+                    }
+                    Intent i = new Intent(AddResourceActivity.this,MyOwnResourcesActivity.class);
+                    startActivity(i);
+                    finish();
                 }
-                Intent i = new Intent(AddResourceActivity.this,MyOwnResourcesActivity.class);
-                startActivity(i);
             }
         });
 
