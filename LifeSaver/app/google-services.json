@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "937555808316",
+    "project_id": "yourhope-life-saver",
+    "storage_bucket": "yourhope-life-saver.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:937555808316:android:8fe6bc3f8f20f1876cf339",
+        "android_client_info": {
+          "package_name": "com.example.lifesaver"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn1QuW4Z8vlLa4eLI5PZCdko8K65QDmIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

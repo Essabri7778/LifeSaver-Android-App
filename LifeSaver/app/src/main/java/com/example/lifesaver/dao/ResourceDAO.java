@@ -19,6 +19,9 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.example.lifesaver.bo.ResourceBo;
 import com.example.lifesaver.db.DatabaseHelper;
+import com.google.firebase.Firebase;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,9 +73,14 @@ public class ResourceDAO {
 
         }
         cursor.close();
+
         return list;
     }
-    public List<ResourceBo> getBookedResources(){
+
+
+
+    /** boooked resources*/
+    public List<ResourceBo> getOtherResources(){
         List<ResourceBo> list = new ArrayList<>();
         String query = "SELECT * FROM "+RESOURCE_TABLE+ " WHERE "+ COLUMN_RESOURCE_TYPE + " != ?" ;
         Cursor cursor = db.rawQuery(query, new String[]{"1"});
@@ -96,14 +104,23 @@ public class ResourceDAO {
 
         }
         cursor.close();
+
         return list;
+    }
+
+    public boolean deleteByName(String name){
+        int result = db.delete(RESOURCE_TABLE, COLUMN_RESOURCE_NAME + " = ?",
+                new String[] { String.valueOf(name) });
+
+
+        return (result == -1 ) ? false : true;
     }
 
     // Deleting a single resource ===> unbooked
     public boolean deleteResource(int id){
         int result = db.delete(RESOURCE_TABLE, COLUMN_RESOURCE_ID + " = ?",
                 new String[] { String.valueOf(id) });
-        db.close();
+
 
         return (result == -1 ) ? false : true;
     }

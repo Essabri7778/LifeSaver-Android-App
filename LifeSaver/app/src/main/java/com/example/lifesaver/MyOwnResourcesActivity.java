@@ -2,6 +2,8 @@ package com.example.lifesaver;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -60,6 +62,15 @@ public class MyOwnResourcesActivity extends AppCompatActivity {
                 populateOwnResourceForm(resource);
             }
         });
+        ownResource.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener(){
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                Object o = ownResource.getItemAtPosition(position);
+                ResourceBo contact = (ResourceBo) o;
+                showDeleteDialog(contact.getId());
+                return true;
+            }
+        });
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,10 +105,10 @@ public class MyOwnResourcesActivity extends AppCompatActivity {
 
 
     public void populateListView(){
-        List<ResourceBo> ownResourceList = new ArrayList<>();
-        List<ResourceBo> bookedResourceList = new ArrayList<>();
+        List<ResourceBo> ownResourceList;
+        List<ResourceBo> bookedResourceList;
         ownResourceList = resourceDAO.getOwnResources();
-        bookedResourceList = resourceDAO.getBookedResources();
+        bookedResourceList = resourceDAO.getOtherResources();
         if(!ownResourceList.isEmpty()) {
             layout1.setVisibility(View.GONE);
         }
@@ -106,6 +117,38 @@ public class MyOwnResourcesActivity extends AppCompatActivity {
         }
         ownResource.setAdapter(new ResourceCustomAdapter(this,ownResourceList));
         bookmark.setAdapter(new ResourceCustomAdapter(this,bookedResourceList));
+    }
+
+    public void showDeleteDialog(int id){
+        AlertDialog.Builder builder = new AlertDialog.Builder(MyOwnResourcesActivity.this);
+        builder.setTitle("Delete your own?");
+        builder.setMessage("Are you sure you would like to delete this resource?");
+
+        builder.setPositiveButton("Remove", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Delete the item from the db
+                deleteResource(id);
+            }
+        });
+
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // User canceled the dialog, do nothing
+            }
+        });
+
+        // Create and show the dialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+    }
+
+    public void  deleteResource(int id){
+
+        resourceDAO.deleteResource(id);
+        populateListView();
     }
 
 }

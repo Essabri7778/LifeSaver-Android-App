@@ -80,14 +80,10 @@ public class DisplayResourceActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String url = i.getStringExtra("website");
 
-                Uri webpage = Uri.parse(url);
+                Uri webpage = Uri.parse("https://www."+url);
                 Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
-                if (webIntent.resolveActivity(getPackageManager()) != null) {
-                    startActivity(webIntent);
-                } else {
-                    // Handle the case where a web browser is not available
-                    Toast.makeText(getApplicationContext(), "No web browser found", Toast.LENGTH_SHORT).show();
-                }
+                startActivity(webIntent);
+
             }
         });
 

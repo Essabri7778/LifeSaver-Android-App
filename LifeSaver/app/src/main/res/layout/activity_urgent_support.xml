@@ -6,31 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".UrgentSupportActivity"
     android:orientation="vertical"
-    android:background="@color/white">
+    android:background="@color/colorSecondary">
 
 
     <!-- START TOOLBAR -->
-    <include
-        layout="@layout/toolbar_1"
+    <include layout="@layout/toolbar_1"
         android:id="@+id/toolbar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@color/white"
         />
-
     <!-- END TOOLBAR -->
-
     <ListView
-        android:id="@+id/contactList"
+        android:id="@+id/urgentResourceList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="80dp"
+
         ></ListView>
     <!-- Empty layout (hidden initially) -->
+    <LinearLayout
+        android:id="@+id/emptyLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <TextView
+            android:id="@+id/emptyTextView"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:gravity="center"
+            android:text="No resources are available"
+            android:textAlignment="center"
+            android:textColor="@color/colorDark"
+            android:fontFamily="@font/poppins"
+            android:textSize="18sp" />
+    </LinearLayout>
 
 
 

@@ -41,7 +41,7 @@ public class ResourceCustomAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ResourceCustomAdapter.ViewHolder holder;
+        ViewHolder holder;
         if(convertView == null){
             convertView = inflater.inflate(R.layout.resource_item,null);
             holder = new ResourceCustomAdapter.ViewHolder();
