@@ -20,6 +20,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Color;
@@ -61,12 +62,22 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
 
-        // Schedule the first notification at 10:00 AM
-        scheduleNotification(getApplicationContext(), 1, "Morning Check-In", "Good morning! How are you feeling today? Remember, you're not alone. If you need someone to talk to, we're here for you.", 10, 00);
+        // Check if notifications have already been scheduled
+        SharedPreferences preferences = getPreferences(Context.MODE_PRIVATE);
+        boolean notificationsScheduled = preferences.getBoolean("notificationsScheduled", false);
 
-        // Schedule the second notification at 8:00 PM
-        scheduleNotification(getApplicationContext(), 2, "End-of-Day Reflection", "As the day winds down, take a moment to reflect on your feelings. If today was tough, tomorrow is a new opportunity. Reach out if you need support—we care about you.", 20, 00);
+        if (!notificationsScheduled) {
+            // Schedule the first notification at 10:00 AM
+            scheduleNotification(getApplicationContext(), 1, "Morning Check-In", "Good morning! How are you feeling today? Remember, you're not alone. If you need someone to talk to, we're here for you.", 10, 00);
 
+            // Schedule the second notification at 8:00 PM
+            scheduleNotification(getApplicationContext(), 2, "End-of-Day Reflection", "As the day winds down, take a moment to reflect on your feelings. If today was tough, tomorrow is a new opportunity. Reach out if you need support—we care about you.", 20, 00);
+
+            // Mark notifications as scheduled
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putBoolean("notificationsScheduled", true);
+            editor.apply();
+        }
 
         contactDAO = new ContactDAO(HomeActivity.this);
 
