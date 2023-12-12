@@ -1,4 +1,4 @@
-package com.example.lifesaver;
+package com.example.lifesaver.ui.adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.lifesaver.DisplayUrgentSuportActivity;
+import com.example.lifesaver.R;
 import com.example.lifesaver.bo.ResourceBo;
 import com.example.lifesaver.bo.UrgentSupportBo;
 import com.example.lifesaver.dao.ResourceDAO;
@@ -174,7 +176,7 @@ public class UrgentSupportCustomAdapter extends BaseAdapter {
         }}
 
     private void populateUrgentSupportForm(UrgentSupportBo urgentSupportBo){
-        Intent i = new Intent(context,DisplayUrgentSuportActivity.class);
+        Intent i = new Intent(context, DisplayUrgentSuportActivity.class);
         i.putExtra("name",urgentSupportBo.getName());
         i.putExtra("logo",urgentSupportBo.getLogo());
         i.putExtra("desc",urgentSupportBo.getDescription());

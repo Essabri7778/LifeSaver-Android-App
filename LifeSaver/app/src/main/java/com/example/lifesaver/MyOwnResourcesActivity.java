@@ -2,9 +2,7 @@ package com.example.lifesaver;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -12,20 +10,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.lifesaver.bo.ContactBo;
 import com.example.lifesaver.bo.ResourceBo;
-import com.example.lifesaver.dao.ContactDAO;
 import com.example.lifesaver.dao.ResourceDAO;
+import com.example.lifesaver.ui.adapter.ResourceCustomAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MyOwnResourcesActivity extends AppCompatActivity {

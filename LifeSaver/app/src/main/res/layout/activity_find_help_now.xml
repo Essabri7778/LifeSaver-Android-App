@@ -77,7 +77,7 @@
                     android:textSize="12dp"
                     android:layout_marginLeft="20dp"
                     android:typeface="sans"
-                    android:text="Resource for emergency situation "
+                    android:text="Resources for emergency situation "
                     android:fontFamily="@font/poppins"
                     android:alpha="0.6"/>
             </LinearLayout>
@@ -240,7 +240,7 @@
                 android:textSize="12dp"
                 android:layout_marginLeft="20dp"
                 android:typeface="sans"
-                android:text="people i know who can help"
+                android:text="People i know who can help"
                 android:fontFamily="@font/poppins"
                 android:alpha="0.6"/>
         </LinearLayout>
@@ -309,7 +309,7 @@
                 android:textSize="20dp"
                 android:layout_marginLeft="20dp"
                 android:typeface="sans"
-                android:text="My Own Reasources"
+                android:text="My Own Resources"
                 android:fontFamily="@font/poppins_semibold"/>
             <TextView
                 android:id="@+id/resource_desc4"
@@ -322,7 +322,7 @@
                 android:textSize="12dp"
                 android:layout_marginLeft="20dp"
                 android:typeface="sans"
-                android:text="add further sources of suport"
+                android:text="Add further sources of support"
                 android:fontFamily="@font/poppins"
                 android:alpha="0.6"/>
         </LinearLayout>
