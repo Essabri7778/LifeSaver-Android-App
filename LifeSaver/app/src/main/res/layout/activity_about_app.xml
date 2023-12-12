@@ -32,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="5dp"
+                android:padding="10dp"
                 android:background="@drawable/shape"
                 android:backgroundTint="@color/colorPrimary">
                 <ImageView
@@ -46,7 +46,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_bold"
-                    android:textSize="15dp"
+                    android:textSize="13dp"
                     android:layout_marginLeft="10dp"
                     android:text="About Your Hope Space: Your Companion in Tough Times"
                     android:textColor="@color/colorSecondary"
@@ -151,14 +151,6 @@
                     android:textColor="@color/colorDark"
                     android:fontFamily="@font/poppins_semibold"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="14dp"
-                    android:text="Your Hope Space is designed to help you navigate through tough times and prevent suicide. Together, let's build a society that understands, connects, and supports every individual on their mental health journey. You are not alone."
-                    android:textColor="@color/colorDark"
-                    android:fontFamily="@font/poppins_semibold"/>
-
             </LinearLayout>
 
         <LinearLayout
@@ -175,7 +167,8 @@
                 android:textSize="20dp"
                 android:text="Developed by"
                 android:textColor="@color/colorPrimary"
-                android:fontFamily="@font/poppins_bold"/>
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginBottom="10dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

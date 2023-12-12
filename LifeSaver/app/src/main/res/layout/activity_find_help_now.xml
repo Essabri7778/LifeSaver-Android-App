@@ -13,7 +13,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/white"
         />
     <!-- END TOOLBAR -->
 
@@ -34,14 +33,14 @@
             android:padding="6dip"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="@color/white"
-            >
+                >
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <ImageView
                 android:id="@+id/resource_logo1"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@mipmap/ic_launcher_round"
+                android:src="@drawable/urgent"
+                app:tint="@color/colorPrimary"
                 android:layout_centerVertical="true"
 
                 />
@@ -92,6 +91,13 @@
                 android:layout_centerVertical="true"
                 android:src="@drawable/baseline_keyboard_arrow_right_24"></ImageView>
         </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="4dp"
+        android:background="@color/colorDark"
+        android:alpha="0.2"
+        />
     <RelativeLayout
         android:id="@+id/online_resource"
         android:layout_width="match_parent"
@@ -100,14 +106,14 @@
         android:padding="6dip"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="@color/white"
         >
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:id="@+id/resource_logo2"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@mipmap/ic_launcher_round"
+            android:src="@drawable/online"
+            app:tint="@color/colorPrimary"
             android:layout_centerVertical="true"
 
             />
@@ -161,6 +167,15 @@
 
 
     </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="4dp"
+        android:background="@color/colorDark"
+        android:alpha="0.2"
+        />
+
     <RelativeLayout
         android:id="@+id/contacts"
         android:layout_width="match_parent"
@@ -169,24 +184,36 @@
         android:padding="6dip"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="@color/white"
         >
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/resource_logo3"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/baseline_contacts_24"
+            app:cardCornerRadius="300dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="50dp"
+            app:cardElevation="0dp"
             android:layout_centerVertical="true"
+            >
 
-            />
+            <ImageView
+                android:id="@+id/resource_logo3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/baseline_contacts_24"
+                />
+
+        </androidx.cardview.widget.CardView>
 
         <LinearLayout
             android:id="@+id/text_layout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_toEndOf= "@id/resource_logo3"
+            android:layout_toEndOf= "@id/cardView"
             android:layout_centerVertical="true"
             >
             <TextView
@@ -234,6 +261,15 @@
 
 
     </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="4dp"
+        android:background="@color/colorDark"
+        android:alpha="0.2"
+        />
+
     <RelativeLayout
         android:id="@+id/own_resources"
         android:layout_width="match_parent"
@@ -242,13 +278,14 @@
         android:padding="6dip"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="@color/white">
+        >
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:id="@+id/resource_logo4"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@mipmap/ic_launcher_round"
+            android:src="@drawable/ownres"
+            app:tint="@color/colorPrimary"
             android:layout_centerVertical="true"
 
             />
@@ -299,6 +336,14 @@
             android:layout_centerVertical="true"
             android:src="@drawable/baseline_keyboard_arrow_right_24"></ImageView>
     </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="4dp"
+        android:background="@color/colorDark"
+        android:alpha="0.2"
+        />
 
 </LinearLayout>
 

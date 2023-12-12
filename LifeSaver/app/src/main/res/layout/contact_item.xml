@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="70dp"
     android:orientation="horizontal"
@@ -8,19 +10,30 @@
     android:layout_marginRight="20dp"
     android:background="@color/white">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/contact_img"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/baseline_person_24"
+    <androidx.cardview.widget.CardView
+    android:id="@+id/cardView"
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    app:cardCornerRadius="15dp"
+    android:layout_gravity="center"
+        android:backgroundTint="@color/white"
         android:layout_centerVertical="true"
-        />
+        app:cardElevation="0dp">
+
+        <ImageView
+        android:id="@+id/contact_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/myself"
+            />
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/contact_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf= "@id/contact_img"
+        android:layout_toEndOf= "@id/cardView"
         android:layout_centerVertical="true"
         android:textStyle="bold"
         android:textSize="20dp"

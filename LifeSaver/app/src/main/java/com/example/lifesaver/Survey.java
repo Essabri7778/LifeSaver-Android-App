@@ -92,8 +92,9 @@ public class Survey extends AppCompatActivity {
                         btn_dialog.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Intent intent = new Intent(Survey.this, HomeActivity.class);
+                                Intent intent = new Intent(Survey.this, FindHelpNowActivity.class);
                                 startActivity(intent);
+                                finish();
                                 Toast.makeText(Survey.this , "Redirect to HELP...", Toast.LENGTH_SHORT).show();
                             }
                         });
@@ -109,6 +110,7 @@ public class Survey extends AppCompatActivity {
                                 Intent intent = new Intent(Survey.this, HomeActivity.class);
                                 intent.putExtra("navigate_to_myspace", true);
                                 startActivity(intent);
+                                finish();
                                 Toast.makeText(Survey.this , "Redirect to SPACE...", Toast.LENGTH_SHORT).show();
                             }
                         });

@@ -9,15 +9,19 @@ import android.Manifest;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -68,15 +72,18 @@ public class AllContactsActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Object o = listView.getItemAtPosition(position);
                 ContactBo contact = (ContactBo) o;
-                populateForm(contact);
+                contactDetailsDialog(contact);
+
             }
         });
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener(){
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                Object o = listView.getItemAtPosition(position);
-                ContactBo contact = (ContactBo) o;
-                showDeleteDialog(contact.getId());
+                if(position!=0){
+                    Object o = listView.getItemAtPosition(position);
+                    ContactBo contact = (ContactBo) o;
+                    showDeleteDialog(contact.getId());
+                }
                 return true;
             }
         });
@@ -105,13 +112,56 @@ public class AllContactsActivity extends AppCompatActivity {
 
     }
 
-    private void populateForm(ContactBo contact) {
-        Intent i = new Intent(AllContactsActivity.this,ContactDetails.class);
-        i.putExtra("firstName",contact.getPrimaryName());
-        i.putExtra("secondName",contact.getAlternativeName());
-        i.putExtra("phone",contact.getPhoneNumber());
-        i.putExtra("photo",String.valueOf(contact.getPhoto()));
-        startActivity(i);
+
+    private void contactDetailsDialog(ContactBo contact) {
+        Dialog dialog = new Dialog(AllContactsActivity.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCancelable(true);
+        dialog.setContentView(R.layout.contact_details_popup);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+
+        TextView firstName;
+        TextView secondName;
+        TextView phoneNumber;
+        ImageView photo;
+        ImageView callBtn;
+        ImageView messageBtn;
+
+        callBtn = dialog.findViewById(R.id.call_btn);
+        messageBtn = dialog.findViewById(R.id.message_btn);
+        firstName = dialog.findViewById(R.id.name);
+        secondName = dialog.findViewById(R.id.family_name);
+        phoneNumber = dialog.findViewById(R.id.phone_nbr);
+        photo = dialog.findViewById(R.id.contact_img);
+
+        firstName.setText(contact.getPrimaryName());
+        secondName.setText(contact.getAlternativeName());
+        phoneNumber.setText(contact.getPhoneNumber());
+        if(!(String.valueOf(contact.getPhoto()).equals(""))){
+            photo.setImageURI(Uri.parse(String.valueOf(contact.getPhoto())));
+        }
+
+        callBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent callIntent = new Intent();
+                callIntent.setAction(Intent.ACTION_DIAL);
+                callIntent.setData(Uri.parse("tel:"+(contact.getPhoneNumber())));
+                startActivity(callIntent);
+            }
+        });
+
+        messageBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri smsUri = Uri.parse("smsto:" + (contact.getPhoneNumber()));
+                Intent smsIntent = new Intent(Intent.ACTION_SENDTO, smsUri);
+                startActivity(smsIntent);
+            }
+        });
+
+        dialog.show();
     }
 
     private void populateListView(){
@@ -269,29 +319,32 @@ public class AllContactsActivity extends AppCompatActivity {
     /** Delete contact logic */
 
     public void showDeleteDialog(int id){
-        AlertDialog.Builder builder = new AlertDialog.Builder(AllContactsActivity.this);
-        builder.setTitle("Remove contact?");
-        builder.setMessage("This will remove the contact from your list in Stay alive, not from your device");
+        Dialog dialog = new Dialog(AllContactsActivity.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCancelable(true);
+        dialog.setContentView(R.layout.contact_popup);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-        builder.setPositiveButton("Remove", new DialogInterface.OnClickListener() {
+        LinearLayout yes = dialog.findViewById(R.id.yes);
+        LinearLayout no = dialog.findViewById(R.id.no);
+
+        yes.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // Delete the item from the db
+            public void onClick(View v) {
                 deleteContact(id);
+                Toast.makeText(AllContactsActivity.this,"Contact deleted successfully",Toast.LENGTH_LONG).show();
+                dialog.dismiss();
             }
         });
 
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        no.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // User canceled the dialog, do nothing
+            public void onClick(View v) {
+                dialog.dismiss();
             }
         });
 
-        // Create and show the dialog
-        AlertDialog dialog = builder.create();
         dialog.show();
-
     }
 
     public void deleteContact(int id){

@@ -45,5 +45,7 @@ dependencies {
     implementation("com.google.firebase:firebase-database")
     implementation ("com.squareup.picasso:picasso:2.8")
 
+    implementation ("androidx.core:core-splashscreen:1.0.1")
+
 
 }
