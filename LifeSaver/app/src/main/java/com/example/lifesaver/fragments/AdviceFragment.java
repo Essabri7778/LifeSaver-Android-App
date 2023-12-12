@@ -73,7 +73,7 @@ public class AdviceFragment extends Fragment {
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int screenHeight = displayMetrics.heightPixels;
 
-        if (screenHeight > 1000) {
+        if (screenHeight > 1500) {
             myImageView.setVisibility(View.VISIBLE);
         } else {
             myImageView.setVisibility(View.GONE);
