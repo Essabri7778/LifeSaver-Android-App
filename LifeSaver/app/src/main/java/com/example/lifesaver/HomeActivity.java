@@ -71,7 +71,7 @@ public class HomeActivity extends AppCompatActivity {
             scheduleNotification(getApplicationContext(), 1, "Morning Check-In", "Good morning! How are you feeling today? Remember, you're not alone. If you need someone to talk to, we're here for you.", 10, 00);
 
             // Schedule the second notification at 8:00 PM
-            scheduleNotification(getApplicationContext(), 2, "End-of-Day Reflection", "As the day winds down, take a moment to reflect on your feelings. If today was tough, tomorrow is a new opportunity. Reach out if you need support—we care about you.", 20, 00);
+            scheduleNotification(getApplicationContext(), 2, "End-of-Day Reflection", "As the day winds down, take a moment to reflect on your feelings. If today was tough, tomorrow is a new opportunity. Reach out if you need support—we care about you.", 00, 00);
 
             // Mark notifications as scheduled
             SharedPreferences.Editor editor = preferences.edit();
