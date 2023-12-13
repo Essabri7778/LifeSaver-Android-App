@@ -64,25 +64,6 @@ public class HomeActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_home);
 
-        NotificationChannel();
-
-        // Check if notifications have already been scheduled
-        SharedPreferences preferences = getPreferences(Context.MODE_PRIVATE);
-        boolean notificationsScheduled = preferences.getBoolean("notificationsScheduled", false);
-
-        if (!notificationsScheduled) {
-            // Schedule the first notification at 10:00 AM
-            scheduleNotification(getApplicationContext(), 1, "Morning Check-In", "Good morning! How are you feeling today? Remember, you're not alone. If you need someone to talk to, we're here for you.", 10, 00);
-
-            // Schedule the second notification at 9:00 PM
-            scheduleNotification(getApplicationContext(), 2, "End-of-Day Reflection", "As the day winds down, take a moment to reflect on your feelings. If today was tough, tomorrow is a new opportunity. Reach out if you need support—we care about you.", 21, 00);
-
-            // Mark notifications as scheduled
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.putBoolean("notificationsScheduled", true);
-            editor.apply();
-        }
-
         contactDAO = new ContactDAO(HomeActivity.this);
 
 
@@ -199,47 +180,6 @@ public class HomeActivity extends AppCompatActivity {
 
     public void updateSelectedItem(int itemId) {
         bottomNav.setSelectedItemId(itemId);
-    }
-
-
-    private void scheduleNotification(Context context, int notificationId, String title, String message, int hour, int minute) {
-        // Set the time for the notification
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY, hour);
-        calendar.set(Calendar.MINUTE, minute);
-        calendar.set(Calendar.SECOND, 00);
-
-        // Create an intent to trigger the BroadcastReceiver
-        Intent intent = new Intent(HomeActivity.this, NotificationReceiver.class);
-        intent.putExtra("notificationId", notificationId);
-        intent.putExtra("title", title);
-        intent.putExtra("message", message);
-
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, notificationId, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-        // Get the AlarmManager
-        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
-        }
-    }
-
-    private void NotificationChannel() {
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            CharSequence name = "YOUR HOPE";
-            String description = "YOUR HOPE `S CHANNEL";
-            int importance = NotificationManager.IMPORTANCE_DEFAULT;
-            NotificationChannel channel = new NotificationChannel("Notification", name, importance);
-            channel.setDescription(description);
-
-
-            NotificationManager notificationManager = getSystemService(NotificationManager.class);
-            notificationManager.createNotificationChannel(channel);
-
-
-        }
     }
 
 

@@ -14,7 +14,6 @@
 
 
     <uses-permission android:name="android.permission.CALL_PHONE"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
 
     <application
@@ -98,14 +97,6 @@
             </intent-filter>
         </activity>
 
-
-        <receiver android:name=".NotificationReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
 
     </application>
 
