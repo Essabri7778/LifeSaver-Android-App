@@ -10,8 +10,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.lifesaver.bo.OnlineSupportBo;
-import com.example.lifesaver.bo.UrgentSupportBo;
 import com.example.lifesaver.db.FirebaseDatabaseHelper;
+import com.example.lifesaver.ui.adapter.OnlineSupportCustomAdapter;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.lifesaver;
+package com.example.lifesaver.ui.adapter;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -14,6 +14,7 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import androidx.core.widget.ImageViewCompat;
 
+import com.example.lifesaver.R;
 import com.example.lifesaver.bo.ContactBo;
 
 import java.util.List;

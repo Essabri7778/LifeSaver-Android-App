@@ -1,5 +1,6 @@
 package com.example.lifesaver;
 
+import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -10,48 +11,43 @@ import android.content.Intent;
 import android.os.Build;
 
 import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 public class NotificationReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+
         int notificationId = intent.getIntExtra("notificationId", 0);
         String title = intent.getStringExtra("title");
         String message = intent.getStringExtra("message");
 
-        // Create an intent to open the desired activity
-        Intent resultIntent = new Intent(context, HomeActivity.class);
-        resultIntent.putExtra("notificationId", notificationId);
-        resultIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-
-        PendingIntent resultPendingIntent = PendingIntent.getActivity(
-                context,
-                notificationId,
-                resultIntent,
-                PendingIntent.FLAG_IMMUTABLE
-        );
-
         // Call the method to show the notification
-        showNotification(context, title, message, notificationId, resultPendingIntent);
+        showNotification(context, title, message, notificationId);
+
+
     }
 
-    private void showNotification(Context context, String title, String message, int notificationId, PendingIntent pendingIntent) {
-        NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+    @SuppressLint("MissingPermission")
+    private void showNotification(Context context, String title, String message, int notificationId) {
 
-        // Notification channel is required for Android Oreo and higher
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel("channel_id", "Channel Name", NotificationManager.IMPORTANCE_DEFAULT);
-            notificationManager.createNotificationChannel(channel);
-        }
+        Intent repeating_Intent = new Intent(context, HomeActivity.class);
+        repeating_Intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "channel_id")
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, notificationId, repeating_Intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "Notification")
+                .setContentIntent(pendingIntent)
                 .setSmallIcon(R.drawable.appicon)
                 .setContentTitle(title)
                 .setContentText(message)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                .setContentIntent(pendingIntent) // Set the click action
-                .setAutoCancel(true)// Close the notification when clicked
-                .setStyle(new NotificationCompat.BigTextStyle().bigText(message)); // Make the notification expandable with longer text;
+                .setPriority(Notification.PRIORITY_DEFAULT)
+                .setStyle(new NotificationCompat.BigTextStyle().bigText(message))
+                .setAutoCancel(true);
+
+
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
+
 
         // Show the notification
         notificationManager.notify(notificationId, builder.build());

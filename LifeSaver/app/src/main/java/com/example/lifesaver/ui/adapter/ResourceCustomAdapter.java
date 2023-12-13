@@ -1,4 +1,4 @@
-package com.example.lifesaver;
+package com.example.lifesaver.ui.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 
+import com.example.lifesaver.R;
 import com.example.lifesaver.bo.ResourceBo;
 
 import java.util.List;

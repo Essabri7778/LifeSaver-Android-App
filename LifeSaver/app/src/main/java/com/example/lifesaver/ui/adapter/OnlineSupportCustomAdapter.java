@@ -1,4 +1,4 @@
-package com.example.lifesaver;
+package com.example.lifesaver.ui.adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.lifesaver.DisplayOnlineSupportActivity;
+import com.example.lifesaver.R;
 import com.example.lifesaver.bo.OnlineSupportBo;
 import com.example.lifesaver.bo.ResourceBo;
 import com.example.lifesaver.dao.ResourceDAO;
@@ -145,7 +147,7 @@ public class OnlineSupportCustomAdapter extends BaseAdapter {
     }
 
     private void populateOnlineSupportForm(OnlineSupportBo onlineSupportBo) {
-        Intent i = new Intent(context,DisplayOnlineSupportActivity.class);
+        Intent i = new Intent(context, DisplayOnlineSupportActivity.class);
         i.putExtra("name",onlineSupportBo.getName());
         i.putExtra("logo",onlineSupportBo.getLogo());
         i.putExtra("desc",onlineSupportBo.getDescription());

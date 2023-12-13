@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.lifesaver.bo.UrgentSupportBo;
 import com.example.lifesaver.db.FirebaseDatabaseHelper;
+import com.example.lifesaver.ui.adapter.UrgentSupportCustomAdapter;
 
 import java.util.List;
 
