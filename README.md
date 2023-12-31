@@ -22,8 +22,10 @@ provides immediate support and resources to individuals facing distress.
 
 ### Your Space
 
-####Safety Plan : helps users recognize their warning signs, that a suicidal crisis is beginning or escalating and the actions they can take to stay safe.
-####Reasons for living : offers users a carefully curated collection of personalized reasons to continue living, helping to shift their focus from despair to hope.
+#### Safety Plan :
+helps users recognize their warning signs, that a suicidal crisis is beginning or escalating and the actions they can take to stay safe.
+#### Reasons for living :
+offers users a carefully curated collection of personalized reasons to continue living, helping to shift their focus from despair to hope.
 
 ### Advice
 
