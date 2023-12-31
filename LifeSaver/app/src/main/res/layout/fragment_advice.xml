@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:padding="18dp"
+        android:padding="10dp"
         android:gravity="center_vertical|center_horizontal"
         >
 
@@ -37,7 +37,7 @@
             android:textSize="28dp"
             android:gravity="center"
             android:lineSpacingMultiplier="0.8"
-            android:layout_marginBottom="-8dp"
+            android:layout_marginBottom="-15dp"
             />
 
         <TextView
@@ -50,7 +50,7 @@
             android:fontFamily="@font/poppins_semibold"
             android:textSize="16dp"
             android:lineSpacingMultiplier="0.8"
-            android:layout_marginBottom="13dp"
+            android:layout_marginBottom="10dp"
             />
 
         <!-- one -->
@@ -61,7 +61,7 @@
             android:orientation="horizontal"
             android:background="@drawable/shape_space"
             android:padding="15dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="10dp"
             >
 
             <LinearLayout
@@ -133,7 +133,7 @@
         android:orientation="horizontal"
         android:background="@drawable/shape_space"
         android:padding="15dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="10dp"
         >
 
         <LinearLayout
@@ -280,7 +280,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="-60dp"
+        android:layout_marginBottom="-70dp"
         />
 
     <include

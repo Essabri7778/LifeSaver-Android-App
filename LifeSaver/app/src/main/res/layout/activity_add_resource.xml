@@ -17,6 +17,11 @@
         android:background="@color/white"
         />
     <!-- END TOOLBAR -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        >
 
     <androidx.cardview.widget.CardView
         android:id="@+id/resources_card"
@@ -26,10 +31,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        android:layout_margin="15dp"
+        android:layout_margin="20dp"
         app:cardElevation="5dp"
-        app:cardCornerRadius="8dp"
+        app:cardCornerRadius="10dp"
         >
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -160,6 +166,7 @@
                 android:elevation="10dp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+    </ScrollView>
 
 
 
