@@ -36,3 +36,7 @@ contains general advice about how to stay well and how to use the app.
 ![Screenshot 1](https://github.com/nassimBenmamoun/LifeSaver-Android-App/blob/main/LifeSaver/app/src/main/res/drawable/your_hope_home2.png)
 
 ![Screenshot 2](https://github.com/nassimBenmamoun/LifeSaver-Android-App/blob/main/LifeSaver/app/src/main/res/drawable/your_hope_home3.png)
+
+## Contributors
+ - [Essabri Fatima Zahrae](https://github.com/Essabri7778)
+ - [Chentoui Abdelali](https://github.com/AbdelaliChe)
